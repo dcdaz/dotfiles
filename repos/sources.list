@@ -1,0 +1,46 @@
+#################################################
+################### OFICIALES ###################
+#################################################
+
+# OFICIALES
+deb http://ftp.jp.debian.org/debian/ testing main contrib non-free
+deb-src http://ftp.jp.debian.org/debian/ testing main contrib non-free
+
+# SEGURIDAD
+deb http://security.debian.org/ testing/updates main contrib non-free
+deb-src http://security.debian.org/ testing/updates main contrib non-free
+
+# STABLE-UPDATES
+# deb http://mirrors.kernel.org/debian jessie-updates main contrib non-free
+
+# PROPOSED-UPDATES
+# deb http://ftp.us.debian.org/debian/ testing-proposed-updates main contrib non-free
+
+# BACKPORTS
+deb http://ftp.debian.org/debian/ jessie-backports main contrib non-free
+deb-src http://ftp.debian.org/debian/ jessie-backports main contrib non-free
+
+#################################################
+################# NO OFICIALES ##################
+#################################################
+
+# FIREFOX
+deb http://mozilla.debian.net/ jessie-backports firefox-release
+
+# GOOGLE CHROME
+deb http://dl.google.com/linux/chrome/deb/ stable main
+
+# GOOGLE TALK-PLUGIN
+deb http://dl.google.com/linux/talkplugin/deb stable main
+
+# TOR
+# deb http://deb.torproject.org/torproject.org testing main
+
+#################################################
+################ LLAVES PUBLICAS ################
+#################################################
+
+#wget -O- -q http://mozilla.debian.net/archive.asc | gpg --import
+#gpg --check-sigs --fingerprint --keyring /usr/share/keyrings/debian-keyring.gpg 06C4AE2A
+#gpg --export -a 06C4AE2A | apt-key add -
+#wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -

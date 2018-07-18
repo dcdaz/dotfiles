@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Pycharm
+GenericName=Python Development IDE
+Comment=Community Edition of Jetbrains IDE for python development
+Exec=pycharm %u
+Icon=pycharm
+Terminal=false
+Type=Application
+Encoding=UTF-8
+Categories=Development;IDE;
+StartupNotify=true

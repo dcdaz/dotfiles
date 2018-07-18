@@ -1,0 +1,7 @@
+[Utilities]
+name=Utilities
+enabled=1
+autorefresh=0
+baseurl=http://download.opensuse.org/repositories/utilities/openSUSE_Leap_42.3/
+type=rpm-md
+keeppackages=0

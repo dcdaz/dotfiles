@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Android Studio
+GenericName=Android Development IDE
+Comment=Google IDE for Android development
+Exec=androidstudio %u
+Icon=androidstudio
+Terminal=false
+Type=Application
+Encoding=UTF-8
+Categories=Development;IDE;
+StartupNotify=true

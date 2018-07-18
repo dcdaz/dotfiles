@@ -1,0 +1,18 @@
+[Desktop Entry]
+Name=Firefox-Dev
+GenericName=Mozilla Developer Edition Web Browser
+Comment=Web Navigator for Web Developers
+TryExec=firefox-dev
+Exec=firefox-dev %u
+Icon=firefox-developer-icon
+Terminal=false
+Type=Application
+Encoding=UTF-8
+Categories=Network;WebBrowser;
+StartupNotify=true
+MimeType=text/html;text/xml;application/xhtml+xml;application/vnd.mozilla.xul+xml;text/mml;application/x-xpinstall;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;
+Actions=PrivateBrowsing;
+
+[Desktop Action PrivateBrowsing]
+Name=New Private Browsing Window
+Exec=firefox-dev --private-window %u

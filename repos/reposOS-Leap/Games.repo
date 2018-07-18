@@ -1,0 +1,7 @@
+[Games]
+name=Games
+enabled=1
+autorefresh=0
+baseurl=http://download.opensuse.org/repositories/games:/tools/openSUSE_Leap_42.3/
+type=rpm-md
+keeppackages=0

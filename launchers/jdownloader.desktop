@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=JDownloader
+GenericName=JDownloader
+Comment=Download Manager
+Exec=jdownloader %u
+Terminal=false
+Type=Application
+Encoding=UTF-8
+Icon=jdownloader
+Categories=GTK;Network;
+StartupNotify=true

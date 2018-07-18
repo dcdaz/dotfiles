@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Slack
+GenericName=Groupware chat
+Comment=Chat for teams
+Exec=slack %u
+Icon=slack
+Terminal=false
+Type=Application
+Encoding=UTF-8
+Categories=Network;
+StartupNotify=true

@@ -1,0 +1,8 @@
+[Utilities]
+name=Utilities
+enabled=1
+autorefresh=0
+baseurl=http://download.opensuse.org/repositories/utilities/openSUSE_Tumbleweed/
+path=/
+type=rpm-md
+keeppackages=0

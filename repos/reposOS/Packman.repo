@@ -1,0 +1,8 @@
+[Packman]
+name=Packman
+enabled=1
+autorefresh=0
+baseurl=http://mirror.karneval.cz/pub/linux/packman/suse/openSUSE_Tumbleweed/
+path=/
+type=rpm-md
+keeppackages=0

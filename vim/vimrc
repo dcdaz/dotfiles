@@ -1,0 +1,79 @@
+"Basic confs
+if has('gui_running')
+    colorscheme desertEx
+    set lines=999 columns=999
+else
+    colorscheme wombat256i
+endif
+syntax on
+filetype plugin on
+set encoding=utf-8
+set number
+set expandtab
+set tabstop=4
+set cindent
+set shiftwidth=4
+set mouse=a
+set ruler
+set showcmd
+set title
+set nocp
+set noshowmode
+set hlsearch
+set guifont=InconsolataForPowerline\ NF\ 12
+
+"Complete syntax
+set omnifunc=syntaxcomplete#Completee
+set completeopt+=longest,menuone
+au InsertLeave * set nopaste
+
+"Sources
+"Various Confs
+source ~/.vim/confs/various.vim
+"Lightline
+source ~/.vim/confs/lightline.vim
+"Pastemode automatically
+source ~/.vim/confs/pastemode.vim
+"Toggle Wrap
+source ~/.vim/confs/wrap.vim
+
+"Mapping Shortcuts
+"Visual Block
+nnoremap vb <C-v>
+
+"Nerdtree and wrapping text
+map 1 :NERDTreeToggle<cr>
+map 2 :TlistToggle<cr>
+map 3 :call ToggleWrap()<CR>
+map 4 <C-w>w
+
+"Tabs
+map za :tabnew<cr>
+map zx gt
+map zz gT
+map zc q:
+
+"Other shortcuts
+map <Space> o
+map <C-v> "+gP
+imap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
+            \ "\<lt>C-n>" :
+            \ "\<lt>C-x>\<lt>C-o><c-r>=pumvisible() ?" .
+            \ "\"\\<lt>c-n>\\<lt>c-p>\\<lt>c-n>\" :" .
+            \ "\" \\<lt>bs>\\<lt>C-n>\"\<CR>"
+imap <C-@> <C-Space>
+map <C-a> ggVG
+
+
+"Pathogen plugin manager
+execute pathogen#infect()
+
+"Vundle plugin manager
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+    Plugin 'VundleVim/Vundle.vim'
+    Plugin 'alvan/vim-closetag'
+    Plugin 'ryanoasis/vim-devicons'
+    Plugin 'itchyny/lightline.vim'
+call vundle#end()
+

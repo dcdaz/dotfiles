@@ -1,0 +1,7 @@
+#!/bin/bash
+
+VSCODE_PATH="/opt/code"
+ELECTRON="$VSCODE_PATH/code"
+CLI="$VSCODE_PATH/resources/app/out/cli.js"
+ELECTRON_RUN_AS_NODE=1 "$ELECTRON" "$CLI" "$@"
+exit $?

@@ -1,0 +1,8 @@
+[Games]
+name=Games
+enabled=1
+autorefresh=0
+baseurl=http://download.opensuse.org/repositories/games:/tools/openSUSE_Tumbleweed/
+path=/
+type=rpm-md
+keeppackages=0

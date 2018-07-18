@@ -1,0 +1,18 @@
+#Some alias to make my daily life easier
+# ZYPPER
+alias i='sudo zypper in'
+alias r='sudo zypper remove -u'
+alias s='zypper search'
+alias f='zypper if'
+alias ref='sudo zypper ref'
+alias u='sudo zypper up'
+alias dup='sudo zypper dup'
+alias z='sudo zypper'
+alias orphans='zypper packages --orphaned'
+alias unneeded='zypper packages --unneeded'
+alias y='sudo yast'
+
+#OTHERS
+alias mci='mvn clean install'
+alias vimu='vim -u "NONE"'
+
