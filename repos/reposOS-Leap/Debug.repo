@@ -1,8 +1,0 @@
-[Debug]
-name=openSUSE-Leap-42.3-Debug
-enabled=0
-autorefresh=0
-baseurl=http://download.opensuse.org/debug/distribution/leap/42.3/repo/oss/
-path=/
-type=NONE
-keeppackages=0

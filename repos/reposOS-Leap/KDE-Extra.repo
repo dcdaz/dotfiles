@@ -1,7 +1,0 @@
-[KDE-Extra]
-name=KDE-Extra
-enabled=1
-autorefresh=0
-baseurl=http://download.opensuse.org/repositories/KDE:/Extra/openSUSE_Leap_42.3/
-type=rpm-md
-keeppackages=0

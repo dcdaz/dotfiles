@@ -1,7 +1,0 @@
-[Devel-GCC]
-name=Devel-GCC
-enabled=1
-autorefresh=0
-baseurl=http://download.opensuse.org/repositories/devel:/gcc/openSUSE_Leap_42.3/
-type=rpm-md
-keeppackages=0
