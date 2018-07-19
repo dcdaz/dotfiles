@@ -2,7 +2,7 @@
 name=openSUSE-Update
 enabled=1
 autorefresh=0
-baseurl=http://download.opensuse.org/update/tumbleweed/
+baseurl=https://download.opensuse.org/update/tumbleweed/
 path=/
 type=rpm-md
 keeppackages=0

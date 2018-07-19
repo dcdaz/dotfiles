@@ -1,8 +1,0 @@
-[Devel-Gcc]
-name=Devel-Gcc
-enabled=1
-autorefresh=0
-baseurl=http://download.opensuse.org/repositories/devel:/gcc/openSUSE_Factory/
-path=/
-type=rpm-md
-keeppackages=0

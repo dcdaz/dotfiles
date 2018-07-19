@@ -2,7 +2,7 @@
 name=openSUSE-Tumbleweed-Non-Oss
 enabled=1
 autorefresh=0
-baseurl=http://download.opensuse.org/tumbleweed/repo/non-oss/
+baseurl=https://download.opensuse.org/tumbleweed/repo/non-oss/
 path=/
-type=yast2
+type=rpm-md
 keeppackages=0
