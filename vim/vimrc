@@ -51,9 +51,13 @@ map 4 <C-w>w
 map za :tabnew<cr>
 map zx gt
 map zz gT
-map zc q:
+
+"Minimap
+map mm :Minimap<cr>
+map mM :MinimapClose<cr>
 
 "Other shortcuts
+map zc q:
 map <Space> o
 map <C-v> "+gP
 imap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
@@ -75,5 +79,7 @@ call vundle#begin()
     Plugin 'alvan/vim-closetag'
     Plugin 'ryanoasis/vim-devicons'
     Plugin 'itchyny/lightline.vim'
+    Plugin 'severin-lemaignan/vim-minimap'
+    Plugin 'dracula/vim'
 call vundle#end()
 

@@ -6,7 +6,7 @@
 "https://gist.github.com/taromero/1353f5bbb07c81bce42b
 let g:unite_force_overwrite_statusline = 0
 let g:lightline = {
-      \ 'colorscheme': 'jellybeans',
+      \ 'colorscheme': 'one',
       \ 'component_function': {
       \   'fugitive': 'MyFugitive',
       \   'filename': 'MyFilename',

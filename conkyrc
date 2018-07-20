@@ -71,7 +71,7 @@ ${swapbar 3,165}
 # Temperature data
 ${color1}${font Radio Space: size=14}TEMPERATURE$font
 ${hr 2}
-${color1}${font weather:size=12}y${font} SSD: ${alignr 12}${execi 1 echo "pasword" | sudo -S hddtemp -n /dev/sda} °C ${goto 110}HDD: ${alignr 4}${execi 1 echo "password" | sudo -S hddtemp -n /dev/sdb} °C
+${color1}${font weather:size=12}y${font} SSD: ${alignr 12}${execi 1 /usr/sbin/hddtemp -n /dev/sda} °C ${goto 110}HDD: ${alignr 4}${execi 1 /usr/sbin/hddtemp -n /dev/sdb} °C
 ${color1}${font weather:size=12}z${font} CPU: 0:${alignr 16}${execi 1 sensors | grep -i "Core 0" | cut -d "+" -f2 | cut -c1-4 } °C ${goto 110}1: ${alignr 4}${execi 1 sensors | grep -i "Core 1" | cut -d "+" -f2 | cut -c1-4 } °C
 
 # Storage data

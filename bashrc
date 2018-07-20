@@ -13,7 +13,7 @@
 #export NEWSSERVER=your.news.server
 
 ## PROMPT
-PS1="\e[36m\u\e[95m@\e[93m\h:\e[94m\W$ \e[39m"
+PS1="\[\e[0;36m\]\u\[\e[0;95m\]@\[\e[0;93m\]\h:\[\e[0;94m\]\W$\[\e[0;39m\] "
 
 ## MAVEN
 export PATH=$PATH:/opt/maven/bin
