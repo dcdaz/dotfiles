@@ -1,0 +1,8 @@
+[Firejail]
+name=Firejail
+enabled=1
+autorefresh=0
+baseurl=http://download.opensuse.org/repositories/home:/tiwai/openSUSE_Factory
+path=/
+type=rpm-md
+keeppackages=0
