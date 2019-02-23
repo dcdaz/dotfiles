@@ -1,0 +1,8 @@
+[Utilities]
+name=Utilities
+enabled=1
+autorefresh=0
+baseurl=https://download.opensuse.org/repositories/utilities/openSUSE_Factory/
+path=/
+type=rpm-md
+keeppackages=0
