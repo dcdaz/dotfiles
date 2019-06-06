@@ -81,5 +81,6 @@ call vundle#begin()
     Plugin 'itchyny/lightline.vim'
     Plugin 'severin-lemaignan/vim-minimap'
     Plugin 'dracula/vim'
+    Plugin 'udalov/kotlin-vim'
 call vundle#end()
 
