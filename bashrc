@@ -6,11 +6,10 @@
 
 # Some applications read the EDITOR variable to determine your favourite text
 # editor. So uncomment the line below and enter the editor of your choice :-)
-#export EDITOR=/usr/bin/vim
-#export EDITOR=/usr/bin/mcedit
+export EDITOR=/usr/bin/vim
 
-# For some news readers it makes sense to specify the NEWSSERVER variable here
-#export NEWSSERVER=your.news.server
+## SSH_ASKPASS -> Disable KDE popup window on Git repos, etc
+unset SSH_ASKPASS
 
 ## PROMPT
 PS1="\[\e[0;36m\]\u\[\e[0;95m\]@\[\e[0;93m\]\h:\[\e[0;94m\]\W$\[\e[0;39m\] "
