@@ -1,9 +1,9 @@
-"LightLine
-"Lightline has some colors like: default, wombat, jellybeans, solarized,
-"solarized_dark, PaperColor, seoul256 and landscape
-"for this configuration I use some dotconfs from this repos: 
-"https://github.com/nureineide/dotfiles.git and
-"https://gist.github.com/taromero/1353f5bbb07c81bce42b
+" LightLine
+" Lightline has some colors like: default, wombat, jellybeans, solarized,
+" solarized_dark, PaperColor, seoul256 and landscape
+" for this configuration I use some dotconfs from this repos: 
+" https://github.com/nureineide/dotfiles.git and
+" https://gist.github.com/taromero/1353f5bbb07c81bce42b
 let g:unite_force_overwrite_statusline = 0
 let g:lightline = {
       \ 'colorscheme': 'one',

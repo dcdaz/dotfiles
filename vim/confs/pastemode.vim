@@ -1,5 +1,5 @@
-"Set Paste Automatically
-"This configuration works with tmux
+" Set Paste Automatically
+" This configuration works with tmux
 function! WrapForTmux(s)
   if !exists('$TMUX')
     return a:s
@@ -21,6 +21,7 @@ endfunction
 inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
 
 "For non tmux users uncomment the following lines and comment the first ones
+
 "let &t_SI .= '"\<Esc>[?2004h"
 "set &t_EI .= '"\<Esc>[?2004l"
 "
