@@ -5,13 +5,9 @@
 "                                   "
 """""""""""""""""""""""""""""""""""""
 
-" Basic confs
-if has('gui_running')
-    colorscheme desertEx
-    set lines=999 columns=999
-else
-    colorscheme wombat256i
-endif
+"""""""""""""""
+" Basic Confs "
+"""""""""""""""
 
 set encoding=utf-8
 set number
@@ -27,9 +23,36 @@ set nocp
 set noshowmode
 set hlsearch
 syntax on
-set guifont=Inconsolata\ for\ Powerline\ Nerd\ Font\ Complete\ 12
 " Vim tell Leave INSERT mode
 au InsertLeave * set nopaste
+
+"""""""""""""""""""""""""""
+" Vim-Plug plugin manager "
+"""""""""""""""""""""""""""
+
+" Install vim-plug and plugins only if there aren't present
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+" Specify a directory for plugins
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/vim-plugins')
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'scrooloose/nerdcommenter'
+Plug 'Xuyuanp/nerdtree-git-plugin', { 'on':  'NERDTreeToggle' }
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight', {'on': 'NERDTreeToggle'}
+Plug 'majutsushi/tagbar', {'on': 'TagbarToggle'}
+Plug 'itchyny/lightline.vim'
+Plug 'ryanoasis/vim-devicons'
+Plug 'alvan/vim-closetag'
+Plug 'severin-lemaignan/vim-minimap', {'on': []}
+Plug 'smancill/conky-syntax.vim', {'for': 'conky'}
+Plug 'udalov/kotlin-vim', {'for': 'kotlin'}
+" Initialize plugin system
+call plug#end()
 
 """""""""""
 " Sources "
@@ -37,35 +60,33 @@ au InsertLeave * set nopaste
 
 " Custom Functions
 source ~/.vim/confs/custom-functions.vim
-" Nerd Stuff
-source ~/.vim/confs/nerd-stuff.vim
+" Pastemode automatically
+source ~/.vim/confs/pastemode.vim
 " Various Confs
 source ~/.vim/confs/various.vim
 " Lightline
 source ~/.vim/confs/lightline.vim
-" Pastemode automatically
-source ~/.vim/confs/pastemode.vim
+" Nerd Stuff
+source ~/.vim/confs/nerd-stuff.vim
 
-" Complete syntax
-set omnifunc=syntaxcomplete#Complete
-set completeopt+=longest,menuone
 
 """""""""""""""""""""
 " Mapping Shortcuts "
 """""""""""""""""""""
 
 " Lazy mappings
-map 1 :NERDTreeToggle<cr>
-map 2 :TagbarToggle<cr>
+map 1 :NERDTreeToggle<CR>
+map 2 :TagbarToggle<CR>
 " Toggle wrapping long text
 map 3 :call ToggleWrap()<CR>
+" Number 4 is mapped in various.vim configuration to Minimap on GUI
 
 " Visual Block
 nnoremap vb <C-v>
 
 " Tabs
 " Create new Tab
-map za :tabnew<cr>
+map za :tabnew<CR>
 " Move to the right tab
 map zx gt
 " Move to the left tab
@@ -79,8 +100,8 @@ map <C-a> ggVG
 
 " NERDTree
 " Move between panes
-map <C-Left> <C-w>h
-map <C-Right> <C-w>l
+map <A-Left> <C-w>h
+map <A-Right> <C-w>l
 
 " NERDCommenter
 " Toggle Comment line or selected text with 'Ctrl+/'
@@ -95,24 +116,4 @@ imap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
             \ "\" \\<lt>bs>\\<lt>C-n>\"\<CR>"
 imap <C-@> <C-Space>
 imap <C-k> <c-r>=SmartOmniComplete()<CR>
-
-" Vundle plugin manager
-set rtp+=~/.vim/bundle/Vundle.vim
-set nocompatible
-filetype off
-call vundle#begin()
-    Plugin 'VundleVim/Vundle.vim'
-    Plugin 'scrooloose/nerdtree'
-    Plugin 'scrooloose/nerdcommenter'
-    Plugin 'Xuyuanp/nerdtree-git-plugin'
-    Plugin 'majutsushi/tagbar'
-    Plugin 'itchyny/lightline.vim'
-    Plugin 'ryanoasis/vim-devicons'
-    Plugin 'alvan/vim-closetag'
-    Plugin 'calebsmith/vim-lambdify'
-    Plugin 'smancill/conky-syntax.vim'
-    Plugin 'pangloss/vim-javascript'
-    Plugin 'udalov/kotlin-vim'
-call vundle#end()
-filetype plugin indent on
 

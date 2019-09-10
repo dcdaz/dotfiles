@@ -1,15 +1,8 @@
 """"""""""""
 " NERDTree "
 """"""""""""
-let g:NERDTreeWinSize = '30'
-" let g:NERDTreeDirArrowExpandable = "\u00a0"
-" let g:NERDTreeDirArrowCollapsible = "\u00a0"
-let g:NERDTreeDirArrowExpandable = '+'
-let g:NERDTreeDirArrowCollapsible = '-'
-" highlight NERDTreeOpenable guifg=#EBDBB2
-" highlight NERDTreeClosable guifg=#FE8019
-" highlight NERDTreeDir guifg=#00AA00 ctermfg=green
 
+let g:NERDTreeWinSize = '30'
 " Open NERDTree automatically when vim starts up in a directory
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
@@ -39,10 +32,10 @@ let g:NERDTrimTrailingWhitespace = 1
 " Enable NERDCommenterToggle to check all selected lines is commented or not 
 let g:NERDToggleCheckAllLines = 1
 
-
 """"""""""""
 " NERD Git "
 """"""""""""
+
 let g:NERDTreeIndicatorMapCustom = {
     \ "Modified"  : "✹",
     \ "Staged"    : "✚",
@@ -55,4 +48,16 @@ let g:NERDTreeIndicatorMapCustom = {
     \ 'Ignored'   : '☒',
     \ "Unknown"   : "?"
     \ }
+
+"""""""""""""""""""""""""
+" NERD Syntax Highlight "
+"""""""""""""""""""""""""
+
+let g:NERDTreeFileExtensionHighlightFullName = 1
+let g:NERDTreeExactMatchHighlightFullName    = 1
+let g:NERDTreePatternMatchHighlightFullName  = 1
+let g:NERDTreeHighlightFolders               = 1 " enables folder icon highlighting using exact match
+let g:NERDTreeHighlightFoldersFullName       = 1 " highlights the folder name
+let g:NERDTreeLimitedSyntax                  = 1
+let g:NERDTreeHighlightCursorline            = 0
 

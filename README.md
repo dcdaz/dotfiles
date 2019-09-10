@@ -10,4 +10,4 @@ sudo chmod u+s /usr/sbin/hddtemp
 This allows conky works properly with hddtemp
 
 ## VIM
-Vim has only a configuration and not the plugins to use it
+Vim contains its own README in: [vim](vim/)
