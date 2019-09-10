@@ -5,6 +5,8 @@ To use it properly you need some fonts like:
 - [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts) installed on your system, I personally use **Inconsolata**
 - [Devicons](https://vorillaz.github.io/devicons/#/main)
 
+> If you see NERDTree folders and files vertically stretched it's because your terminal needs **Mono** version of the patched font you're currently using
+
 ## Installation
 In order to install this config is necessary to create `/home/{user}/.vim` dir and copy `colors` and `confs` folders into it, also copy this `vimrc` into user folder
 
