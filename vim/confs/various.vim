@@ -1,9 +1,6 @@
 """""""""""""""""""
 " Various Configs "
 """""""""""""""""""
-" Complete syntax
-set omnifunc=syntaxcomplete#Complete
-set completeopt+=longest,menuone
 
 " GUI
 if has('gui_running')

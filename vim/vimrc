@@ -58,17 +58,26 @@ call plug#end()
 " Sources "
 """""""""""
 
+" Various Confs
+source ~/.vim/confs/various.vim
 " Custom Functions
 source ~/.vim/confs/custom-functions.vim
 " Pastemode automatically
 source ~/.vim/confs/pastemode.vim
-" Various Confs
-source ~/.vim/confs/various.vim
 " Lightline
 source ~/.vim/confs/lightline.vim
 " Nerd Stuff
 source ~/.vim/confs/nerd-stuff.vim
 
+""""""""""""""""
+" OmniComplete "
+""""""""""""""""
+
+" Syntax completion
+set omnifunc=syntaxcomplete#Complete
+set completeopt+=longest,menuone
+" Popup Menu config
+highlight Pmenu ctermbg=236 ctermfg=250 guibg=#313131 guifg=#D6D6D6
 
 """""""""""""""""""""
 " Mapping Shortcuts "
