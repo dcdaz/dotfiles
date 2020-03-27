@@ -26,7 +26,8 @@ text_buffer_size = 2048,
 -- Window specifications
 own_window_class = 'conky-semi',
 own_window = true,
-own_window_type = 'dock',
+--own_window_type = 'dock',
+own_window_type = 'desktop',
 own_window_transparent = true,
 own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
 own_window_argb_visual = true,
@@ -87,18 +88,18 @@ ${fs_bar 3,165 /}
 # Network data
 ${color1}${font Radio Space: size=14}NETWORK$font
 ${hr 2}
-${color1}SSID: ${alignr 4}${wireless_essid wlo1}
-${color1}Señal: ${alignr 4}${wireless_link_qual_perc wlo1} %
-${color1}IP Local: ${alignr 4}${addr wlo1}
-${font PizzaDude Bullets:size=12}v${font} Up: ${upspeed wlo1} Kb/s
-${font PizzaDude Bullets:size=12}r${font} Down: ${downspeed wlo1} Kb/s
+${color1}SSID: ${alignr 4}${wireless_essid wlp3s0}
+${color1}Señal: ${alignr 4}${wireless_link_qual_perc wlp3s0} %
+${color1}IP Local: ${alignr 4}${addr wlp3s0}
+${font PizzaDude Bullets:size=12}v${font} Up: ${upspeed wlp3s0} Kb/s
+${font PizzaDude Bullets:size=12}r${font} Down: ${downspeed wlp3s0} Kb/s
 
-${font PizzaDude Bullets:size=12}M${font} Upload: ${totalup wlo1}
-${font PizzaDude Bullets:size=12}S${font} Download: ${totaldown wlo1}
+${font PizzaDude Bullets:size=12}M${font} Upload: ${totalup wlp3s0}
+${font PizzaDude Bullets:size=12}S${font} Download: ${totaldown wlp3s0}
 
 # Energy data
 ${color1}${font Radio Space: size=14}ENERGY$font
 ${hr 2}
-${color1}Adapter: ${alignr 4}${acpiacadapter AC}
+${color1}Adapter: ${alignr 4}${acpiacadapter AC0}
 ${color1}Battery: ${alignr 4}${battery_percent BAT0} %
 ]];

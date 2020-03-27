@@ -12,7 +12,14 @@ alias orphans='zypper packages --orphaned'
 alias unneeded='zypper packages --unneeded'
 alias y='sudo yast'
 
-#OTHERS
+# OTHERS
 alias mci='mvn clean install'
 alias vimu='vim -u "NONE"'
+
+# NINJA
+alias ninja-key='ssh-add ~/.ssh/ninja_rsa'
+alias vpn-ninja-start='sudo ipsec up ninja'
+alias vpn-ninja-stop='sudo ipsec down ninja'
+alias firejail-ninja-dns='firejail --dns=172.31.0.2 '
+alias nslookup-ninja-sandbox='firejail --dns=172.31.0.2 nslookup '
 

@@ -51,6 +51,7 @@ Plug 'alvan/vim-closetag'
 Plug 'severin-lemaignan/vim-minimap', {'on': []}
 Plug 'smancill/conky-syntax.vim', {'for': 'conky'}
 Plug 'udalov/kotlin-vim', {'for': 'kotlin'}
+Plug 'dracula/vim', { 'as': 'dracula' }
 " Initialize plugin system
 call plug#end()
 

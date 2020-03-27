@@ -4,7 +4,7 @@
 
 " GUI
 if has('gui_running')
-    colorscheme desertEx
+    colorscheme dracula
     set lines=999 columns=999
     " Load MiniMap only if has UI
     call plug#load('vim-minimap')
@@ -16,7 +16,7 @@ if has('gui_running')
 else
     colorscheme wombat256i
 endif
-set guifont=Inconsolata\ Nerd\ Font\ Mono\ 11
+set guifont=Inconsolata\ Nerd\ Font\ Mono\ 12
 
 " Some CPP configs
 let g:cpp_class_scope_highlight           = 1

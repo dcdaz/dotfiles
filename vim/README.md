@@ -11,9 +11,8 @@ To use it properly you need some fonts like:
 In order to install this config is necessary to create `/home/{user}/.vim` dir and copy `colors` and `confs` folders into it, also copy this `vimrc` into user folder
 
 ```bash
-mkdir .vim
-cp -r co* ~/.vim/
-cp vimrc ~/.vimrc
+cp -r .vim/ ~/
+cp .vimrc ~/
 ```
 
 > That's it, now on the first run vim will install automatically `vim-plug` and use it to install all plugins configured on `vimrc`
