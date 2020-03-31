@@ -29,8 +29,5 @@ if [[ -n "$TMUX" ]]; then
   bind '"\e[4~":"\eOF"'
 fi
 
-## GVIM SINGLE INSTANCE
-gvim () { command gvim --remote-silent "$@" || command gvim "$@"; }
-
 # ALIASES
 test -s ~/.alias && . ~/.alias || true
