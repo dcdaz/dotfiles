@@ -19,13 +19,14 @@ temperature_unit = 'celsius',
 
 -- Text settings
 use_xft = true,
-font = 'Aller:style=Regular:size=9',
+font = 'Noto Sans:style=Medium:size=9',
 override_utf8_locale = true,
 text_buffer_size = 2048,
 
 -- Window specifications
 own_window_class = 'conky-semi',
 own_window = true,
+-- Dock type for KDE, Desktop type for XFCE to avoid conky get messed with notifications and also for openbox
 --own_window_type = 'dock',
 own_window_type = 'desktop',
 own_window_transparent = true,
@@ -58,7 +59,8 @@ ${color1}Kernel: ${alignr 4}$kernel
 ${color1}Host: ${alignr 4}$nodename
 ${color1}Uptime: ${alignr 4}$uptime
 
-# System data    
+# System data
+# ${color1}${font Radio Space: size=14}SYSTEM$font
 ${color1}${font Radio Space: size=14}SYSTEM$font
 ${hr 2}
 ${color1}CPU: ${alignr 4}$cpu% (${freq}Mhz)
@@ -89,13 +91,14 @@ ${fs_bar 3,165 /}
 ${color1}${font Radio Space: size=14}NETWORK$font
 ${hr 2}
 ${color1}SSID: ${alignr 4}${wireless_essid wlp3s0}
-${color1}Señal: ${alignr 4}${wireless_link_qual_perc wlp3s0} %
-${color1}IP Local: ${alignr 4}${addr wlp3s0}
+${color1}Signal: ${alignr 4}${wireless_link_qual_perc wlp3s0} %
+${color1}Local IP: ${alignr 4}${addr wlp3s0}
+
 ${font PizzaDude Bullets:size=12}v${font} Up: ${upspeed wlp3s0} Kb/s
 ${font PizzaDude Bullets:size=12}r${font} Down: ${downspeed wlp3s0} Kb/s
 
-${font PizzaDude Bullets:size=12}M${font} Upload: ${totalup wlp3s0}
-${font PizzaDude Bullets:size=12}S${font} Download: ${totaldown wlp3s0}
+${font PizzaDude Bullets:size=12}M${font} Uploaded: ${totalup wlp3s0}
+${font PizzaDude Bullets:size=12}S${font} Downloaded: ${totaldown wlp3s0}
 
 # Energy data
 ${color1}${font Radio Space: size=14}ENERGY$font
