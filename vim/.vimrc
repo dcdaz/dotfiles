@@ -107,6 +107,10 @@ map zz gT
 map <C-v> "+gP
 " Select all text with 'Ctrl+a'
 map <C-a> ggVG
+" Format Json
+nmap fj :%!python3 -m json.tool<CR>
+" Format XML
+nmap fx :%!python3 -c "import xml.dom.minidom, sys; print(xml.dom.minidom.parse(sys.stdin).toprettyxml())"<CR>
 
 " NERDTree
 " Move between panes
