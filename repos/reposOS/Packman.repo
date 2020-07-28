@@ -2,7 +2,8 @@
 name=Packman
 enabled=1
 autorefresh=0
-baseurl=https://mirror.karneval.cz/pub/linux/packman/suse/openSUSE_Tumbleweed/
+baseurl=http://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Tumbleweed/
 path=/
 type=rpm-md
+priority=97
 keeppackages=0

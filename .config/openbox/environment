@@ -1,0 +1,3 @@
+# Look'n Feel of QT Apps
+# For more custom config install qt5ct
+export QT_STYLE_OVERRIDE=gtk2

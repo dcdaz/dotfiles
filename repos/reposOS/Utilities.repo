@@ -5,4 +5,5 @@ autorefresh=0
 baseurl=https://download.opensuse.org/repositories/utilities/openSUSE_Factory/
 path=/
 type=rpm-md
+priority=95
 keeppackages=0

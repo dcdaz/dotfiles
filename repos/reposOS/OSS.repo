@@ -1,5 +1,5 @@
-[Repo-OSS]
-name=openSUSE-Tumbleweed-Oss
+[OSS]
+name=Oss
 enabled=1
 autorefresh=0
 baseurl=https://download.opensuse.org/tumbleweed/repo/oss/

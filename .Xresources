@@ -46,7 +46,7 @@ Xft.hintstyle:  hintfull
 
 !! URxvt Appearance
 #define FONTTYPE Inconsolata Nerd Font Mono
-#define FONTSIZE 11
+#define FONTSIZE 10
 URxvt*termName:  xterm-256color
 URxvt.font: xft:FONTTYPE:style=Medium:size=FONTSIZE
 URxvt.boldFont: xft:FONTTYPE:style=Bold:size=FONTSIZE
@@ -114,3 +114,4 @@ URxvt.keysym.C-slash: perl:font-size:show
 ! URxvt.tabbed.tabbar-bg: 0
 ! URxvt.tabbed.tab-fg: 3
 ! URxvt.tabbed.tab-bg: 0
+

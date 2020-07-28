@@ -1,8 +1,0 @@
-[Repo-Non-OSS]
-name=openSUSE-Tumbleweed-Non-Oss
-enabled=1
-autorefresh=0
-baseurl=https://download.opensuse.org/tumbleweed/repo/non-oss/
-path=/
-type=rpm-md
-keeppackages=0

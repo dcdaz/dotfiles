@@ -4,4 +4,5 @@ enabled=1
 autorefresh=0
 baseurl=https://download.opensuse.org/repositories/X11:/Bumblebee/openSUSE_Tumbleweed/
 type=rpm-md
+priority=98
 keeppackages=0

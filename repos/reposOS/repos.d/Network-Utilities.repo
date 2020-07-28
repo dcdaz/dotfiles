@@ -1,5 +1,0 @@
-[Network-Utilities]
-enabled=1
-autorefresh=0
-baseurl=https://download.opensuse.org/repositories/network:/utilities/openSUSE_Factory/
-type=rpm-md

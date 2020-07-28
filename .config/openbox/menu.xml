@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openbox_menu xmlns="http://openbox.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://openbox.org/">
+  <menu id="root-menu" label="Applications">
+    <item label="Web Browser" icon="/usr/share/icons/Papirus/24x24/apps/firefox.svg">
+      <action name="Execute"><execute>xdg-open http://</execute></action>
+    </item>
+    <item label="Terminal" icon="/usr/share/icons/Papirus/24x24/apps/terminal.svg">
+      <action name="Execute"><execute>urxvt-256color</execute></action>
+    </item>
+    <item label="File Manager" icon="/usr/share/icons/Papirus/24x24/apps/system-file-manager.svg">
+      <action name="Execute"><execute>pcmanfm</execute></action>
+    </item>
+    <item label="Vi IMproved" icon="/usr/share/icons/Papirus/24x24/apps/vim.svg">
+        <action name="Execute"><execute>gvim -f</execute></action>
+    </item>
+    <item label="KeePassXC" icon="/usr/share/icons/Papirus/24x24/apps/keepassxc.svg">
+        <action name="Execute"><execute>keepassxc</execute></action>
+    </item>
+    <separator label="Categories"/>
+    <menu id="utilities" icon="/usr/share/icons/Papirus/24x24/apps/applications-accessories.svg" label="Utilities">
+      <item label="Engrampa Archive Manager" icon="/usr/share/icons/Papirus/24x24/apps/archive-manager.svg">
+        <action name="Execute"><execute>engrampa</execute></action>
+      </item>
+      <item label="File Manager PCManFM" icon="/usr/share/icons/Papirus/24x24/apps/system-file-manager.svg">
+        <action name="Execute"><execute>pcmanfm</execute></action>
+      </item>
+      <item label="Flameshot" icon="/usr/share/icons/Papirus/24x24/apps/flameshot.svg">
+        <action name="Execute"><execute>flameshot</execute></action>
+      </item>
+      <item label="Galculator" icon="/usr/share/icons/Papirus/24x24/apps/calc.svg">
+        <action name="Execute"><execute>galculator</execute></action>
+      </item>
+      <item label="KeePassXC" icon="/usr/share/icons/Papirus/24x24/apps/keepassxc.svg">
+        <action name="Execute"><execute>keepassxc</execute></action>
+      </item>
+      <item label="Vi IMproved" icon="/usr/share/icons/Papirus/24x24/apps/vim.svg">
+        <action name="Execute"><execute>gvim -f</execute></action>
+      </item>
+      <item label="Xed" icon="/usr/share/icons/Papirus/24x24/apps/accessories-text-editor.svg">
+        <action name="Execute"><execute>xed</execute></action>
+      </item>
+    </menu>
+    <menu id="development" icon="/usr/share/icons/Papirus/24x24/apps/applications-development.svg" label="Development">
+      <item label="Android Studio" icon="/usr/share/icons/Papirus/24x24/apps/androidstudio.svg">
+        <action name="Execute"><execute>androidstudio</execute></action>
+      </item>
+      <item label="DBeaver" icon="/usr/share/icons/Papirus/24x24/apps/dbeaver.svg">
+        <action name="Execute"><execute>dbeaver</execute></action>
+      </item>
+      <item label="Insomnia" icon="/usr/share/icons/Papirus/24x24/apps/insomnia.svg">
+        <action name="Execute"><execute>insomnia</execute></action>
+      </item>
+      <item label="Intellij Idea" icon="/usr/share/icons/Papirus/24x24/apps/intellij.svg">
+        <action name="Execute"><execute>intellijidea</execute></action>
+      </item>
+      <item label="OpenJDK 1.8.0 for x86__64 Monitoring &amp; Management Console (1.8.0__222-b10)" icon="/usr/share/icons/Papirus/24x24/apps/java.svg">
+        <action name="Execute"><execute>_SDKBINDIR_/jconsole</execute></action>
+      </item>
+      <item label="Pycharm" icon="/usr/share/icons/Papirus/24x24/apps/pycharm.svg">
+        <action name="Execute"><execute>pycharm</execute></action>
+      </item>
+      <item label="Robo3t" icon="/opt/robo3t/robomongo.png">
+        <action name="Execute"><execute>robo3t</execute></action>
+      </item>
+      <item label="Visual Studio Code" icon="/usr/share/icons/Papirus/24x24/apps/code.svg">
+        <action name="Execute"><execute>code --unity-launch</execute></action>
+      </item>
+    </menu>
+    <menu id="network" icon="/usr/share/icons/Papirus/24x24/apps/applications-internet.svg" label="Network">
+      <item label="Chromium" icon="/usr/share/icons/Papirus/24x24/apps/chromium.svg">
+        <action name="Execute"><execute>chromium</execute></action>
+      </item>
+      <item label="FileZilla" icon="/usr/share/icons/Papirus/24x24/apps/filezilla.svg">
+        <action name="Execute"><execute>filezilla</execute></action>
+      </item>
+      <item label="Firefox" icon="/usr/share/icons/Papirus/24x24/apps/firefox.svg">
+        <action name="Execute"><execute>firefox</execute></action>
+      </item>
+      <item label="Firefox-Dev" icon="/usr/share/icons/Papirus/24x24/apps/firefox-developer-edition.svg">
+        <action name="Execute"><execute>firefox-dev</execute></action>
+      </item>
+      <item label="JDownloader" icon="/usr/share/icons/Papirus/24x24/apps/jdownloader.svg">
+        <action name="Execute"><execute>jdownloader</execute></action>
+      </item>
+      <item label="Mutt" icon="/usr/share/icons/Papirus/24x24/apps/mutt.svg">
+        <action name="Execute"><execute>urxvt-256color -e 'mutt'</execute></action>
+      </item>
+      <item label="Pidgin" icon="/usr/share/icons/Papirus/24x24/apps/pidgin.svg">
+        <action name="Execute"><execute>pidgin</execute></action>
+      </item>
+      <item label="qBittorrent" icon="/usr/share/icons/Papirus/24x24/apps/qbittorrent.svg">
+        <action name="Execute"><execute>qbittorrent</execute></action>
+      </item>
+      <item label="Rambox" icon="/usr/share/icons/Papirus/24x24/apps/rambox.svg">
+        <action name="Execute"><execute>rambox</execute></action>
+      </item>
+      <item label="Thunderbird" icon="/usr/share/icons/Papirus/24x24/apps/thunderbird.svg">
+        <action name="Execute"><execute>thunderbird</execute></action>
+      </item>
+      <item label="Tor Browser" icon="/usr/share/icons/Papirus/24x24/apps/tor-browser.svg">
+        <action name="Execute"><execute>tor-browser</execute></action>
+      </item>
+      <item label="uGet" icon="/usr/share/icons/Papirus/24x24/apps/uget.svg">
+        <action name="Execute"><execute>env GDK_BACKEND=x11 uget-gtk</execute></action>
+      </item>
+      <item label="Wireshark" icon="/usr/share/icons/Papirus/24x24/apps/wireshark.svg">
+        <action name="Execute"><execute>wireshark</execute></action>
+      </item>
+      <item label="Zoom" icon="/usr/share/icons/Papirus/24x24/apps/Zoom.svg">
+        <action name="Execute"><execute>/usr/bin/zoomapp</execute></action>
+      </item>
+    </menu>
+    <menu id="graphics" icon="/usr/share/icons/Papirus/24x24/apps/applications-graphics.svg" label="Graphics">
+      <item label="Color picker" icon="/usr/share/icons/Papirus/24x24/apps/gcolor3.svg">
+        <action name="Execute"><execute>gcolor3</execute></action>
+      </item>
+      <item label="GIMP" icon="/usr/share/icons/Papirus/24x24/apps/gimp.svg">
+        <action name="Execute"><execute>gimp-2.10</execute></action>
+      </item>
+      <item label="Inkscape" icon="/usr/share/icons/Papirus/24x24/apps/inkscape.svg">
+        <action name="Execute"><execute>inkscape</execute></action>
+      </item>
+      <item label="LibreOffice Draw" icon="/usr/share/icons/Papirus/24x24/apps/libreoffice-draw.svg">
+        <action name="Execute"><execute>libreoffice --draw</execute></action>
+      </item>
+      <item label="Viewnior" icon="/usr/share/icons/Papirus/24x24/apps/viewnior.svg">
+        <action name="Execute"><execute>viewnior</execute></action>
+      </item>
+    </menu>
+    <menu id="games" icon="/usr/share/icons/Papirus/24x24/apps/applications-games.svg" label="Games">
+      <item label="DOSBox" icon="/usr/share/icons/Papirus/24x24/apps/dosbox.svg">
+        <action name="Execute"><execute>dosbox</execute></action>
+      </item>
+      <item label="Steam" icon="/usr/share/icons/Papirus/24x24/apps/steam.svg">
+        <action name="Execute"><execute>steam</execute></action>
+      </item>
+    </menu>
+    <menu id="office" icon="/usr/share/icons/Papirus/24x24/apps/applications-office.svg" label="Office">
+      <item label="Document Viewer" icon="/usr/share/icons/Papirus/24x24/apps/document-viewer.svg">
+        <action name="Execute"><execute>xreader</execute></action>
+      </item>
+      <item label="LibreOffice" icon="/usr/share/icons/Papirus/24x24/apps/libreoffice.svg">
+        <action name="Execute"><execute>libreoffice</execute></action>
+      </item>
+      <item label="LibreOffice Base" icon="/usr/share/icons/Papirus/24x24/apps/libreoffice-base.svg">
+        <action name="Execute"><execute>libreoffice --base</execute></action>
+      </item>
+      <item label="LibreOffice Calc" icon="/usr/share/icons/Papirus/24x24/apps/libreoffice-calc.svg">
+        <action name="Execute"><execute>libreoffice --calc</execute></action>
+      </item>
+      <item label="LibreOffice Draw" icon="/usr/share/icons/Papirus/24x24/apps/libreoffice-draw.svg">
+        <action name="Execute"><execute>libreoffice --draw</execute></action>
+      </item>
+      <item label="LibreOffice Impress" icon="/usr/share/icons/Papirus/24x24/apps/libreoffice-impress.svg">
+        <action name="Execute"><execute>libreoffice --impress</execute></action>
+      </item>
+      <item label="LibreOffice Writer" icon="/usr/share/icons/Papirus/24x24/apps/libreoffice-writer.svg">
+        <action name="Execute"><execute>libreoffice --writer</execute></action>
+      </item>
+    </menu>
+    <menu id="multimedia" icon="/usr/share/icons/Papirus/24x24/apps/applications-multimedia.svg" label="Multimedia">
+      <item label="Clementine" icon="/usr/share/icons/Papirus/24x24/apps/clementine.svg">
+        <action name="Execute"><execute>clementine</execute></action>
+      </item>
+      <item label="HDAJackRetask" icon="/usr/share/icons/Papirus/24x24/devices/audio-speakers.svg">
+        <action name="Execute"><execute>hdajackretask</execute></action>
+      </item>
+      <item label="projectM PulseAudio Visualization" icon="/usr/share/icons/Papirus/24x24/apps/prjm16-transparent.svg">
+        <action name="Execute"><execute>projectM-pulseaudio</execute></action>
+      </item>
+      <item label="PulseAudio Volume Control" icon="/usr/share/icons/Papirus/24x24/apps/pavucontrol.svg">
+        <action name="Execute"><execute>pavucontrol</execute></action>
+      </item>
+      <item label="VLC media player" icon="/usr/share/icons/Papirus/24x24/apps/vlc.svg">
+        <action name="Execute"><execute>/usr/bin/vlc --started-from-file</execute></action>
+      </item>
+    </menu>
+    <menu id="settings" icon="/usr/share/icons/Papirus/24x24/apps/system-config-services.svg" label="Settings">
+      <item label="Bluetooth Manager" icon="/usr/share/icons/Papirus/24x24/apps/blueman.svg">
+        <action name="Execute"><execute>blueman-manager</execute></action>
+      </item>
+      <item label="Customize Look and Feel" icon="/usr/share/icons/Papirus/24x24/apps/preferences-desktop-theme.svg">
+        <action name="Execute"><execute>lxappearance</execute></action>
+      </item>
+      <item label="Openbox Configuration Manager" icon="/usr/share/icons/Papirus/24x24/apps/obconf.svg">
+        <action name="Execute"><execute>obconf</execute></action>
+      </item>
+      <item label="Reconfigure Openbox" icon="/usr/share/icons/Papirus/24x24/apps/openbox.svg">
+        <action name="Execute"><execute>openbox --reconfigure</execute></action>
+      </item>
+      <item label="Tint2 Settings" icon="/usr/share/icons/Papirus/24x24/apps/tint2.svg">
+        <action name="Execute"><execute>tint2conf</execute></action>
+      </item>
+    </menu>
+    <menu id="system" icon="/usr/share/icons/Papirus/24x24/apps/applications-utilities.svg" label="System">
+      <item label="Advanced Network Configuration" icon="/usr/share/icons/Papirus/24x24/apps/preferences-system-network.svg">
+        <action name="Execute"><execute>nm-connection-editor</execute></action>
+      </item>
+      <item label="ARandR" icon="/usr/share/icons/Papirus/24x24/devices/video-display.svg">
+        <action name="Execute"><execute>arandr</execute></action>
+      </item>
+      <item label="BleachBit" icon="/usr/share/icons/Papirus/24x24/apps/bleachbit.svg">
+        <action name="Execute"><execute>bleachbit</execute></action>
+      </item>
+      <item label="BleachBit as Administrator" icon="/usr/share/icons/Papirus/24x24/apps/bleachbit.svg">
+        <action name="Execute"><execute>xdg-su -c bleachbit</execute></action>
+      </item>
+      <item label="dconf Editor" icon="/usr/share/icons/Papirus/24x24/apps/dconf-editor.svg">
+        <action name="Execute"><execute>dconf-editor</execute></action>
+      </item>
+      <item label="GParted" icon="/usr/share/icons/Papirus/24x24/apps/gparted.svg">
+        <action name="Execute"><execute>xdg-su -c gparted</execute></action>
+      </item>
+      <item label="Htop" icon="/usr/share/icons/Papirus/24x24/apps/htop.svg">
+        <action name="Execute"><execute>urxvt-256color -e 'htop'</execute></action>
+      </item>
+      <item label="Oracle VM VirtualBox" icon="/usr/share/icons/Papirus/24x24/apps/virtualbox.svg">
+        <action name="Execute"><execute>VirtualBox</execute></action>
+      </item>
+      <item label="rxvt-unicode" icon="/usr/share/icons/Papirus/24x24/apps/urxvt.svg">
+        <action name="Execute"><execute>urxvt</execute></action>
+      </item>
+      <item label="rxvt-unicode-256colors" icon="/usr/share/icons/Papirus/24x24/apps/urxvt.svg">
+        <action name="Execute"><execute>urxvt-256color</execute></action>
+      </item>
+      <item label="XTerm" icon="/usr/share/icons/Papirus/24x24/apps/xterm.svg">
+        <action name="Execute"><execute>xterm</execute></action>
+      </item>
+      <item label="YaST Software" icon="/usr/share/icons/Papirus/24x24/apps/yast-software.svg">
+        <action name="Execute"><execute>/usr/lib/YaST2/bin/sw_single_wrapper</execute></action>
+      </item>
+      <item label="YaST" icon="/usr/share/icons/Papirus/24x24/apps/yast.svg">
+        <action name="Execute"><execute>xdg-su -c /sbin/yast2</execute></action>
+      </item>
+    </menu>
+    <menu id="power" icon="/usr/share/icons/Papirus/24x24/apps/system-shutdown.svg" label="Power">
+      <item label="Exit" icon="/usr/share/icons/Papirus/24x24/apps/system-log-out.svg">
+        <action name="Exit"/>
+      </item>
+      <item label="Suspend" icon="/usr/share/icons/Papirus/24x24/apps/system-suspend.svg">
+        <action name="Execute"><execute>systemctl suspend</execute></action>
+      </item>
+      <item label="Hibernate" icon="/usr/share/icons/Papirus/24x24/apps/system-hibernate.svg">
+        <action name="Execute"><execute>systemctl hibernate</execute></action>
+      </item>
+      <item label="Reboot" icon="/usr/share/icons/Papirus/24x24/apps/system-reboot.svg">
+        <action name="Execute"><execute>systemctl reboot</execute></action>
+      </item>
+      <item label="Power Off" icon="/usr/share/icons/Papirus/24x24/apps/system-shutdown.svg">
+        <action name="Execute"><execute>systemctl poweroff</execute></action>
+      </item>
+    </menu>
+  </menu>
+</openbox_menu>
