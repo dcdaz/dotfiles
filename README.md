@@ -22,19 +22,19 @@ My **rc.xml** has several configs related to my own hotkeys `feel free to use th
 
 The scripts that I use are placed on `.config/custom_scripts` and are the following:
 
-    - notify.sh -> Send notifications using *gdBus* instead on dunstify/notify-send
-    - backlight.sh -> Allows to change screen brightness and notify about it [depends on notify.sh]
-    - bumblebee.sh -> *Tint2* script that runs every X sec, to fetch data of a *NVIDIA* card using bumblebee [depends on nvidia.sh]
-    - calendar.sh -> Executes/Terminates process called calendar.py when user clicks on *Tint2* clock
-    - calenda.py -> Simple **Python3** script that creates a *GTK* calendar and place it on bottom right of screen
-    - external_monitor.sh -> Check if laptop has external monitor connected, placed as primary activate it and deactivate laptop screen
-    - manage_volume.sh -> Allows to change volume of active sink and notify about if [depends on notify.sh]
-    - notes.sh -> Executes/Terminates process called notes.py to show a *GTK* simple notes app when user clicks on Notes icon of *Tint2*
-    - notes.py -> Small **Python3** script that creates a simple notes app that reads from a plain text file and it's placed on bottom right of screen
-    - nvidia.sh -> Bash script that fetches *NVIDIA* info, taken from (https://github.com/bxabi/bumblebee-indicator)
-    - screen_capture.sh -> Bash script with *Zenity* to allow have some screen capture options and perform them with *scrot*
-    - select_audio_sink.sh -> Bash script that shows all audio sinks on a *Zenity* dialog and allows to change current sound stream to a different sink
-    - volume_echo.sh -> Bash script that it's executed every X sec on *Tint2* to get current volume of current master channel and echo it to panel
+- **notify.sh** -> Send notifications using *gdBus* instead on dunstify/notify-send
+- **backlight.sh** -> Allows to change screen brightness and notify about it [depends on notify.sh]
+- **bumblebee.sh** -> *Tint2* script that runs every X sec, to fetch data of a *NVIDIA* card using bumblebee [depends on nvidia.sh]
+- **calendar.sh** -> Executes/Terminates process called calendar.py when user clicks on *Tint2* clock
+- **calenda.py** -> Simple **Python3** script that creates a *GTK* calendar and place it on bottom right of screen
+- **external_monitor.sh** -> Check if laptop has external monitor connected, placed as primary activate it and deactivate laptop screen
+- **manage_volume.sh** -> Allows to change volume of active sink and notify about if [depends on notify.sh]
+- **notes.sh** -> Executes/Terminates process called notes.py to show a *GTK* simple notes app when user clicks on Notes icon of *Tint2*
+- **notes.py** -> Small **Python3** script that creates a simple notes app that reads from a plain text file and it's placed on bottom right of screen
+- **nvidia.sh** -> Bash script that fetches *NVIDIA* info, taken from (https://github.com/bxabi/bumblebee-indicator)
+- **screen_capture.sh** -> Bash script with *Zenity* to allow have some screen capture options and perform them with *scrot*
+- **select_audio_sink.sh** -> Bash script that shows all audio sinks on a *Zenity* dialog and allows to change current sound stream to a different sink
+- **volume_echo.sh** -> Bash script that it's executed every X sec on *Tint2* to get current volume of current master channel and echo it to panel
 
 
 > Some of those scripts are binded to a hotkey on *openbox's* **rc.xml** some other are binded to an executor or a button on *Tint2* and propably some of them needs some upgrade  
