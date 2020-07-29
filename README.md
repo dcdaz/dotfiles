@@ -18,7 +18,7 @@ LightDM uses a bash script called `external_monitor.sh` located on `~/.config/op
 ## OPENBOX
 Currently I'm using **openbox** window manager mainly for it's simplicity and stability with **tint2** panel but due to a lack of things on them I made some scripts to make it more usable and more comfortable to me, if one of them works for you too go ahead and grab it.
 
-The scripts that I use are the following:
+The scripts that I use are placed on `.config/custom_scripts` and are the following:
 
     - notify.sh -> Send notifications using *gdBus* instead on dunstify/notify-send
     - backlight.sh -> Allows to change screen brightness and notify about it [depends on notify.sh]
