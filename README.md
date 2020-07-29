@@ -18,6 +18,8 @@ LightDM uses a bash script called `external_monitor.sh` located on `~/.config/op
 ## OPENBOX
 Currently I'm using **openbox** window manager mainly for it's simplicity and stability with **tint2** panel but due to a lack of things on them I made some scripts to make it more usable and more comfortable to me, if one of them works for you too go ahead and grab it.
 
+My **rc.xml** has several configs related to my own hotkeys `feel free to use them if you want` and my **menu.xml** has the entire menu hardcoded because I like that so I think that will not be very useful to any one.
+
 The scripts that I use are placed on `.config/custom_scripts` and are the following:
 
     - notify.sh -> Send notifications using *gdBus* instead on dunstify/notify-send
@@ -34,7 +36,7 @@ The scripts that I use are placed on `.config/custom_scripts` and are the follow
     - select_audio_sink.sh -> Bash script that shows all audio sinks on a *Zenity* dialog and allows to change current sound stream to a different sink
     - volume_echo.sh -> Bash script that it's executed every X sec on *Tint2* to get current volume of current master channel and echo it to panel
 
-> Some of those scripts are binded to a hotkey on *openbox's* **rc.xml** some other are binded to an executor or a button on *Tint2* and propably some of them needs some upgrade
-> **notify.sh** script needs an upgrade to allow send *variant* value related to urgency on *gdBus* but I didn't found how to do it, when i found if i'll update it
 
+> Some of those scripts are binded to a hotkey on *openbox's* **rc.xml** some other are binded to an executor or a button on *Tint2* and propably some of them needs some upgrade  
+> **notify.sh** script needs an upgrade to allow send *variant* value related to urgency on *gdBus* but I didn't found how to do it, when I found it I'll update it
 
