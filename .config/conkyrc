@@ -84,7 +84,7 @@ ${color1}/ ${alignr 4}${fs_free /} free
 ${fs_bar 3,165 /}
 ${color1}/home ${alignr 4}${fs_free /home} free
 ${fs_bar 3,165 /}
-${color1}Datos ${alignr 4}${fs_free /run/media/danny/Datos} free
+${color1}Datos ${alignr 4}${fs_free {second_disk_path}} free
 ${fs_bar 3,165 /}
 
 # Network data

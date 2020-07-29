@@ -1,0 +1,35 @@
+[user]
+	name = {username}
+	email = {email}
+[includeIf "gitdir:{custom-path}"]
+    path = {custom-path}/.gitconfig
+[core]
+	editor = vim
+[merge]
+	tool = vimdiff
+[diff]
+    tool = vimdiff
+[alias]
+    a = add .
+    b = branch
+    bl = blame
+    br = b -r
+    c = commit
+    cl = clone
+    co = checkout
+    cob = co -b
+    d = diff
+    f = fetch
+    g = grep -i
+    l = log
+    lg = l --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset %C(bold green)<%aE>%Creset' --abbrev-commit --date=relative
+    lbg = l --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset %C(bold green)<%aE>%Creset' --abbrev-commit --date=relative --branches
+    m = merge
+    p = pull
+    r = reset
+    rh= reset --hard
+    s = show
+    st = status
+    ub = b -vv
+[pull]
+    rebase = false

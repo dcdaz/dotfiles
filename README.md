@@ -1,19 +1,12 @@
 # dotsAndConfs
 
-This reposository has some config files of my own and some dotfiles that I do to make my daily life easier.
+This reposository has some config files of my own and some dotfiles that I made/use to make my daily life easier and happier.
 
-## CONKY
-Conky configuration executes hddtemp without sudo, but before to execute it's necessary to run the following command: 
-```
-sudo chmod u+s /usr/sbin/hddtemp
-``` 
-This allows conky works properly with hddtemp
+## REPOS
+Check [repos](repos/)
 
-## VIM
-Vim contains its own README in: [vim](vim/)
-
-## LIGHTDM
-LightDM uses a bash script called `external_monitor.sh` located on `~/.config/openbox/external_monitor.sh` to be active only on primary monitor ir order to have this functionality `lightdm.conf` should be placed on `/etc/lightdm/lightdm.conf`, before put conf in its place read comment on it related to replace with your bash script path
+## LAUNCHERS
+Check [launchers](launchers/)
 
 ## OPENBOX
 Currently I'm using **openbox** window manager mainly for it's simplicity and stability with **tint2** panel but due to a lack of things on them I made some scripts to make it more usable and more comfortable to me, if one of them works for you too go ahead and grab it.
@@ -22,21 +15,80 @@ My **rc.xml** has several configs related to my own hotkeys `feel free to use th
 
 The scripts that I use are placed on `.config/custom_scripts` and are the following:
 
-- **notify.sh** -> Send notifications using *gdBus* instead on dunstify/notify-send
-- **backlight.sh** -> Allows to change screen brightness and notify about it [depends on notify.sh]
-- **bumblebee.sh** -> *Tint2* script that runs every X sec, to fetch data of a *NVIDIA* card using bumblebee [depends on nvidia.sh]
-- **calendar.sh** -> Executes/Terminates process called calendar.py when user clicks on *Tint2* clock
-- **calenda.py** -> Simple **Python3** script that creates a *GTK* calendar and place it on bottom right of screen
-- **external_monitor.sh** -> Check if laptop has external monitor connected, placed as primary activate it and deactivate laptop screen
-- **manage_volume.sh** -> Allows to change volume of active sink and notify about if [depends on notify.sh]
-- **notes.sh** -> Executes/Terminates process called notes.py to show a *GTK* simple notes app when user clicks on Notes icon of *Tint2*
-- **notes.py** -> Small **Python3** script that creates a simple notes app that reads from a plain text file and it's placed on bottom right of screen
-- **nvidia.sh** -> Bash script that fetches *NVIDIA* info, taken from (https://github.com/bxabi/bumblebee-indicator)
-- **screen_capture.sh** -> Bash script with *Zenity* to allow have some screen capture options and perform them with *scrot*
-- **select_audio_sink.sh** -> Bash script that shows all audio sinks on a *Zenity* dialog and allows to change current sound stream to a different sink
-- **volume_echo.sh** -> Bash script that it's executed every X sec on *Tint2* to get current volume of current master channel and echo it to panel
+Script | Description
+-------|------------
+**notify.sh** | Send notifications using *gdBus* instead on dunstify/notify-send
+**backlight.sh** | Allows to change screen brightness and notify about it [depends on notify.sh]
+**bumblebee.sh** | *Tint2* script that runs every X sec, to fetch data of a *NVIDIA* card using bumblebee [depends on nvidia.sh]
+**calendar.sh** | Executes/Terminates process called calendar.py when user clicks on *Tint2* clock
+**calenda.py** | Simple **Python3** script that creates a *GTK* calendar and place it on bottom right of screen
+**external_monitor.sh** | Check if laptop has external monitor connected, placed as primary activate it and deactivate laptop screen
+**manage_volume.sh** | Allows to change volume of active sink and notify about if [depends on notify.sh]
+**notes.sh** | Executes/Terminates process called notes.py to show a *GTK* simple notes app when user clicks on Notes icon of *Tint2*
+**notes.py** | Small **Python3** script that creates a simple notes app that reads from a plain text file and it's placed on bottom right of screen
+**nvidia.sh** | Bash script that fetches *NVIDIA* info, taken from (https://github.com/bxabi/bumblebee-indicator)
+**screen_capture.sh** | Bash script with *Zenity* to allow have some screen capture options and perform them with *scrot*
+**select_audio_sink.sh** | Bash script that shows all audio sinks on a *Zenity* dialog and allows to change current sound stream to a different sink
+**volume_echo.sh** | Bash script that it's executed every X sec on *Tint2* to get current volume of current master channel and echo it to panel
 
 
 > Some of those scripts are binded to a hotkey on *openbox's* **rc.xml** some other are binded to an executor or a button on *Tint2* and propably some of them needs some upgrade  
 > **notify.sh** script needs an upgrade to allow send *variant* value related to urgency on *gdBus* but I didn't found how to do it, when I found it I'll update it
+
+## VIM
+Vim contains its own README in: [vim](vim/)
+
+## SHELL
+Some aliases and custom bashrc configs to make my terminal life easier and happier
+
+## TMUX
+I use **tmux** as terminal multiplexer and have a 2 file configuration one for the status bar and the other for config per se, my config is for *lazy* people because most of the things that I use are on the same keyboard side
+
+## XRESOURCES
+My current terminal is **URxvt**, so in order to have a nice and beauty terminal emulator I use a custom *Xresources* file for it with some nice colors, fonts, behaviors, etc
+
+## GITCONFIG
+My gitconfig has some stuff to help me like *aliases, defaul-editor, name, mail, etc* and also has a `includeIf` clause to allow all of my work stuff has a different **gitconfig** to change name or email, to use it the file should be place on `$HOME` folder and replace the following variables with your own.
+
+- username
+- email
+- custom-path -> this is to have different `gitconfig` files like one for your ow personal projects and another for work
+
+## DAVMAIL
+Davmail is a gateway that allows use **Exchange Web Services** **EWS** from Microsoft Outlook on any email client like *Thunderbird, Claws, Mutt, etc*. The configuration should be placed on your `$HOME` folder and replace the variable **davmail_log_path** with your own
+
+## LIGHTDM
+LightDM uses a bash script called `external_monitor.sh` located on `~/.config/openbox/external_monitor.sh` to be active only on primary monitor ir order to have this functionality `lightdm.conf` should be placed on `/etc/lightdm/lightdm.conf`, before put conf in its place read comment on it related to replace with your bash script path
+
+## CONFIGS
+
+My `.config/` folder has configs for the most used apps on my side like:
+
+App Name | Description
+---------|------------
+Conky | System Monitor
+Dunst | Notification Daemon
+Picom | Standalone compositor
+Rofi | Multipurpose app [Used as a launcher]
+Tint2 | Panel
+Openbox | Window Manager
+Custom Scripts | My own custom *bash* and *python* scripts
+
+
+### CONKY
+
+Conky configuration executes hddtemp without sudo, but before to execute it's necessary to run the following command:
+
+```
+sudo chmod u+s /usr/sbin/hddtemp
+```
+
+This allows conky works properly with hddtemp
+
+I have 2 Disk Drives so this config shows info of both of them, needs to replace **second_disk_path** with your own path
+
+
+### PICOM
+
+Picom has a variable on login path, so if you want to use it you should replace **picom_log_path** with your own
 
