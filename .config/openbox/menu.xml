@@ -47,6 +47,9 @@
       <item label="DBeaver" icon="/usr/share/icons/Papirus/24x24/apps/dbeaver.svg">
         <action name="Execute"><execute>dbeaver</execute></action>
       </item>
+      <item label="Glade" icon="/usr/share/icons/Papirus/24x24/apps/org.gnome.Glade.svg">
+        <action name="Execute"><execute>glade</execute></action>
+      </item>
       <item label="Insomnia" icon="/usr/share/icons/Papirus/24x24/apps/insomnia.svg">
         <action name="Execute"><execute>insomnia</execute></action>
       </item>
