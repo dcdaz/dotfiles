@@ -60,7 +60,7 @@ class Config(object):
     def __init__(self):
         import configparser
         from os.path import expanduser
-        config_file_path = expanduser('~/.config/seshat.conf')
+        config_file_path = expanduser('~/.config/notes.conf')
         config = configparser.ConfigParser()
         config.read(config_file_path)
         if len(config.sections()) == 0:
