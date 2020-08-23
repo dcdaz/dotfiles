@@ -16,7 +16,7 @@ setxkbmap -layout us -variant altgr-intl -option deadkeys -option numpad:mac &
 
 # Set custom composition
 (sleep 0.5s && picom --config ~/.config/picom.conf) &
-#(sleep 0.5s && xcompmgr -l -5 -t -5 -r 4 -cC -o.55) &
+#(sleep 0.5s && xcompmgr -I 0.04 -O 0.03 -D 6 -fF) &
 
 # Launch Conky System Monitor with custom config
 (sleep 0.5s && conky -c ~/.config/conkyrc) &
@@ -25,7 +25,10 @@ setxkbmap -layout us -variant altgr-intl -option deadkeys -option numpad:mac &
 (sleep 0.5s && dunst) &
 
 # Load Xresources
-(xrdb ~/.Xresources) &
+(sleep 0.2s && xrdb ~/.Xresources) &
+
+# Volume Systray
+(sleep 0.2s && pasystray) &
 
 # Launch Network-Manager app
 (sleep 0.5s && nm-applet --indicator) &

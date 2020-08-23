@@ -1018,12 +1018,6 @@
     <application name="Calendar" class="Thunderbird" type="dialog">
       <desktop>all</desktop>
     </application>
-    <application name="calendar.py" class="Calendar.py" type="dialog">
-      <desktop>all</desktop>
-    </application>
-    <application name="notes.py" class="Notes.py" type="normal">
-      <desktop>all</desktop>
-    </application>
     <application role="PictureInPicture">
       <decor>no</decor>
       <skip_taskbar>yes</skip_taskbar>

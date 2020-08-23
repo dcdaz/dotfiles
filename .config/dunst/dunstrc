@@ -16,7 +16,7 @@
     background = "#2E3440"
     foreground = "#d87260"
     frame = "#b66d6d"
-    timeout = 10
+    timeout = 5
 
 [global]
     # The format of the message.  Possible variables:
@@ -61,7 +61,7 @@
     icon_position = left        # Align icons left/right/off
     max_icon_size = 48
 
-    idle_threshold = 120        # Don't remove messages if the user is idle (no mouse or keyboard input) for longer than idle_threshold seconds
+    idle_threshold = 5        # Don't remove messages if the user is idle (no mouse or keyboard input) for longer than idle_threshold seconds
     sticky_history = yes        # Make notifications remain until clicked on (yes) or timeout as normal (no) when recalled from history
     history_length = 20         # Maximum amount of notifications kept in history
 

@@ -65,6 +65,9 @@
       <item label="Robo3t" icon="/opt/robo3t/robomongo.png">
         <action name="Execute"><execute>robo3t</execute></action>
       </item>
+      <item label="TkDiff" icon="/usr/share/icons/Papirus/24x24/apps/kompare.svg">
+        <action name="Execute"><execute>tkdiff</execute></action>
+      </item>
       <item label="Visual Studio Code" icon="/usr/share/icons/Papirus/24x24/apps/code.svg">
         <action name="Execute"><execute>code --unity-launch</execute></action>
       </item>
