@@ -88,7 +88,7 @@ class Config(object):
         Config.APP_HEIGHT = self.get_int(general.get('Height'), 'Height') if general.get('Height') else self.APP_HEIGHT
         Config.TITLE_TAG = general.get('TitleTag') if general.get('TitleTag') else self.TITLE_TAG
         Config.NOTES_PATH = general.get('NotesPath') if general.get('NotesPath') else self.NOTES_PATH
-        Config.AUTOSAVE_TIME = general.get('AutoSaveTime') if general.get('AutoSaveTime') else self.AUTOSAVE_TIME
+        Config.AUTOSAVE_TIME = self.get_int(general.get('AutoSaveTime'), 'AutoSaveTime') if general.get('AutoSaveTime') else self.AUTOSAVE_TIME
 
     def add_positions_config(self, positions):
         Config.NOTES_POSITION = \
@@ -268,6 +268,7 @@ class NewTabWindow(Gtk.Dialog):
     def __init__(self, parent):
         Gtk.Dialog.__init__(self, title='Tab Name', transient_for=parent, flags=0)
         self.add_button(Gtk.STOCK_OK, Gtk.ResponseType.OK).set_relief(Gtk.ReliefStyle.NONE)
+        self.set_default_icon_name('mynotes')
         box = self.get_content_area()
         self.entry = Gtk.Entry()
         box.add(self.entry)
