@@ -164,6 +164,8 @@ class FileHandler(object):
 class NoteBook(object):
 
     def __init__(self):
+        if self.is_already_running():
+            self.kill_instances()
         Config()
         from os.path import expanduser
         self.file_handler = FileHandler(expanduser(Config.NOTES_PATH))
@@ -173,10 +175,11 @@ class NoteBook(object):
         self.win.connect('destroy', self.on_destroy)
         self.win.connect('focus-out-event', self.save_on_focus_out)
         self.win.show_all()
-        from threading import Thread
-        thread = Thread(target=self.auto_save)
+        from multiprocessing import Process
+        thread = Process(target=self.auto_save, args=())
         thread.start()
         Gtk.main()
+        thread.terminate()
         thread.join()
 
     def on_destroy(self, _):
@@ -191,6 +194,34 @@ class NoteBook(object):
         while True:
             self.file_handler.write_data(self.win.get_notebook_data())
             sleep(Config.AUTOSAVE_TIME)
+
+    @staticmethod
+    def is_already_running():
+        import fcntl
+        import os
+
+        lock_file_pointer = os.open(os.path.realpath(__file__), os.O_WRONLY)
+        try:
+            fcntl.lockf(lock_file_pointer, fcntl.LOCK_EX | fcntl.LOCK_NB)
+            already_running = False
+        except IOError:
+            already_running = True
+
+        return already_running
+
+    @staticmethod
+    def kill_instances():
+        import os
+        command_to_search_processes = 'ps h -eo pid:1,command  | grep -i notes.py'
+        # Nasty way of doing things, check if we can do it in a better way
+        notes_processes = [
+            (int(process), command) for process, command in [
+                ps_output.rstrip('\n').split(' ', 1) for ps_output in os.popen(command_to_search_processes)
+            ]
+        ]
+        for note_process in notes_processes:
+            # Signal 15 is SIGTERM related to terminate action
+            os.kill(note_process[0], 15)
 
 
 class NoteBookWindow(Gtk.Window):
@@ -322,4 +353,4 @@ class NoteBookPageData(Gtk.ScrolledWindow):
 
 
 if __name__ == '__main__':
-    app = NoteBook()
+    NoteBook()
