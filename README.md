@@ -40,7 +40,7 @@ Some aliases and custom bashrc configs to make my terminal life easier and happi
 ## TMUX
 I use **tmux** as terminal multiplexer and have a 2 file configuration one for the status bar and the other for config per se, my config is for *lazy* people because most of the things that I use are on the same keyboard side
 
-> This configuration wont work with **Nano/Pico** text editors since *my* **TMUX** prefix is `Ctrl-X` **Nano/Pico** will never exit and user should kill them, if you want this *TMUX* config feel free to change the prefix to whatever you want
+> This configuration won't work with **Nano/Pico** text editors since *my* **TMUX** prefix is `Ctrl-X` **Nano/Pico** will never exit and user should kill them, if you want this *TMUX* config feel free to change the prefix to whatever you want
 
 ## XRESOURCES
 My current terminal is **URxvt**, so in order to have a nice and beauty terminal emulator I use a custom *Xresources* file for it with some nice colors, fonts, behaviors, etc
