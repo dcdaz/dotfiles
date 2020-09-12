@@ -474,7 +474,7 @@
     </keybind>
     <keybind key="Print">
       <action name="Execute">
-        <command>~/.config/custom_scripts/screen_capture.sh</command>
+        <command>python3 ~/.config/custom_scripts/screenshooter.py</command>
       </action>
     </keybind>
     <!-- Keybindings for running applications -->
@@ -511,7 +511,7 @@
           <enabled>false</enabled>
           <name>PcManFM</name>
         </startupnotify>
-        <command>sh -c 'LANG=en_UK.utf8 pcmanfm -n Downloads'</command>
+        <command>pcmanfm -n Downloads</command>
       </action>
     </keybind>
     <keybind key="W-t">

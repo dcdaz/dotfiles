@@ -17,7 +17,6 @@ BODY="Current brightness"
 
 # Load Notify Script
 SCRIPT_PATH=${0%/*}
-source "$SCRIPT_PATH/notify.sh"
 
 function get_current_backlight() {
     xbacklight -get
@@ -25,12 +24,12 @@ function get_current_backlight() {
 
 function raise_backlight() {
     xbacklight +$VALUE
-    notify "$APPNAME" "$APPICON" "$SUMMARY" "$BODY $(get_current_backlight)"
+    python3 $SCRIPT_PATH/notify.py "$APPNAME" "$APPICON" "$SUMMARY" "$BODY $(get_current_backlight)" 1
 }
 
 function lower_backlight() {
     xbacklight -$VALUE
-    notify "$APPNAME" "$APPICON" "$SUMMARY" "$BODY $(get_current_backlight)"
+    python3 $SCRIPT_PATH/notify.py "$APPNAME" "$APPICON" "$SUMMARY" "$BODY $(get_current_backlight)" 1
 }
 
 if [[ -z $ACTION ]]

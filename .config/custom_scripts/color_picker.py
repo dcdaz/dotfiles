@@ -45,18 +45,17 @@ class ColorPicker(Gtk.ColorSelectionDialog):
 
 
 class AboutDialog(Gtk.Dialog):
-    DEVS_DATA = """
-    <big><b>Color Picker About</b></big>
+    DEVS_DATA = """<big><b><u>Color Picker About</u></b></big>
     
-    <b>Developers:</b>
-    <small><b>Name:</b> Daniel Córdova A.
-    <b>E-mail:</b> danesc87@gmail.com
-    </small>
-    """
+    <b>Developers:</b><small>
+    \t<b>Name:</b> Daniel Córdova A.
+    \t<b>E-mail:</b> danesc87@gmail.com
+    </small>"""
 
     def __init__(self, parent):
         Gtk.Dialog.__init__(self, title='About', transient_for=parent)
-        self.set_default_size(300, 150)
+        self.set_default_size(250, 150)
+        self.set_border_width(5)
         self.set_resizable(False)
         self.set_type_hint(2)  # Number 2 is to disable minimize button
         box = self.get_content_area()

@@ -8,6 +8,9 @@ exec ~/.config/custom_scripts/external_monitor.sh &
 # numpad:mac -> allow to use numeric keypad without press numblock key
 setxkbmap -layout us -variant altgr-intl -option deadkeys -option numpad:mac &
 
+# Turn off bell sounds
+xset b off &
+
 # Set wallpaper
 (sleep 0.5s && feh --bg-center ~/Pictures/futuristic/futuristic4.jpg) &
 
@@ -16,7 +19,6 @@ setxkbmap -layout us -variant altgr-intl -option deadkeys -option numpad:mac &
 
 # Set custom composition
 (sleep 0.5s && picom --config ~/.config/picom.conf) &
-#(sleep 0.5s && xcompmgr -I 0.04 -O 0.03 -D 6 -fF) &
 
 # Launch Conky System Monitor with custom config
 (sleep 0.5s && conky -c ~/.config/conkyrc) &
@@ -33,14 +35,12 @@ setxkbmap -layout us -variant altgr-intl -option deadkeys -option numpad:mac &
 # Launch Network-Manager app
 (sleep 0.5s && nm-applet --indicator) &
 
-# Turn off bell sounds
-xset b off &
-
 # Start Light Locker
-light-locker &
+(sleep 0.5s && light-locker) &
 
 # Disable TouchScreen (Only Asus has TouchScreen)
-xinput disable "ELAN Touchscreen" &
+(sleep 0.5s &&xinput disable "ELAN Touchscreen") &
 
 # Davmail Gateway
 (sleep 0.5s && /opt/davmail/davmail) &
+

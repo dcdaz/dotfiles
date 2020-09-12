@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Description: Simple GTK3 notes App
+Description: Simple GTK3 Notes App
 Author: Daniel Córdova A.
 E-Mail : danesc87@gmail.com
 Github : @danesc87

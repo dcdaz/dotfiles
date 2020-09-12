@@ -17,23 +17,19 @@ The scripts that I use are placed on `.config/custom_scripts` and are the follow
 
 Script | Description
 -------|------------
-**notify.sh** | Send notifications using *gdBus* instead on dunstify/notify-send
 **backlight.sh** | Allows to change screen brightness and notify about it [depends on notify.sh]
-**bumblebee.sh** | *Tint2* script that runs every X sec, to fetch data of a *NVIDIA* card using bumblebee [depends on nvidia.sh]
-**calendar.sh** | Executes/Terminates process called calendar.py when user clicks on *Tint2* clock
-**calenda.py** | Simple **Python3** script that creates a *GTK* calendar and place it on bottom right of screen
+**bumblebee_echo.sh** | *Tint2* script that runs every X sec, to fetch data from *nvidia-smi* and show NVIDIA icon on *Tint2* panel
+**bumblembee_info.py** | Small **Python3** script that runs over the icon created from *bumblebee_echo* and shows some info inside *GTK* dialog
+**calendar.py** | Simple **Python3** script that creates a *GTK* calendar and place it where the mouse is [if user tries to execute again it will exit]
+**color_picker.py** | Simple **Python3** script that create a *GTK* Color Picker, this script allows only one instance of it
 **external_monitor.sh** | Check if laptop has external monitor connected, placed as primary activate it and deactivate laptop screen
 **manage_volume.sh** | Allows to change volume of active sink and notify about if [depends on notify.sh]
-**notes.sh** | Executes/Terminates process called notes.py to show a *GTK* simple notes app when user clicks on Notes icon of *Tint2*
-**notes.py** | Small **Python3** script that creates a simple notes app that reads from a plain text file and it's placed on bottom right of screen
-**nvidia.sh** | Bash script that fetches *NVIDIA* info, taken from (https://github.com/bxabi/bumblebee-indicator)
-**screen_capture.sh** | Bash script with *Zenity* to allow have some screen capture options and perform them with *scrot*
-**select_audio_sink.sh** | Bash script that shows all audio sinks on a *Zenity* dialog and allows to change current sound stream to a different sink
-**volume_echo.sh** | Bash script that it's executed every X sec on *Tint2* to get current volume of current master channel and echo it to panel
+**notes.py** | Small **Python3** script that creates a simple *GTK* notes app that reads from a plain text file and place it where the mouse is [if user tries to execute again it will exit]
+**notify.py** | Simple **Python3** script for sned notifications with urgency level using *gdBus* instead on dunstify/notify-send
+**screenshooter.py** | Simple **Python3** script that creates a *GTK* dialog with some harcoded options to allow do some screenshots with *scrot*
 
 
 > Some of those scripts are binded to a hotkey on *openbox's* **rc.xml** some other are binded to an executor or a button on *Tint2* and propably some of them needs some upgrade  
-> **notify.sh** script needs an upgrade to allow send *variant* value related to urgency on *gdBus* but I didn't found how to do it, when I found it I'll update it
 
 ## VIM
 Vim contains its own README in: [vim](vim/)
@@ -43,6 +39,8 @@ Some aliases and custom bashrc configs to make my terminal life easier and happi
 
 ## TMUX
 I use **tmux** as terminal multiplexer and have a 2 file configuration one for the status bar and the other for config per se, my config is for *lazy* people because most of the things that I use are on the same keyboard side
+
+> This configuration wont work with **Nano/Pico** text editors since *my* **TMUX** prefix is `Ctrl-X` **Nano/Pico** will never exit and user should kill them, if you want this *TMUX* config feel free to change the prefix to whatever you want
 
 ## XRESOURCES
 My current terminal is **URxvt**, so in order to have a nice and beauty terminal emulator I use a custom *Xresources* file for it with some nice colors, fonts, behaviors, etc
