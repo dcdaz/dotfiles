@@ -36,9 +36,6 @@
       <item label="Vi IMproved" icon="/usr/share/icons/Papirus/24x24/apps/vim.svg">
         <action name="Execute"><execute>gvim -f</execute></action>
       </item>
-      <item label="Xed" icon="/usr/share/icons/Papirus/24x24/apps/accessories-text-editor.svg">
-        <action name="Execute"><execute>xed</execute></action>
-      </item>
     </menu>
     <menu id="development" icon="/usr/share/icons/Papirus/24x24/apps/applications-development.svg" label="Development">
       <item label="Android Studio" icon="/usr/share/icons/Papirus/24x24/apps/androidstudio.svg">
@@ -46,6 +43,9 @@
       </item>
       <item label="DBeaver" icon="/usr/share/icons/Papirus/24x24/apps/dbeaver.svg">
         <action name="Execute"><execute>dbeaver</execute></action>
+      </item>
+      <item label="Geany" icon="/usr/share/icons/Papirus/24x24/apps/geany.svg">
+        <action name="Execute"><execute>geany</execute></action>
       </item>
       <item label="Insomnia" icon="/usr/share/icons/Papirus/24x24/apps/insomnia.svg">
         <action name="Execute"><execute>insomnia</execute></action>

@@ -25,6 +25,7 @@ class Screenshooter(Gtk.Dialog):
         'Whole Screen with Pointer': 'scrot -d 1 -p -q 100 ' + TEMPLATE + " -e 'mv $f '" + IMAGES_PATH,
         'Focused Window': 'scrot -d 1 -u -q 100 ' + TEMPLATE + " -e 'mv $f '" + IMAGES_PATH
     }
+    WAS_CAPTURED = False
 
     def __init__(self):
         Gtk.Dialog.__init__(self, "Simple Screenshooter")
@@ -55,6 +56,7 @@ class Screenshooter(Gtk.Dialog):
     def execute_command_and_exit(self, option_button):
         import os
         os.popen(self.AVAILABLE_OPTIONS[option_button.get_label()])
+        Screenshooter.WAS_CAPTURED = True
         self.destroy()
 
 
@@ -86,7 +88,8 @@ def notify_capture():
 if __name__ == '__main__':
     if not is_already_running():
         Screenshooter()
-        # Not the proper way but it works
-        import time
-        time.sleep(1)
-        notify_capture()
+        if Screenshooter.WAS_CAPTURED:
+            # Not the proper way but it works
+            import time
+            time.sleep(1)
+            notify_capture()
