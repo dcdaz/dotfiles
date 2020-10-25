@@ -2,21 +2,13 @@
 " Various Configs "
 """""""""""""""""""
 
-" GUI
-if has('gui_running')
-    colorscheme dracula
-    set lines=999 columns=999
-    " Load MiniMap only if has UI
-    call plug#load('vim-minimap')
-    let g:minimap_highlight='Visual'
-
-    " ShortCut MiniMap
-    map 4 :MinimapToggle<CR>
-
-else
-    colorscheme wombat256i
-endif
+" Colorscheme and Font
+colorscheme dracula
 set guifont=Inconsolata\ Nerd\ Font\ Mono\ 12
+
+" Load MiniMap
+call plug#load('vim-minimap')
+let g:minimap_highlight='Visual'
 
 " Some CPP configs
 let g:cpp_class_scope_highlight           = 1

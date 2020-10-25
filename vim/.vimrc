@@ -22,6 +22,7 @@ set title
 set nocp
 set noshowmode
 set hlsearch
+set backspace=indent,eol,start "To make 'Backspace' key work propely on some vim instances
 syntax on
 " Vim tell Leave INSERT mode
 au InsertLeave * set nopaste
@@ -89,7 +90,8 @@ map 1 :NERDTreeToggle<CR>
 map 2 :TagbarToggle<CR>
 " Toggle wrapping long text
 map 3 :call ToggleWrap()<CR>
-" Number 4 is mapped in various.vim configuration to Minimap on GUI
+" ShortCut MiniMap
+map 4 :MinimapToggle<CR>
 
 " Visual Block
 nnoremap vb <C-v>

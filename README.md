@@ -53,10 +53,17 @@ My gitconfig has some stuff to help me like *aliases, defaul-editor, name, mail,
 - custom-path -> this is to have different `gitconfig` files like one for your ow personal projects and another for work
 
 ## DAVMAIL
-Davmail is a gateway that allows use **Exchange Web Services** **EWS** from Microsoft Outlook on any email client like *Thunderbird, Claws, Mutt, etc*. The configuration should be placed on your `$HOME` folder and replace the variable **davmail_log_path** with your own
+Davmail is a gateway that allows use **Exchange Web Services** **EWS** from Microsoft Outlook on any email client like *Thunderbird, Claws, Mutt, etc*. My custom config is made to get shared calendars only!
 
-## LIGHTDM
-LightDM uses a bash script called `external_monitor.sh` located on `~/.config/openbox/external_monitor.sh` to be active only on primary monitor ir order to have this functionality `lightdm.conf` should be placed on `/etc/lightdm/lightdm.conf`, before put conf in its place read comment on it related to replace with your bash script path
+## PRIME-RUN
+`prime-run` is a small shell script to allow launch any app with NVIDIA graphic card, it should work on laptops with *Optimus* technology like Intel+NVIDIA or AMD+NVIDIA, it will work if user has NVIDIA driver installed **HARD-WAY** which means no Bumblebee neither Suse-prime, nvidia-prime, etc.
+
+```bash
+prime-run glxspheres
+```
+
+> It can be placed on `/usr/bin/`
+
 
 ## CONFIGS
 
@@ -75,16 +82,7 @@ Custom Scripts | My own custom *bash* and *python* scripts
 
 ### CONKY
 
-Conky configuration executes hddtemp without sudo, but before to execute it's necessary to run the following command:
-
-```
-sudo chmod u+s /usr/sbin/hddtemp
-```
-
-This allows conky works properly with hddtemp
-
-I have 2 Disk Drives so this config shows info of both of them, needs to replace **second_disk_path** with your own path
-
+This Conky configuration is kinda specific for my Laptop it uses sensors to get NVIDA, AMD GPU/CPU and NVME adapter temperatures, so probably will not work on some other laptops/desktops, but feel free to use it if you want.
 
 ### PICOM
 
