@@ -22,7 +22,13 @@ set title
 set nocp
 set noshowmode
 set hlsearch
-set backspace=indent,eol,start "To make 'Backspace' key work propely on some vim instances
+" Use case insensitive search, except when using capital letters
+set ignorecase
+set smartcase
+" Make 'Backspace' key work propely on some vim instances
+set backspace=indent,eol,start
+" Make Ctrl-Arrows work well
+set term=xterm-256color
 syntax on
 " Vim tell Leave INSERT mode
 au InsertLeave * set nopaste
@@ -52,6 +58,7 @@ Plug 'alvan/vim-closetag'
 Plug 'severin-lemaignan/vim-minimap', {'on': []}
 Plug 'smancill/conky-syntax.vim', {'for': 'conky'}
 Plug 'udalov/kotlin-vim', {'for': 'kotlin'}
+Plug 'peterhoeg/vim-qml', {'for': 'qml'}
 Plug 'dracula/vim', { 'as': 'dracula' }
 " Initialize plugin system
 call plug#end()
