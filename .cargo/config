@@ -1,4 +1,5 @@
 # My own cargo config
+
 [alias]
 b = "build"
 c = "check"
@@ -9,7 +10,7 @@ br = "build --release"
 [build]
 rustc = "rustc"
 
-[cargo-new]                                                                                                                                                                                                                                    
+[cargo-new]
 vcs = "none"
 
 [profile.release]
