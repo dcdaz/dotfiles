@@ -28,7 +28,11 @@ The following plugins are used by this **vim** config
 - Lightline
 - Vim Devicons
 - Vim Closetag
-- Vim Minimap (Only in GUI Mode)
+- Vim Minimap
 - Conky Syntax (Only with Conky files)
 - Kotlin Vim (Only with Kotlin files)
+- QML Vim (Only with Qml files)
+- Rust Vim (Only with Rust files)
+- TOML Vim (Only with toml files)
+- Dracula Vim (Color Scheme)
 

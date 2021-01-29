@@ -18,6 +18,10 @@ let c_no_curly_error                      = 1
 set regexpengine=1
 set laststatus=2
 
+" RUST configs
+let g:rustfmt_autosave = 1
+let g:rust_clip_command = 'xclip -selection clipboard'
+
 " Closetags
 let g:closetag_filenames               = "*.html,*.xhtml,*.phtml,*.xml"
 let g:closetag_xhtml_filenames         = '*.xhtml,*.jsx'

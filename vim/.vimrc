@@ -59,6 +59,8 @@ Plug 'severin-lemaignan/vim-minimap', {'on': []}
 Plug 'smancill/conky-syntax.vim', {'for': 'conky'}
 Plug 'udalov/kotlin-vim', {'for': 'kotlin'}
 Plug 'peterhoeg/vim-qml', {'for': 'qml'}
+Plug 'rust-lang/rust.vim', {'for': 'rust'}
+Plug 'cespare/vim-toml', {'for': 'toml'}
 Plug 'dracula/vim', { 'as': 'dracula' }
 " Initialize plugin system
 call plug#end()
