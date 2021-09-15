@@ -2,35 +2,39 @@
 
 # Launch script that switch to external monitor
 # or laptop monitor when cable is connected/disconnected
-exec ~/.config/custom_scripts/external_monitor.sh &
+#exec ~/.config/custom_scripts/external_monitor.sh &
 
 # Launch Keyboard config layout
-# numpad:mac -> allow to use numeric keypad without press numblock key
-setxkbmap -layout us -variant altgr-intl -option deadkeys -option numpad:mac &
+# -option numpad:mac -> allow to use numeric keypad without press numblock key
+setxkbmap -layout us -variant altgr-intl -option deadkeys
 
 # Turn off bell sounds
 xset b off &
 
 # Set wallpaper
-(sleep 0.5s && feh --bg-center ~/Pictures/futuristic/futuristic4.jpg) &
+(sleep 0.5s && feh --bg-center ~/Pictures/scifi/scifi5.jpg) &
 
 # Launch Tint2 bar
-(sleep 0.5s && tint2) &
-
-# Set custom composition
-(sleep 0.5s && picom --config ~/.config/picom.conf) &
-
-# Launch Conky System Monitor with custom config
-(sleep 0.5s && conky -c ~/.config/conkyrc) &
-
-# Launch notification system
-(sleep 0.5s && dunst) &
+(sleep 0.2s && tint2) &
 
 # Load Xresources
 (sleep 0.2s && xrdb ~/.Xresources) &
 
+# Set custom composition
+#(sleep 0.2s && picom --config ~/.config/picom.conf) &
+(sleep 0.2s && xcompmgr -l -5 -t -5 -r 4 -cC -o.55) &
+
+# Launch Conky System Monitor with custom config
+(sleep 0.5s && conky -c ~/.config/conkyrc) &
+
+# Policy Kit, allows to ask super user password
+(sleep 0.5s && /usr/libexec/polkit-gnome-authentication-agent-1) &
+
+# Launch notification system
+(sleep 0.5s && dunst) &
+
 # Volume Systray
-(sleep 0.2s && pasystray) &
+(sleep 0.5s && pasystray) &
 
 # Launch Network-Manager app
 (sleep 0.5s && nm-applet --indicator) &
@@ -38,9 +42,5 @@ xset b off &
 # Start Light Locker
 (sleep 0.5s && light-locker) &
 
-# Disable TouchScreen (Only Asus has TouchScreen)
-(sleep 0.5s &&xinput disable "ELAN Touchscreen") &
-
-# Davmail Gateway
-(sleep 0.5s && /opt/davmail/davmail) &
-
+# Turn off Keyboard backlight
+(sleep 0.2s && asusctl -k high && asusctl -k off ) &

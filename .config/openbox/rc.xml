@@ -505,7 +505,7 @@
         <command>firefox --private-window</command>
       </action>
     </keybind>
-    <keybind key="W-p">
+    <keybind key="W-S-d">
       <action name="Execute">
         <startupnotify>
           <enabled>false</enabled>
@@ -543,7 +543,7 @@
     </keybind>
     <keybind key="W-F12">
       <action name="Execute">
-        <command>dunstify "DUNST_COMMAND_TOGGLE"</command>
+        <command>dunstctl set-paused toggle</command>
       </action>
     </keybind>
   </keyboard>

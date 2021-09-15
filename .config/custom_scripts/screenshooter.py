@@ -9,8 +9,6 @@ Released under GPLv3
 
 import gi
 
-import notify
-
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk
 
@@ -18,14 +16,15 @@ from gi.repository import Gtk
 class Screenshooter(Gtk.Dialog):
 
     IMAGES_PATH = '~/Pictures'
-    TEMPLATE = 'Screenshot_%Y-%m-%d_%H-%M-%S.png'
+    TEMPLATE = 'Screenshot_{dt:%Y}{dt:%m}{dt:%d}_{dt:%H}{dt:%M}{dt:%S}.png'
+    NOTIFICATION = 'notify.py Screenshooter applets-screenshooter "Screen Capture" "Screenshot captured successfully ' \
+                   'on: {}" 1 '
     AVAILABLE_OPTIONS = {
-        'Rectangular Area': 'scrot -l style=solid,width=1,color="#2f343f" -s -q 100 ' + TEMPLATE + " -e 'mv $f '" + IMAGES_PATH,
-        'Whole Screen': 'scrot -d 1 -q 100 ' + TEMPLATE + " -e 'mv $f '" + IMAGES_PATH,
-        'Whole Screen with Pointer': 'scrot -d 1 -p -q 100 ' + TEMPLATE + " -e 'mv $f '" + IMAGES_PATH,
-        'Focused Window': 'scrot -d 1 -u -q 100 ' + TEMPLATE + " -e 'mv $f '" + IMAGES_PATH
+        'Rectangular Area': 'scrot -l style=solid,width=1,color="#2f343f" -s -q 100 ',
+        'Whole Screen': 'scrot -d 1 -q 100 ',
+        'Whole Screen with Pointer': 'scrot -d 1 -p -q 100 ',
+        'Focused Window': 'scrot -d 1 -u -q 100 '
     }
-    WAS_CAPTURED = False
 
     def __init__(self):
         Gtk.Dialog.__init__(self, "Simple Screenshooter")
@@ -55,8 +54,17 @@ class Screenshooter(Gtk.Dialog):
 
     def execute_command_and_exit(self, option_button):
         import os
-        os.popen(self.AVAILABLE_OPTIONS[option_button.get_label()])
-        Screenshooter.WAS_CAPTURED = True
+        import datetime
+        from inspect import getsourcefile
+        from os.path import abspath, dirname
+
+        screenshot_name = self.TEMPLATE.format(dt=datetime.datetime.now())
+        screenshot_path = os.path.expanduser(self.IMAGES_PATH) + '/' + screenshot_name
+
+        self_path = abspath(getsourcefile(lambda: 0))
+        notification = 'python3 ' + dirname(self_path) + '/' + self.NOTIFICATION.format(screenshot_path)
+        command = self.AVAILABLE_OPTIONS[option_button.get_label()] + screenshot_path + " -e '" + notification + "'"
+        os.popen(command)
         self.destroy()
 
 
@@ -74,22 +82,7 @@ def is_already_running():
     return already_running
 
 
-def notify_capture():
-    import os
-    notify.Notification().notify(
-        'Screen Capture',
-        'applets-screenshooter',
-        'Screen Capture',
-        'Screen captured succesfully on: ' + os.path.expanduser(Screenshooter.IMAGES_PATH),
-        notify.URGENCY_NORMAL
-    )
-
-
 if __name__ == '__main__':
     if not is_already_running():
         Screenshooter()
-        if Screenshooter.WAS_CAPTURED:
-            # Not the proper way but it works
-            import time
-            time.sleep(1)
-            notify_capture()
+

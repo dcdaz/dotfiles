@@ -122,11 +122,17 @@ map <C-a> ggVG
 nmap fj :%!python3 -m json.tool<CR>
 " Format XML
 nmap fx :%!python3 -c "import xml.dom.minidom, sys; print(xml.dom.minidom.parse(sys.stdin).toprettyxml())"<CR>
-
-" NERDTree
-" Move between panes
-map <A-Left> <C-w>h
-map <A-Right> <C-w>l
+" Move between panes in NORMAL and INSERT modes
+nmap <A-Left> <C-w>h
+nmap <A-Right> <C-w>l
+nmap <A-Up> <C-w>k
+nmap <A-Down> <C-w>j
+imap <A-Left> <Esc><C-w>h
+imap <A-Right> <Esc><C-w>l
+imap <A-Up> <Esc><C-w>k
+imap <A-Down> <Esc><C-w>j
+"Move from below terminal to editor
+tnoremap <A-Up> <C-w>k
 
 " NERDCommenter
 " Toggle Comment line or selected text with 'Ctrl+/'

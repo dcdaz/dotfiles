@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Description: Simple GTK3 App that shows info from NVIDIA cards with Bumblebee
+Description: Simple GTK3 App that shows info from NVIDIA cards
 Author: Daniel Córdova A.
 E-Mail : danesc87@gmail.com
 Github : @danesc87
@@ -14,10 +14,10 @@ gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk
 
 
-class Bumblebee(Gtk.Dialog):
+class NvidiaInfo(Gtk.Dialog):
 
     def __init__(self, nvidia_markup_data):
-        Gtk.Dialog.__init__(self, "Bumblebee")
+        Gtk.Dialog.__init__(self, "Nvidia Info")
         self.set_window_properties()
         label = Gtk.Label()
         label.set_markup(nvidia_markup_data)
@@ -53,7 +53,7 @@ def is_already_running():
 
 def kill_instances():
     import os
-    command_to_search_processes = 'ps h -eo pid:1,command  | grep -i bumblebee_info.py'
+    command_to_search_processes = 'ps h -eo pid:1,command  | grep -i nvidia_info.py'
     # Nasty way of doing things, check if we can do it in a better way
     notes_processes = [
         (int(process), command) for process, command in [
@@ -106,4 +106,4 @@ if __name__ == '__main__':
     if is_already_running():
         kill_instances()
     nvidia_data = get_nvidia_info()
-    Bumblebee(nvidia_data)
+    NvidiaInfo(nvidia_data)

@@ -18,8 +18,7 @@ The scripts that I use are placed on `.config/custom_scripts` and are the follow
 Script | Description
 -------|------------
 **backlight.sh** | Allows to change screen brightness and notify about it [depends on notify.sh]
-**bumblebee_echo.sh** | *Tint2* script that runs every X sec, to fetch data from *nvidia-smi* and show NVIDIA icon on *Tint2* panel
-**bumblembee_info.py** | Small **Python3** script that runs over the icon created from *bumblebee_echo* and shows some info inside *GTK* dialog
+**nvidia_info.py** | Small **Python3** script that checks nvidia information every time user opens it and shows that info inside a *GTK* dialog
 **calendar.py** | Simple **Python3** script that creates a *GTK* calendar and place it where the mouse is [if user tries to execute again it will exit]
 **color_picker.py** | Simple **Python3** script that create a *GTK* Color Picker, this script allows only one instance of it
 **external_monitor.sh** | Check if laptop has external monitor connected, placed as primary activate it and deactivate laptop screen
@@ -46,14 +45,11 @@ I use **tmux** as terminal multiplexer and have a 2 file configuration one for t
 My current terminal is **URxvt**, so in order to have a nice and beauty terminal emulator I use a custom *Xresources* file for it with some nice colors, fonts, behaviors, etc
 
 ## GITCONFIG
-My gitconfig has some stuff to help me like *aliases, defaul-editor, name, mail, etc* and also has a `includeIf` clause to allow all of my work stuff has a different **gitconfig** to change name or email, to use it the file should be place on `$HOME` folder and replace the following variables with your own.
+My gitconfig has some stuff to help me like *aliases, default-editor, name, mail, etc* and also has a `includeIf` clause to allow all of my work stuff has a different **gitconfig** to change name or email, to use it the file should be place on `$HOME` folder and replace the following variables with your own.
 
 - username
 - email
-- custom-path -> this is to have different `gitconfig` files like one for your ow personal projects and another for work
-
-## DAVMAIL
-Davmail is a gateway that allows use **Exchange Web Services** **EWS** from Microsoft Outlook on any email client like *Thunderbird, Claws, Mutt, etc*. My custom config is made to get shared calendars only!
+- custom-path -> this is to have different `gitconfig` files like one for your ow personal projects and another for work, should be in form of directory like `~/work/`
 
 ## PRIME-RUN
 `prime-run` is a small shell script to allow launch any app with NVIDIA graphic card, it should work on laptops with *Optimus* technology like Intel+NVIDIA or AMD+NVIDIA, it will work if user has NVIDIA driver installed **HARD-WAY** which means no Bumblebee neither Suse-prime, nvidia-prime, etc.
@@ -89,4 +85,5 @@ This Conky configuration is kinda specific for my Laptop it uses sensors to get 
 Picom has a variable on login path, so if you want to use it you should replace **picom_log_path** with your own
 
 ### CARGO
+
 Some custom *cargo* configs that I use for building **Rust** apps

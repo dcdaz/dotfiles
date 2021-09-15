@@ -78,9 +78,8 @@ ${hr 2}
 # which is quite the same ~0.1 diff
 ${color1}${font weather:size=12}y${font} SSD: ${alignr 4}${execi 7 sensors | grep -A2 nvme | grep Composite | cut -d "+" -f2 | cut -c1-4} °C
 # Real Temp on K10 processors like Ryzen 9 4900HS, in older CPUS or intel ones, should be something like "Core" rather than "Tdie"
-${color1}${font weather:size=12}z${font} CPU: ${alignr 4}${execi 7 sensors | grep -A3 k10temp | grep Tdie | cut -d "+" -f2 | cut -c1-4 } °C
-${color1}${font weather:size=12}y${font} AMD: ${alignr 4}${execi 7 sensors | grep -A4 amd | grep edge | cut -d "+" -f2 | cut -c1-4} °C
-${color1}${font weather:size=12}y${font} NVIDIA: ${alignr 4}${nvidia temp} °C
+${color1}${font weather:size=12}z${font} CPU: ${alignr 4}${execi 7 sensors | grep -A3 coretemp | grep Package | cut -d "+" -f2 | cut -c1-4 } °C
+${color1}${font weather:size=12}y${font} NVIDIA: ${alignr 4}${execi 7 nvidia-smi -q -d TEMPERATURE | grep "GPU Current Temp" | cut -d ":" -f2 | cut -c1-3} °C
 
 # Storage data
 ${color1}${font Noto Sans:style=Medium:size=14}STORAGE${font}
@@ -93,15 +92,15 @@ ${fs_bar 3,165 /}
 # Network data
 ${color1}${font Noto Sans:style=Medium:size=14}NETWORK${font}
 ${hr 2}
-${color1}SSID: ${alignr 4}${wireless_essid wlp2s0}
-${color1}Signal: ${alignr 4}${wireless_link_qual_perc wlp2s0} %
-${color1}Local IP: ${alignr 4}${addr wlp2s0}
+${color1}SSID: ${alignr 4}${wireless_essid wlan0}
+${color1}Signal: ${alignr 4}${wireless_link_qual_perc wlan0} %
+${color1}Local IP: ${alignr 4}${addr wlan0}
 
-${font PizzaDude Bullets:size=12}v${font} Up: ${alignr 4}${upspeed wlp2s0} Kb/s
-${font PizzaDude Bullets:size=12}r${font} Down: ${alignr 4}${downspeed wlp2s0} Kb/s
+${font PizzaDude Bullets:size=12}v${font} Up: ${alignr 4}${upspeed wlan0} Kb/s
+${font PizzaDude Bullets:size=12}r${font} Down: ${alignr 4}${downspeed wlan0} Kb/s
 
-${font PizzaDude Bullets:size=12}M${font} Uploaded: ${alignr 4}${totalup wlp2s0}
-${font PizzaDude Bullets:size=12}S${font} Downloaded: ${alignr 4}${totaldown wlp2s0}
+${font PizzaDude Bullets:size=12}M${font} Uploaded: ${alignr 4}${totalup wlan0}
+${font PizzaDude Bullets:size=12}S${font} Downloaded: ${alignr 4}${totaldown wlan0}
 
 # Energy data
 ${color1}${font Noto Sans:style=Medium:size=14}ENERGY${font}
