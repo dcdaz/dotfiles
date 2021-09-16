@@ -1,0 +1,5 @@
+[Asus]
+enabled=1
+autorefresh=0
+baseurl=https://download.opensuse.org/repositories/home:/luke_nukem:/asus/openSUSE_Tumbleweed/
+priority=50
