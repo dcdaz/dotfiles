@@ -9,7 +9,7 @@ Check [repos](repos/)
 Check [launchers](launchers/)
 
 ## OPENBOX
-Currently I'm using **openbox** window manager mainly for it's simplicity and stability with **tint2** panel but due to a lack of things on them I made some scripts to make it more usable and more comfortable to me, if one of them works for you too go ahead and grab it.
+Currently I'm using **openbox** window manager mainly for it's simplicity and stability with **tint2** panel but due to a lack of things on them I made some scripts to make it more usable and more comfortable to me, if one of them works for you too, go ahead and grab it.
 
 My **rc.xml** has several configs related to my own hotkeys `feel free to use them if you want` and my **menu.xml** has the entire menu hardcoded because I like that so I think that will not be very useful to any one.
 
@@ -24,7 +24,7 @@ Script | Description
 **external_monitor.sh** | Check if laptop has external monitor connected, placed as primary activate it and deactivate laptop screen
 **manage_volume.sh** | Allows to change volume of active sink and notify about if [depends on notify.sh]
 **notes.py** | Small **Python3** script that creates a simple *GTK* notes app that reads from a plain text file and place it where the mouse is [if user tries to execute again it will exit]
-**notify.py** | Simple **Python3** script for sned notifications with urgency level using *gdBus* instead on dunstify/notify-send
+**notify.py** | Simple **Python3** script for sned notifications with urgency level using *gdBus* instead of dunstify/notify-send
 **screenshooter.py** | Simple **Python3** script that creates a *GTK* dialog with some harcoded options to allow do some screenshots with *scrot*
 
 
@@ -37,9 +37,9 @@ Vim contains its own README in: [vim](vim/)
 Some aliases and custom bashrc configs to make my terminal life easier and happier
 
 ## TMUX
-I use **tmux** as terminal multiplexer and have a 2 file configuration one for the status bar and the other for config per se, my config is for *lazy* people because most of the things that I use are on the same keyboard side
+I use **tmux** as terminal multiplexer and have a 2 file configuration one for the status bar and the other for config per se, my config is for *"lazy"* people because most of the things that I use are on the same side of the keyboard
 
-> This configuration won't work with **Nano/Pico** text editors since *my* **TMUX** prefix is `Ctrl-X` **Nano/Pico** will never exit and user should kill them, if you want this *TMUX* config feel free to change the prefix to whatever you want
+> This configuration won't work with **Nano/Pico** text editors since *my* **TMUX** prefix is `Ctrl-X` **Nano/Pico** will never exit and user should kill them instead of exit normally, if you want this *TMUX* config feel free to change the prefix to whatever you want
 
 ## XRESOURCES
 My current terminal is **URxvt**, so in order to have a nice and beauty terminal emulator I use a custom *Xresources* file for it with some nice colors, fonts, behaviors, etc
@@ -49,10 +49,10 @@ My gitconfig has some stuff to help me like *aliases, default-editor, name, mail
 
 - username
 - email
-- custom-path -> this is to have different `gitconfig` files like one for your ow personal projects and another for work, should be in form of directory like `~/work/`
+- custom-path -> this path is to have different `gitconfig` files like one for your ow personal projects and another for work, should be in form of directory like `~/work/`
 
 ## PRIME-RUN
-`prime-run` is a small shell script to allow launch any app with NVIDIA graphic card, it should work on laptops with *Optimus* technology like Intel+NVIDIA or AMD+NVIDIA, it will work if user has NVIDIA driver installed **HARD-WAY** which means no Bumblebee neither Suse-prime, nvidia-prime, etc.
+`prime-run` is a small shell script to allows launch any app with NVIDIA graphics card, it should work on laptops with *Optimus* technology like Intel+NVIDIA or AMD+NVIDIA, it'll work if user has NVIDIA driver installed **HARD-WAY** or directly from repos which means no Bumblebee becuase is an old tech and isn't supported, in case of using suse-prime, nvidia-prime, etc. You need to setup your graphics env to hybrid, thus you allow your laptop use integrated card for most graphic and render work but **prime-run** for dedicated stuff like video games or heavy rendering
 
 ```bash
 prime-run glxspheres

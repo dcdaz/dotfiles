@@ -31,3 +31,4 @@ fi
 
 # ALIASES
 test -s ~/.alias && . ~/.alias || true
+source "$HOME/.cargo/env"

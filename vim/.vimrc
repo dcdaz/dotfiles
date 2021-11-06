@@ -119,9 +119,9 @@ map <C-v> "+gP
 " Select all text with 'Ctrl+a'
 map <C-a> ggVG
 " Format Json
-nmap fj :%!python3 -m json.tool<CR>
+nmap fj :set syntax=json \| %!python3 -m json.tool<CR>
 " Format XML
-nmap fx :%!python3 -c "import xml.dom.minidom, sys; print(xml.dom.minidom.parse(sys.stdin).toprettyxml())"<CR>
+nmap fx :set syntax=xml \| %!python3 -c "import xml.dom.minidom, sys; print(xml.dom.minidom.parse(sys.stdin).toprettyxml())"<CR>
 " Move between panes in NORMAL and INSERT modes
 nmap <A-Left> <C-w>h
 nmap <A-Right> <C-w>l
