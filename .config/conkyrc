@@ -62,7 +62,7 @@ ${color1}Uptime: ${alignr 4}$uptime
 # System data
 ${color1}${font Noto Sans:style=Medium:size=14}SYSTEM${font}
 ${hr 2}
-${color1}RAM:${alignr 4}$mem/$memmax
+${color1}RAM:${alignr 4}$legacymem/$memmax
 ${membar 3,165}
 ${color1}SWAP:${alignr 4}$swap/$swapmax
 ${swapbar 3,165}

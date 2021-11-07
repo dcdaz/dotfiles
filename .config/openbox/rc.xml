@@ -55,7 +55,7 @@
       D: omnipresent (on all desktops).
   -->
     <keepBorder>yes</keepBorder>
-    <animateIconify>yes</animateIconify>
+    <animateIconify>no</animateIconify>
     <font place="ActiveWindow">
       <name>Noto Sans</name>
       <size>9</size>
@@ -485,6 +485,15 @@
           <name>Rofi</name>
         </startupnotify>
         <command>rofi -show drun</command>
+      </action>
+    </keybind>
+    <keybind key="W-a">
+      <action name="Execute">
+        <startupnotify>
+          <enabled>false</enabled>
+          <name>Atom</name>
+        </startupnotify>
+        <command>atom</command>
       </action>
     </keybind>
     <keybind key="W-f">
