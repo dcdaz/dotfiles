@@ -23,8 +23,15 @@ class NvidiaInfo(Gtk.Dialog):
         label.set_markup(nvidia_markup_data)
         self.get_content_area().pack_start(label, False, True, 0)
         self.connect("destroy", Gtk.main_quit)
+        self.connect('notify::is-active', self.save_on_focus_out_and_exit)
         self.show_all()
+        # Config for getting Notes focused when user opens it
+        self.set_urgency_hint(True)
         Gtk.main()
+
+    def save_on_focus_out_and_exit(self, _, _1):
+        if not self.is_active():
+            Gtk.main_quit()
 
     def set_window_properties(self):
         self.get_style_context().add_class('primary-toolbar')
@@ -84,20 +91,32 @@ def get_nvidia_info():
     used_memory = nvidia_xml_data.find('.//fb_memory_usage/used')
     free_memory = nvidia_xml_data.find('.//fb_memory_usage/free')
     temperature = nvidia_xml_data.find('.//temperature/gpu_temp')
+    graphics_clock = nvidia_xml_data.find('.//clocks/graphics_clock')
+    sm_clock = nvidia_xml_data.find('.//clocks/sm_clock')
+    mem_clock = nvidia_xml_data.find('.//clocks/mem_clock')
+    video_clock = nvidia_xml_data.find('.//clocks/video_clock')
 
-    return """<big><b><u>NVIDIA {} Info</u></b></big>
-
-    <b>Driver:</b>\t\t\t\t{}
-    <b>Memory:</b>
-    \t<b>- Total:</b>\t\t\t{}    
-    \t<b>- Used:</b>\t\t\t{}    
-    \t<b>- Free:</b>\t\t\t{}
-    <b>Temperature:</b>\t\t{}""".format(
+    return """<b>- Name:</b> <u>{}</u>\n
+    \t\t<b>- Driver:</b>\t\t\t\t\t{}
+    \t\t<b>- Memory:</b>
+    \t\t\t\t<b>- Total:</b>\t\t\t\t{}
+    \t\t\t\t<b>- Used:</b>\t\t\t\t{}
+    \t\t\t\t<b>- Free:</b>\t\t\t\t{}
+    \t\t<b>- Clocks:</b>
+    \t\t\t\t<b>- Graphics:</b>\t\t{}
+    \t\t\t\t<b>- SM:</b>\t\t\t\t{}
+    \t\t\t\t<b>- Mem:</b>\t\t\t\t{}
+    \t\t\t\t<b>- Video:</b>\t\t\t{}
+    \t\t<b>- Temperature:</b>\t\t\t{}""".format(
         card_name.text,
         driver_version.text,
         total_memory.text,
         used_memory.text,
         free_memory.text,
+        graphics_clock.text,
+        sm_clock.text,
+        mem_clock.text,
+        video_clock.text,
         temperature.text
     )
 

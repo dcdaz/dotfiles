@@ -434,7 +434,7 @@
         <command>~/.config/custom_scripts/manage_volume.sh mute</command>
       </action>
     </keybind>
-    <!-- Backlight Keys-->
+    <!-- Backlight Keys -->
     <keybind key="XF86MonBrightnessUp">
       <action name="Execute">
         <command>~/.config/custom_scripts/backlight.sh up</command>
@@ -443,6 +443,17 @@
     <keybind key="XF86MonBrightnessDown">
       <action name="Execute">
         <command>~/.config/custom_scripts/backlight.sh down</command>
+      </action>
+    </keybind>
+    <!-- Keyboard Backlight Keys -->
+    <keybind key="XF86KbdBrightnessUp">
+      <action name="Execute">
+        <command>~/.config/custom_scripts/keyboard_backlight.sh up</command>
+      </action>
+    </keybind>
+    <keybind key="XF86KbdBrightnessDown">
+      <action name="Execute">
+        <command>~/.config/custom_scripts/keyboard_backlight.sh down</command>
       </action>
     </keybind>
     <!-- Keybindings for window switching with the arrow keys -->

@@ -1,0 +1,110 @@
+-----------------------------------------------------------------------------
+-- conkyrc
+-- Author : Daniel Córdova A.
+-- Conky : >= 1.10
+-- License : Distributed under the terms of GNU GPL version 2 or later
+-----------------------------------------------------------------------------
+
+conky.config = {
+-- Conky settings
+update_interval = 1,
+total_run_times = 0,
+net_avg_samples = 1,
+cpu_avg_samples = 1,
+format_human_readable = true,
+imlib_cache_size = 0,
+double_buffer = true,
+no_buffers = true,
+temperature_unit = 'celsius',
+
+-- Text settings
+use_xft = true,
+font = 'Noto Sans:style=Medium:size=9',
+override_utf8_locale = true,
+text_buffer_size = 2048,
+
+-- Window specifications
+own_window_class = 'conky-semi',
+own_window = true,
+-- Dock type for KDE, Desktop type for XFCE to avoid conky get messed with notifications and also for openbox
+--own_window_type = 'dock',
+own_window_type = 'desktop',
+own_window_transparent = true,
+own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+own_window_argb_visual = true,
+-- own_window_argb_value = 255,
+alignment = 'top_right',
+gap_x = 10,
+gap_y = 10,
+minimum_width = 0, minimum_height = 0,
+maximum_width = 360,
+
+-- Graphics settings
+draw_shades = false,
+draw_outline = false,
+draw_borders = false,
+default_color = 'EFEFEF',
+color1 = 'F0F0F0',
+color2 = 'F0F0F0',
+
+}
+
+
+
+conky.text = [[
+# Common data
+${color1}${font openlogos-archupdate:bold:size=18}t${font Noto Sans:size=18} ${alignc}${exec whoami}${font}
+${hr 2}
+${color1}Kernel: ${alignr 4}$kernel
+${color1}Host: ${alignr 4}$nodename
+${color1}Uptime: ${alignr 4}$uptime
+
+# System data
+${color1}${font Noto Sans:style=Medium:size=14}SYSTEM${font}
+${hr 2}
+${color1}RAM:${alignr 4}$legacymem/$memmax
+${membar 3,165}
+${color1}SWAP:${alignr 4}$swap/$swapmax
+${swapbar 3,165}
+CPU: ${alignr 4}$cpu% (${freq}Mhz)
+${cpubar cpu0 3,165}
+FAN SPEED: ${alignr 4}${execi 5 sensors | grep -A2 asus-isa | grep cpu_fan | cut -d ":" -f2 | xargs}
+
+# Temperature data
+${color1}${font Noto Sans:style=Medium:size=14}TEMPERATURE${font}
+${hr 2}
+# Proper HDD/SSD Temp should be done via "hddtemp" util, 
+# in my laptop case lm_sensors reports nvme-pci-adapter temp 
+# which is quite the same ~0.1 diff
+${color1}${font weather:size=12}y${font} SSD: ${alignr 4}${execi 7 sensors | grep -A2 nvme | grep Composite | cut -d "+" -f2 | cut -c1-4} °C
+# Real Temp on K10 processors like Ryzen 9 4900HS, in older CPUS or intel ones, should be something like "Core" rather than "Tdie"
+${color1}${font weather:size=12}z${font} CPU: ${alignr 4}${execi 7 sensors | grep -A3 coretemp | grep Package | cut -d "+" -f2 | cut -c1-4 } °C
+${color1}${font weather:size=12}y${font} NVIDIA: ${alignr 4}${execi 7 nvidia-smi -q -d TEMPERATURE | grep "GPU Current Temp" | cut -d ":" -f2 | cut -c1-3} °C
+
+# Storage data
+${color1}${font Noto Sans:style=Medium:size=14}STORAGE${font}
+${hr 2}
+${color1}/ ${alignr 4}${fs_free /} free
+${fs_bar 3,165 /}
+${color1}/home ${alignr 4}${fs_free /home} free
+${fs_bar 3,165 /}
+
+# Network data
+${color1}${font Noto Sans:style=Medium:size=14}NETWORK${font}
+${hr 2}
+${color1}SSID: ${alignr 4}${wireless_essid wlan0}
+${color1}Signal: ${alignr 4}${wireless_link_qual_perc wlan0} %
+${color1}Local IP: ${alignr 4}${addr wlan0}
+
+${font PizzaDude Bullets:size=12}v${font} Up: ${alignr 4}${upspeed wlan0} Kb/s
+${font PizzaDude Bullets:size=12}r${font} Down: ${alignr 4}${downspeed wlan0} Kb/s
+
+${font PizzaDude Bullets:size=12}M${font} Uploaded: ${alignr 4}${totalup wlan0}
+${font PizzaDude Bullets:size=12}S${font} Downloaded: ${alignr 4}${totaldown wlan0}
+
+# Energy data
+${color1}${font Noto Sans:style=Medium:size=14}ENERGY${font}
+${hr 2}
+${color1}Adapter: ${alignr 4}${acpiacadapter AC0}
+${color1}Battery: ${alignr 4}${battery_percent BAT0} %
+]];

@@ -58,20 +58,17 @@ function toggle_mute {
     fi
 }
 
-if [[ -z $ACTION ]]
-then
+if [[ -z $ACTION ]]; then
     echo "This script must have an action up/down/mute"
     exit 1
 fi
 
-if [[ $ACTION == "up" ]]
-then
+if [[ $ACTION == "up" ]]; then
     manage_volume $PERCENTAGE"+"
-elif [[ $ACTION == "down" ]]
-then
+elif [[ $ACTION == "down" ]]; then
     manage_volume $PERCENTAGE"-"
-elif [[ $ACTION == "mute" ]]
-then
+elif [[ $ACTION == "mute" ]]; then
     toggle_mute
 fi
 
+exit 0

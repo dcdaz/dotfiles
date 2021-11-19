@@ -173,8 +173,10 @@ class NoteBook(object):
         self.win = NoteBookWindow()
         self.win.create_notebooks(self.file_handler.get_file_data())
         self.win.connect('destroy', self.on_destroy)
-        self.win.connect('focus-out-event', self.save_on_focus_out)
+        self.win.connect('notify::is-active', self.save_on_focus_out_and_exit)
         self.win.show_all()
+        # Config for getting Notes focused when user opens it
+        self.win.set_urgency_hint(True)
         from multiprocessing import Process
         thread = Process(target=self.auto_save, args=())
         thread.start()
@@ -186,8 +188,9 @@ class NoteBook(object):
         self.file_handler.write_data(self.win.get_notebook_data())
         Gtk.main_quit()
 
-    def save_on_focus_out(self, *args):
-        self.file_handler.write_data(self.win.get_notebook_data())
+    def save_on_focus_out_and_exit(self, _, _1):
+        if not self.win.is_active():
+            self.on_destroy(_)
 
     def auto_save(self):
         from time import sleep

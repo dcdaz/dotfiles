@@ -1,41 +1,34 @@
 ! Colorscheme
 
 ! special
-*.foreground: #23dd23
+*.foreground: #12EC12
 URxvt.background: [90]#282828
-*.cursorColor: #72a672
+*.cursorColor: #22E622
 
 ! black
 *.color0: #263640
 *.color8: #4a697d
-
 ! red
-*.color1: #d12f2c
-*.color9: #fa3935
-
+*.color1: #FF5555
+*.color9: #FF6E67
 ! green
-*.color2: #819400
-*.color10: #a4bd00
-
+*.color2: #50FA7B
+*.color10: #5AF78E
 ! yellow
-*.color3: #b08500
-*.color11: #d9a400
-
+*.color3: #F1FA8C
+*.color11: #F4F99D
 ! blue
-*.color4: #2587cc
-*.color12: #2ca2f5
-
+*.color4: #BD993F9
+*.color12: #CAA9FA
 ! magenta
-*.color5: #696ebf
-*.color13: #8086e8
-
+*.color5: #FF70C6
+*.color13: #FF92D0
 ! cyan
-*.color6: #289c93
-*.color14: #33c5ba
-
+*.color6: #8BE9FD
+*.color14: #9AEDFE
 ! white
-*.color7: #bfbaac
-*.color15: #fdf6e3
+*.color7: #BFBFBF
+*.color15: #E6E6E6
 
 ! XFT configs
 Xft.dpi:        96
@@ -46,7 +39,7 @@ Xft.hintstyle:  hintfull
 
 !! URxvt Appearance
 #define FONTTYPE Inconsolata Nerd Font Mono
-#define FONTSIZE 10
+#define FONTSIZE 11
 URxvt*termName:  xterm-256color
 URxvt.font: xft:FONTTYPE:style=Medium:size=FONTSIZE
 URxvt.boldFont: xft:FONTTYPE:style=Bold:size=FONTSIZE
@@ -91,7 +84,7 @@ URxvt.copyCommand: xclip -i -selection clipboard
 URxvt.pasteCommand: xclip -o -selection clipboard
 URxvt.keysym.M-c: perl:clipboard:copy
 URxvt.keysym.M-v: perl:clipboard:paste
-! URxvt.keysym.M-C-v: perl:clipboard:paste_escape
+!URxvt.keysym.M-C-v: perl:clipboard:paste_escape
 
 !! Font Size
 URxvt.keysym.C-Up: perl:font-size:increase
@@ -101,17 +94,17 @@ URxvt.keysym.C-S-Down: perl:font-size:decglobal
 URxvt.keysym.C-equal: perl:font-size:reset
 URxvt.keysym.C-slash: perl:font-size:show
 
-!! URL's
-! URxvt.keysym.M-u: perl:url-select:select_next
-! URxvt.urlLauncher: firefox --new-tab
-! URxvt.underlineURLs: true
-! URxvt.matcher.button: 1
-! URxvt.matcher.pattern.1: \\bwww\\.[\\w-]+\\.[\\w./?&@#-]*[\\w/-]
-! URxvt.matcher.pattern.2: \\B(/\\S+?):(\\d+)(?=:|$)
+!!! URL's
+!URxvt.keysym.M-u: perl:url-select:select_next
+!URxvt.urlLauncher: firefox --new-tab
+!URxvt.underlineURLs: true
+!URxvt.matcher.button: 1
+!URxvt.matcher.pattern.1: \\bwww\\.[\\w-]+\\.[\\w./?&@#-]*[\\w/-]
+!URxvt.matcher.pattern.2: \\B(/\\S+?):(\\d+)(?=:|$)
 
-!! Tabs
-! URxvt.tabbed.tabbar-fg: 2
-! URxvt.tabbed.tabbar-bg: 0
-! URxvt.tabbed.tab-fg: 3
-! URxvt.tabbed.tab-bg: 0
+!!! Tabs
+!URxvt.tabbed.tabbar-fg: 2
+!URxvt.tabbed.tabbar-bg: 0
+!URxvt.tabbed.tab-fg: 3
+!URxvt.tabbed.tab-bg: 0
 

@@ -1,3 +1,8 @@
 # VIM Stuff
 *autoload/
 *vim-plugins/
+
+# Directories
+.idea/
+.DS_Store
+.vscode

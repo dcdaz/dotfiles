@@ -41,9 +41,6 @@
      <item label="DBeaver" icon="/usr/share/icons/Papirus/24x24/apps/dbeaver.svg">
         <action name="Execute"><execute>dbeaver</execute></action>
       </item>
-      <item label="Geany" icon="/usr/share/icons/Papirus/24x24/apps/geany.svg">
-        <action name="Execute"><execute>geany</execute></action>
-      </item>
       <item label="Insomnia" icon="/usr/share/icons/Papirus/24x24/apps/insomnia.svg">
         <action name="Execute"><execute>insomnia</execute></action>
       </item>
@@ -181,9 +178,6 @@
       <item label="Advanced Network Configuration" icon="/usr/share/icons/Papirus/24x24/apps/preferences-system-network.svg">
         <action name="Execute"><execute>nm-connection-editor</execute></action>
       </item>
-      <item label="ARandR" icon="/usr/share/icons/Papirus/24x24/devices/video-display.svg">
-        <action name="Execute"><execute>arandr</execute></action>
-      </item>
       <item label="BleachBit" icon="/usr/share/icons/Papirus/24x24/apps/bleachbit.svg">
         <action name="Execute"><execute>bleachbit</execute></action>
       </item>
@@ -198,6 +192,9 @@
       </item>
       <item label="Htop" icon="/usr/share/icons/Papirus/24x24/apps/htop.svg">
         <action name="Execute"><execute>urxvt-256color -e 'htop'</execute></action>
+      </item>
+      <item label="LXRandR" icon="/usr/share/icons/Papirus/24x24/devices/video-display.svg">
+        <action name="Execute"><execute>lxrandr</execute></action>
       </item>
       <item label="Oracle VM VirtualBox" icon="/usr/share/icons/Papirus/24x24/apps/virtualbox.svg">
         <action name="Execute"><execute>VirtualBox</execute></action>

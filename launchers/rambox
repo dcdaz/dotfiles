@@ -1,2 +1,2 @@
 #!/bin/bash
-/opt/rambox/./rambox &
+/opt/rambox/./rambox --disable-gpu-compositing &

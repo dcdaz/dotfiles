@@ -23,10 +23,19 @@ class Calendar(Gtk.Dialog):
         box = self.get_content_area()
         calendar = Gtk.Calendar(show_week_numbers=True)
         calendar.get_style_context().add_class('primary-toolbar')
+        from datetime import date
+        calendar.mark_day(date.today().day)
         box.add(calendar)
         self.connect("destroy", Gtk.main_quit)
+        self.connect('notify::is-active', self.save_on_focus_out_and_exit)
         self.show_all()
+        # Config for getting Notes focused when user opens it
+        self.set_urgency_hint(True)
         Gtk.main()
+
+    def save_on_focus_out_and_exit(self, _, _1):
+        if not self.is_active():
+            Gtk.main_quit()
 
     def set_window_properties(self):
         self.get_style_context().add_class('primary-toolbar')

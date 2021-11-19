@@ -26,9 +26,11 @@ EXTERNAL_OUTPUT_IS_CONNECTED=$(echo "$CONNECTION" |cut -d ' ' -f 2)
 EXTERNAL_OUTPUT=$(echo "$CONNECTION" | cut -d ' ' -f 1)
 INTERNAL_OUTPUT=$(xrandr |grep "$LVDS\|$eDP" | cut -d ' ' -f 1)
 
-# Change from external to internal and vicesversa when external output is connected/disconnected
+# Change from external to internal and vice versa when external output is connected/disconnected
 if [ "$EXTERNAL_OUTPUT_IS_CONNECTED" == "$CONNECTED_STATUS" ]; then
     xrandr --output $EXTERNAL_OUTPUT --primary --auto --output $INTERNAL_OUTPUT --off
 else
     xrandr --output $INTERNAL_OUTPUT --primary --auto --output $EXTERNAL_OUTPUT --off
 fi
+
+exit 0

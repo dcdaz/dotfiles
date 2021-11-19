@@ -32,17 +32,15 @@ function lower_backlight() {
     python3 $SCRIPT_PATH/notify.py "$APPNAME" "$APPICON" "$SUMMARY" "$BODY $(get_current_backlight)" 1
 }
 
-if [[ -z $ACTION ]]
-then
+if [[ -z $ACTION ]]; then
     echo "This script must have an action up/down"
     exit 1
 fi
 
-if [[ $ACTION == "up" ]]
-then
+if [[ $ACTION == "up" ]]; then
     raise_backlight
-elif [[ $ACTION == "down" ]]
-then
+elif [[ $ACTION == "down" ]]; then
     lower_backlight
 fi
 
+exit 0
