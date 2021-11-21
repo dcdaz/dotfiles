@@ -37,6 +37,23 @@
         <action name="Execute"><execute>gvim -f</execute></action>
       </item>
     </menu>
+    <menu id="graphics" icon="/usr/share/icons/Papirus/24x24/apps/applications-graphics.svg" label="Graphics">
+      <item label="Color picker" icon="/usr/share/icons/Papirus/24x24/apps/gcolor3.svg">
+          <action name="Execute"><execute>python3 ~/.config/custom_scripts/color_picker.py</execute></action>
+      </item>
+      <item label="GIMP" icon="/usr/share/icons/Papirus/24x24/apps/gimp.svg">
+        <action name="Execute"><execute>gimp-2.10</execute></action>
+      </item>
+      <item label="Inkscape" icon="/usr/share/icons/Papirus/24x24/apps/inkscape.svg">
+        <action name="Execute"><execute>inkscape</execute></action>
+      </item>
+      <item label="LibreOffice Draw" icon="/usr/share/icons/Papirus/24x24/apps/libreoffice-draw.svg">
+        <action name="Execute"><execute>libreoffice --draw</execute></action>
+      </item>
+      <item label="Viewnior" icon="/usr/share/icons/Papirus/24x24/apps/viewnior.svg">
+        <action name="Execute"><execute>viewnior</execute></action>
+      </item>
+    </menu>
     <menu id="development" icon="/usr/share/icons/Papirus/24x24/apps/applications-development.svg" label="Development">
      <item label="DBeaver" icon="/usr/share/icons/Papirus/24x24/apps/dbeaver.svg">
         <action name="Execute"><execute>dbeaver</execute></action>
@@ -93,23 +110,6 @@
       </item>
       <item label="Zoom" icon="/usr/share/icons/Papirus/24x24/apps/Zoom.svg">
         <action name="Execute"><execute>/usr/bin/zoomapp</execute></action>
-      </item>
-    </menu>
-    <menu id="graphics" icon="/usr/share/icons/Papirus/24x24/apps/applications-graphics.svg" label="Graphics">
-      <item label="Color picker" icon="/usr/share/icons/Papirus/24x24/apps/gcolor3.svg">
-          <action name="Execute"><execute>python3 ~/.config/custom_scripts/color_picker.py</execute></action>
-      </item>
-      <item label="GIMP" icon="/usr/share/icons/Papirus/24x24/apps/gimp.svg">
-        <action name="Execute"><execute>gimp-2.10</execute></action>
-      </item>
-      <item label="Inkscape" icon="/usr/share/icons/Papirus/24x24/apps/inkscape.svg">
-        <action name="Execute"><execute>inkscape</execute></action>
-      </item>
-      <item label="LibreOffice Draw" icon="/usr/share/icons/Papirus/24x24/apps/libreoffice-draw.svg">
-        <action name="Execute"><execute>libreoffice --draw</execute></action>
-      </item>
-      <item label="Viewnior" icon="/usr/share/icons/Papirus/24x24/apps/viewnior.svg">
-        <action name="Execute"><execute>viewnior</execute></action>
       </item>
     </menu>
     <menu id="games" icon="/usr/share/icons/Papirus/24x24/apps/applications-games.svg" label="Games">

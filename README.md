@@ -87,6 +87,11 @@ This Conky configuration is kinda specific for my Laptop it uses sensors to get 
 
 Picom has a variable on login path, so if you want to use it you should replace **picom_log_path** with your own.
 
-### CARGO
+## CARGO
 
 Some custom *cargo* configs that I use for building **Rust** apps.
+
+## THEMES
+
+`.themes/` contains an **Openbox** theme of my own called *Arc-Zero* this theme takes ideas from Arc-Dark and others to have an *Arc-ish* feel with some improvements.
+

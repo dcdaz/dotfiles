@@ -1,2 +1,4 @@
 #!/bin/bash
+
 sh /opt/pycharm-community/bin/pycharm.sh &
+

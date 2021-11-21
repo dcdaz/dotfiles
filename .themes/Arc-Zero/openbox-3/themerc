@@ -1,0 +1,55 @@
+## Kinda Arc Theme
+# Taken ideas from several places
+# Github: danesc87
+
+# Decorator
+window.active.title.bg.color: #2F343F
+window.inactive.title.bg.color: #2F343F
+window.*.label.text.color: #D8DEE8
+window.*.button.*.image.color: #D8DEE8
+
+# Borders
+window.handle.width: 0
+window.client.padding.width: 0
+border.width: 0
+
+# Title
+padding.width: 0
+padding.height: 2
+window.*.title.bg: Solid Flat
+window.*.*.bg: Parentrelative
+window.label.text.justify: center
+
+# Menu
+menu.border.width: 0
+menu.separator.width: 1
+menu.separator.padding.width: 10
+menu.separator.padding.height: 2
+menu.overlap.x: -2
+menu.*.bg: flat solid
+menu.*.bg.color: #2F343F
+menu.*.color: #2F343F
+menu.title.text.color: #ffffff
+menu.items.text.color: #D8DEE8
+menu.items.active.disabled.text.color: #707070
+menu.items.active.text.color: #D8DEE8
+menu.title.text.justify: center
+menu.items.active.bg.color: #5294E2
+
+# OSD
+osd.border.width: 0
+osd.border.color: #2F343F
+osd.bg: flat solid
+osd.bg.color: #2F343F
+osd.label.bg: flat solid
+osd.label.bg.color: #2F343F
+osd.hilight.bg: flat solid
+osd.hilight.bg.color: #EF6B7B
+
+# Colour Trick
+window.active.button.*.hover.image.color: #8D94A5
+window.active.button.*.pressed.image.color: #8D94A5
+window.active.button.close.unpressed.image.color: #EF6B7B
+window.active.button.close.hover.image.color: #C66571
+window.active.button.close.pressed.image.color: #EF6B7B
+window.inactive.button.close.unpressed.image.color: #BF616A

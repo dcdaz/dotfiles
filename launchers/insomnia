@@ -1,2 +1,4 @@
 #!/bin/bash
-/opt/insomnia/./insomnia --disable-gpu-compositing &
+
+/opt/insomnia/insomnia --disable-gpu-compositing &
+
