@@ -2,7 +2,7 @@
 
 # Launch script that switch to external monitor
 # or laptop monitor when cable is connected/disconnected
-#exec ~/.config/custom_scripts/external_monitor.sh &
+exec ~/.config/custom_scripts/external_monitor.sh &
 
 # Launch Keyboard config layout
 # -option numpad:mac -> allow to use numeric keypad without press numblock key
@@ -21,8 +21,8 @@ xset b off &
 (sleep 0.2s && xrdb ~/.Xresources) &
 
 # Set custom composition
-#(sleep 0.2s && picom --config ~/.config/picom.conf) &
-(sleep 0.2s && xcompmgr -fF -cC -I 0.038 -O 0.038 -r 0 -o.55) &
+(sleep 0.2s && picom --config ~/.config/picom.conf) &
+#(sleep 0.2s && xcompmgr -fF -cC -I 0.038 -O 0.038 -r 0 -o.55) &
 
 # Launch Conky System Monitor with custom config
 (sleep 0.5s && conky -c ~/.config/conkyrc) &

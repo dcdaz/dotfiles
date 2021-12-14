@@ -1,0 +1,13 @@
+configuration {
+    modi: "drun";
+    width: 20;
+    lines: 2;
+	location: 2;
+    fixed-num-lines: true;
+    font: "Inconsolata Nerd Font Mono Medium 11";
+    show-icons: true;
+    icon-theme: "Papirus";
+}
+
+@theme "Arc-Zero"
+
