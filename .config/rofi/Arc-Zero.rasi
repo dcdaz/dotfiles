@@ -33,11 +33,12 @@
     active-background:           rgba ( 29, 31, 33, 17 % );
     selected-active-background:  rgba ( 68, 145, 237, 100 % );
 }
-#window {
+window {
     background-color: @background;
     border:           0;
     border-radius:    5;
     padding:          5;
+    width:            20%;
 }
 #mainbox {
     border:  0;
@@ -51,7 +52,9 @@
 #textbox {
     text-color: @foreground;
 }
-#listview {
+listview {
+    lines:        2;
+    columns:      1;
     fixed-height: 0;
     border:       2px 0px 0px ;
     border-color: @separatorcolor;
