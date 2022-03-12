@@ -17,8 +17,11 @@ xset b off &
 # Launch Tint2 bar
 (sleep 0.2s && tint2) &
 
-# Load Xresources
-(sleep 0.2s && xrdb ~/.Xresources) &
+# Policy Kit, allows to ask super user password
+(sleep 0.2s && /usr/libexec/polkit-gnome-authentication-agent-1) &
+
+# Launch Network-Manager app
+(sleep 0.2s && nm-applet --indicator) &
 
 # Set custom composition
 (sleep 0.2s && picom --config ~/.config/picom.conf) &
@@ -26,20 +29,15 @@ xset b off &
 # Launch Conky System Monitor with custom config
 (sleep 0.5s && conky -c ~/.config/conkyrc) &
 
-# Policy Kit, allows to ask super user password
-(sleep 0.5s && /usr/libexec/polkit-gnome-authentication-agent-1) &
-
 # Launch notification system
 (sleep 0.5s && dunst) &
 
-# Launch Network-Manager app
-(sleep 0.5s && nm-applet --indicator) &
-
-# Volume Systray
-(sleep 0.5s && pasystray) &
-
 # Start Light Locker
-(sleep 0.5s && light-locker) &
+(sleep 0.2s && light-locker) &
 
 # Turn off Keyboard backlight
 (sleep 0.2s && asusctl -k high && asusctl -k off ) &
+
+# Load Xresources
+(sleep 0.2s && xrdb ~/.Xresources) &
+
