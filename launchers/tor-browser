@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/bin/sh
 
 /opt/tor-browser/Browser/start-tor-browser &
 
+exit 0

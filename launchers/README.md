@@ -4,7 +4,6 @@ This folder contains several launchers for apps that I download from its website
 
 Currently I have launchers for:
 
-- Android Studio
 - Atom
 - DBeaver
 - Firefox
@@ -12,7 +11,6 @@ Currently I have launchers for:
 - Insomnia REST Client
 - Intellij IDEA
 - JDownloader
-- KDevelop
 - Pycharm
 - Rambox
 - Robo3T

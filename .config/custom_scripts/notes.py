@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Description: Simple GTK3 Notes App
-Author: Daniel Córdova A.
+Author: Daniel Cordova A.
 E-Mail : danesc87@gmail.com
 Github : @danesc87
 Released under GPLv3
@@ -34,8 +34,8 @@ class Config(object):
     Tabs = Bottom
 
     [Behavior]
-    # HintType is the behavior of notes window app -> 
-    #   - Normal (Normal behavior), 
+    # HintType is the behavior of notes window app ->
+    #   - Normal (Normal behavior),
     #   - Dock (Will be above other windows all the time and will be static)
     #   - Desktop (Will be below other windows all the time but will keep sticky on the desktop)
     HintType = Normal

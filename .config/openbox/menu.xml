@@ -38,8 +38,8 @@
       </item>
     </menu>
     <menu id="graphics" icon="/usr/share/icons/Papirus/24x24/apps/applications-graphics.svg" label="Graphics">
-      <item label="Color picker" icon="/usr/share/icons/Papirus/24x24/apps/gcolor3.svg">
-          <action name="Execute"><execute>python3 ~/.config/custom_scripts/color_picker.py</execute></action>
+      <item label="Color picker" icon="/usr/share/icons/Papirus/24x24/apps/gcolor2.svg">
+          <action name="Execute"><execute>gcolor2</execute></action>
       </item>
       <item label="GIMP" icon="/usr/share/icons/Papirus/24x24/apps/gimp.svg">
         <action name="Execute"><execute>gimp-2.10</execute></action>
@@ -217,19 +217,19 @@
     </menu>
     <menu id="power" icon="/usr/share/icons/Papirus/24x24/apps/system-shutdown.svg" label="Power">
       <item label="Exit" icon="/usr/share/icons/Papirus/24x24/apps/system-log-out.svg">
-        <action name="Exit"/>
+        <action name="Execute"><execute>bash ~/.config/custom_scripts/power_menu.sh 0</execute></action>
       </item>
       <item label="Suspend" icon="/usr/share/icons/Papirus/24x24/apps/system-suspend.svg">
-        <action name="Execute"><execute>systemctl suspend</execute></action>
+        <action name="Execute"><execute>bash ~/.config/custom_scripts/power_menu.sh 1</execute></action>
       </item>
       <item label="Hibernate" icon="/usr/share/icons/Papirus/24x24/apps/system-hibernate.svg">
-        <action name="Execute"><execute>systemctl hibernate</execute></action>
+        <action name="Execute"><execute>bash ~/.config/custom_scripts/power_menu.sh 4</execute></action>
       </item>
       <item label="Reboot" icon="/usr/share/icons/Papirus/24x24/apps/system-reboot.svg">
-        <action name="Execute"><execute>systemctl reboot</execute></action>
+        <action name="Execute"><execute>bash ~/.config/custom_scripts/power_menu.sh 3</execute></action>
       </item>
       <item label="Power Off" icon="/usr/share/icons/Papirus/24x24/apps/system-shutdown.svg">
-        <action name="Execute"><execute>systemctl poweroff</execute></action>
+        <action name="Execute"><execute>bash ~/.config/custom_scripts/power_menu.sh 2</execute></action>
       </item>
     </menu>
   </menu>

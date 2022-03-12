@@ -1,7 +1,7 @@
 """""""""""""""""""""""""""""""""""""
 "                                   "
 " This is my personal configuration "
-" Daniel Córdova A.                 "
+" Daniel Cordova A.                 "
 "                                   "
 """""""""""""""""""""""""""""""""""""
 

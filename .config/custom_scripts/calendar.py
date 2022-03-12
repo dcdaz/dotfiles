@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Description: Simple GTK3 Calendar App
-Author: Daniel Córdova A.
+Author: Daniel Cordova A.
 E-Mail : danesc87@gmail.com
 Github : @danesc87
 Released under GPLv3
@@ -27,13 +27,13 @@ class Calendar(Gtk.Dialog):
         calendar.mark_day(date.today().day)
         box.add(calendar)
         self.connect("destroy", Gtk.main_quit)
-        self.connect('notify::is-active', self.save_on_focus_out_and_exit)
+        self.connect('notify::is-active', self.exit_on_focus_out)
         self.show_all()
         # Config for getting Notes focused when user opens it
         self.set_urgency_hint(True)
         Gtk.main()
 
-    def save_on_focus_out_and_exit(self, _, _1):
+    def exit_on_focus_out(self, _, _1):
         if not self.is_active():
             Gtk.main_quit()
 

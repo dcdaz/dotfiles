@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/bin/sh
 
 sh /opt/pycharm-community/bin/pycharm.sh &
 
+exit 0

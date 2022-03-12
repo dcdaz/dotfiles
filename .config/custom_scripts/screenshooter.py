@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Description: Simple GTK3 Screenshooter App
-Author: Daniel Córdova A.
+Author: Daniel Cordova A.
 E-Mail : danesc87@gmail.com
 Github : @danesc87
 Released under GPLv3

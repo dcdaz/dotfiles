@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Author : Daniel Córdova A.
+# Author : Daniel Cordova A.
 # E-Mail : danesc87@gmail.com
 # Github : @danesc87
 # Released under GPLv3
@@ -22,11 +22,11 @@ BACKLIGHT_TEXT=""
 SCRIPT_PATH=${0%/*}
 
 function get_current_backlight() {
-    if [[ "$1" -le 0 ]]; then
+    if [ "$1" -le 0 ]; then
       echo "off"
-    elif [[ "$1" == 1 ]]; then
+    elif [ "$1" == 1 ]; then
       echo "low"
-    elif [[ "$1" == 2 ]]; then
+    elif [ "$1" == 2 ]; then
       echo "medium"
     else
       echo "high"
@@ -35,7 +35,7 @@ function get_current_backlight() {
 
 function raise_backlight() {
     BACKLIGHT=$(($CURRENT_BACKLIGHT + 1))
-    if [[ $BACKLIGHT -gt 3 ]]; then
+    if [ $BACKLIGHT -gt 3 ]; then
       python3 $SCRIPT_PATH/notify.py "$APPNAME" "$APPICON" "$SUMMARY" "$BODY $(get_current_backlight $BACKLIGHT)" 1
       exit 0
     fi
@@ -45,7 +45,7 @@ function raise_backlight() {
 
 function lower_backlight() {
     BACKLIGHT=$(($CURRENT_BACKLIGHT - 1))
-    if [[ $BACKLIGHT -lt 0 ]]; then
+    if [ $BACKLIGHT -lt 0 ]; then
       python3 $SCRIPT_PATH/notify.py "$APPNAME" "$APPICON" "$SUMMARY" "$BODY $(get_current_backlight $BACKLIGHT)" 1
       exit 0
     fi
@@ -53,15 +53,15 @@ function lower_backlight() {
     python3 $SCRIPT_PATH/notify.py "$APPNAME" "$APPICON" "$SUMMARY" "$BODY $(get_current_backlight $BACKLIGHT)" 1
 }
 
-if [[ -z $ACTION ]]; then
+if [ -z $ACTION ]; then
     echo "This script must have an action up/down"
     exit 1
 fi
 
 
-if [[ $ACTION == "up" ]]; then
+if [ $ACTION == "up" ]; then
     raise_backlight
-elif [[ $ACTION == "down" ]]; then
+elif [ $ACTION == "down" ]; then
     lower_backlight
 fi
 

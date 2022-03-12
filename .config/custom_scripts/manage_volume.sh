@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Author : Daniel Córdova A.
+# Author : Daniel Cordova A.
 # E-Mail : danesc87@gmail.com
 # Github : @danesc87
 # Released under GPLv3
@@ -28,18 +28,18 @@ function check_if_is_mute {
 
 function get_volume_icon_name {
     CURRENT_VOL=$(get_volume_level | cut -d'%' -f 1)
-    if [[ $CURRENT_VOL -ge 11 ]] && [[ $CURRENT_VOL -le 30 ]]; then
+    if [ $CURRENT_VOL -ge 11 ] && [ $CURRENT_VOL -le 30 ]; then
         APPICON_NAME="audio-volume-low"
-    elif [[ $CURRENT_VOL -ge 31 ]] && [[ $CURRENT_VOL -le 60 ]]; then
+    elif [ $CURRENT_VOL -ge 31 ] && [ $CURRENT_VOL -le 60 ]; then
         APPICON_NAME="audio-volume-medium"
-    elif [[ $CURRENT_VOL -ge 61 ]]; then
+    elif [ $CURRENT_VOL -ge 61 ]; then
         APPICON_NAME="audio-volume-high"
     else
         APPICON_NAME="audio-volume-muted"
     fi
 }
 
-function manage_volume() {
+function manage_volume {
     amixer set -q Master $1 > /dev/null
     get_volume_icon_name
     python3 $SCRIPT_PATH/notify.py "$APPNAME" "$APPICON_NAME" "$SUMMARY" "$BODY $(get_volume_level)" 1
@@ -47,7 +47,7 @@ function manage_volume() {
 
 function toggle_mute {
     check_if_is_mute
-    if [[ $? == 1 ]]
+    if [ $? == 1 ]
     then
         amixer -q set Master mute
         python3 $SCRIPT_PATH/notify.py "$APPNAME" "audio-volume-muted" "$SUMMARY" "$BODY 0%" 1
@@ -58,16 +58,16 @@ function toggle_mute {
     fi
 }
 
-if [[ -z $ACTION ]]; then
+if [ -z $ACTION ]; then
     echo "This script must have an action up/down/mute"
     exit 1
 fi
 
-if [[ $ACTION == "up" ]]; then
+if [ $ACTION == "up" ]; then
     manage_volume $PERCENTAGE"+"
-elif [[ $ACTION == "down" ]]; then
+elif [ $ACTION == "down" ]; then
     manage_volume $PERCENTAGE"-"
-elif [[ $ACTION == "mute" ]]; then
+elif [ $ACTION == "mute" ]; then
     toggle_mute
 fi
 

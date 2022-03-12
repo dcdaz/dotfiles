@@ -1,11 +1,16 @@
+/* Author : Daniel Cordova A.
+ * E-Mail : danesc87@gmail.com
+ * Github : @danesc87
+ * Released under GPLv3
+ */
+
 configuration {
-    modi: "drun";
-	location: 2;
-    fixed-num-lines: true;
-    font: "Inconsolata Nerd Font Mono Medium 11";
-    show-icons: true;
-    icon-theme: "Papirus";
+    modi:               "drun";
+    location:           2;
+    fixed-num-lines:    true;
+    font:               "Inconsolata Nerd Font Mono Medium 11";
+    show-icons:         true;
+    icon-theme:         "Papirus";
 }
 
-@theme "Arc-Zero"
-
+@theme "arc_zero"

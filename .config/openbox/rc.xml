@@ -421,7 +421,7 @@
     <!-- Volume Keys -->
     <keybind key="XF86AudioRaiseVolume">
       <action name="Execute">
-        <command>~/.config/custom_scripts/manage_volume.sh up</command>
+        <command>bash ~/.config/custom_scripts/manage_volume.sh up</command>
       </action>
     </keybind>
     <keybind key="XF86AudioLowerVolume">
@@ -431,29 +431,29 @@
     </keybind>
     <keybind key="XF86AudioMute">
       <action name="Execute">
-        <command>~/.config/custom_scripts/manage_volume.sh mute</command>
+        <command>bash ~/.config/custom_scripts/manage_volume.sh mute</command>
       </action>
     </keybind>
     <!-- Backlight Keys -->
     <keybind key="XF86MonBrightnessUp">
       <action name="Execute">
-        <command>~/.config/custom_scripts/backlight.sh up</command>
+        <command>bash ~/.config/custom_scripts/backlight.sh up</command>
       </action>
     </keybind>
     <keybind key="XF86MonBrightnessDown">
       <action name="Execute">
-        <command>~/.config/custom_scripts/backlight.sh down</command>
+        <command>bash ~/.config/custom_scripts/backlight.sh down</command>
       </action>
     </keybind>
     <!-- Keyboard Backlight Keys -->
     <keybind key="XF86KbdBrightnessUp">
       <action name="Execute">
-        <command>~/.config/custom_scripts/keyboard_backlight.sh up</command>
+        <command>bash ~/.config/custom_scripts/keyboard_backlight.sh up</command>
       </action>
     </keybind>
     <keybind key="XF86KbdBrightnessDown">
       <action name="Execute">
-        <command>~/.config/custom_scripts/keyboard_backlight.sh down</command>
+        <command>bash ~/.config/custom_scripts/keyboard_backlight.sh down</command>
       </action>
     </keybind>
     <!-- Keybindings for window switching with the arrow keys -->
@@ -475,6 +475,12 @@
     <keybind key="W-S-Down">
       <action name="DirectionalCycleWindows">
         <direction>down</direction>
+      </action>
+    </keybind>
+    <!-- <Switch Monitors> -->
+    <keybind key="W-p">
+      <action name="Execute">
+          <command>bash ~/.config/custom_scripts/external_monitor.sh</command>
       </action>
     </keybind>
     <!-- Misc Keys -->
@@ -529,7 +535,7 @@
       <action name="Execute">
         <startupnotify>
           <enabled>false</enabled>
-          <name>PcManFM</name>
+          <name>Downloads</name>
         </startupnotify>
         <command>pcmanfm -n Downloads</command>
       </action>
@@ -563,7 +569,7 @@
     </keybind>
     <keybind key="W-F12">
       <action name="Execute">
-        <command>dunstctl set-paused toggle</command>
+        <command>bash ~/.config/custom_scripts/toggle_notifications.sh</command>
       </action>
     </keybind>
   </keyboard>
@@ -1022,6 +1028,9 @@
   # end of the example
     -->
     <application name="urxvt-256color">
+      <maximized>yes</maximized>
+    </application>
+    <application class="Zathura">
       <maximized>yes</maximized>
     </application>
     <application name="gvim">

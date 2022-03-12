@@ -21,15 +21,18 @@ The scripts that I use are placed on `.config/custom_scripts` and are the follow
 Script | Description
 -------|------------
 **backlight.sh** | Allows to change screen brightness and notify about it [depends on notify.sh]
-**keyboard_backlight.sh** | Allows to change keyboard backlight and notify about it [depends on notify.sh]
-**nvidia_info.py** | Small **Python3** script that checks nvidia information every time user opens it and shows that info inside a *GTK* dialog
 **calendar.py** | Simple **Python3** script that creates a *GTK* calendar and place it where the mouse is [if user tries to execute again it will exit]
 **color_picker.py** | Simple **Python3** script that create a *GTK* Color Picker, this script allows only one instance of it
 **external_monitor.sh** | Check if laptop has external monitor connected, placed as primary activate it and deactivate laptop screen
+**get_current_volume** | Check current volume and *echoes* complete path for audio icon with extension like `/usr/..../Papirus/..../audio-volume-medium.svg`
+**keyboard_backlight.sh** | Allows to change keyboard backlight and notify about it [depends on notify.sh]
 **manage_volume.sh** | Allows to change volume of active sink and notify about if [depends on notify.sh]
 **notes.py** | Small **Python3** script that creates a simple *GTK* notes app that reads from a plain text file and place it where the mouse is [if user tries to execute again it will exit]
 **notify.py** | Simple **Python3** script for send notifications with urgency level using *gdBus* instead of dunstify/notify-send
+**nvidia_info.py** | Small **Python3** script that checks nvidia information every time user opens it and shows that info inside a *GTK* dialog
+**power_menu.sh** | Small **Bash** script that sends *"icons"* or *"emojis"* to a rofi theme to show a custome power menu, it's based on [Aditya's Rofi Themes](https://github.com/adi1090x/rofi)
 **screenshooter.py** | Simple **Python3** script that creates a *GTK* dialog with some hardcoded options to allow do some screenshots with *scrot*
+**toggle_notifications** | Small **Bash** script that enables or disables **Dunst** notifications and inform to user
 
 
 > Some of those scripts are bound to a hotkey on *openbox's* **rc.xml** some others are bound to an executor or a button on *Tint2* and probably some of them needs some upgrade.
@@ -52,7 +55,7 @@ I use **tmux** as terminal multiplexer and have a 2 file configuration one for t
 > This configuration won't work with **Nano/Pico** text editors since *my* **TMUX** prefix is `Ctrl-X` **Nano/Pico** will never exit and user should kill them instead of exit normally, if you want this *TMUX* config feel free to change the prefix to whatever you want.
 
 ## XRESOURCES
-My current terminal is **URxvt**, so in order to have a nice and beauty terminal emulator I use a custom *Xresources* file based on most ideas of [Dracula](https://draculatheme.com/) for colors and some custom fonts, behaviors, etc. 
+My current terminal is **URxvt**, so in order to have a nice and beauty terminal emulator I use a custom *Xresources* file based on most ideas of [Dracula](https://draculatheme.com/) for colors and some custom fonts, behaviors, etc.
 
 ## GITCONFIG
 My gitconfig has some stuff to help me like *aliases, default-editor, name, mail, etc.* and also has a `includeIf` clause to allow all of my work stuff has a different **gitconfig** to change name or email, to use it the file should be place on `$HOME` folder and replace the following variables with your own.
@@ -76,6 +79,11 @@ Picom | Standalone compositor
 Rofi | Multipurpose app [Used as a launcher]
 Tint2 | Panel
 Openbox | Window Manager
+PCManFM | FileManager
+Galculator | Simple Calculator
+Flameshot | Screen Capture
+Viewnior | Image viewer
+Zathura | PDF Reader
 Custom Scripts | My own custom *bash* and *python* scripts
 
 
@@ -85,7 +93,7 @@ This Conky configuration is kinda specific for my Laptop it uses sensors to get 
 
 ### PICOM
 
-Picom has a variable on login path, so if you want to use it you should replace **picom_log_path** with your own.
+Picom has a variable on login path, so if you want to use it you should replace **picom_log_path** with your own and enable it.
 
 ## CARGO
 
@@ -94,4 +102,3 @@ Some custom *cargo* configs that I use for building **Rust** apps.
 ## THEMES
 
 `.themes/` contains an **Openbox** theme of my own called *Arc-Zero* this theme takes ideas from Arc-Dark and others to have an *Arc-ish* feel with some improvements.
-

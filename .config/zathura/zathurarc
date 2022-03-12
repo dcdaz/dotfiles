@@ -1,0 +1,35 @@
+####################
+## ZATHURA CONFIG ##
+####################
+
+# Author : Daniel Cordova A.
+# E-Mail : danesc87@gmail.com
+# Github : @danesc87
+# Released under GPLv3
+
+# Common Settings
+set font "Inconsolata 10"
+set selection-clipboard clipboard
+set zoom-min 10
+set guioptions ""
+
+set scroll-page-aware "true"
+set scroll-full-overlap 0.01
+set scroll-step 100
+
+
+# Colors
+set default-bg "#2F343F"
+set default-fg "#F5F6F7"
+set statusbar-bg "#2F343F"
+set statusbar-fg "#F5F6F7"
+set inputbar-bg "#2F343F"
+set notification-bg "#2F343F"
+set notification-fg "#FF79C6"
+set notification-error-bg "#F1FA8C"
+set notification-error-fg "#2F343F"
+set notification-warning-bg "#FF79C6"
+set notification-warning-fg "#2F343F"
+set highlight-color "#5294E2"
+set highlight-active-color "#427AB3"
+

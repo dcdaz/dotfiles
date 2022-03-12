@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Author : Daniel Córdova A.
+# Author : Daniel Cordova A.
 # E-Mail : danesc87@gmail.com
 # Github : @danesc87
 # Released under GPLv3
@@ -8,7 +8,7 @@
 # Script that check if an external monitor is connected
 # put external monitor as primary and deactivate laptop monitor
 
-# Monitor connections 
+# Monitor connections
 VGA="VGA"
 eDP="eDP"
 DP="DP"
@@ -19,18 +19,24 @@ LVDS="LVDS"
 CONNECTED_STATUS="connected"
 
 # Get Connection type and current status
-CONNECTION=$(xrandr | grep -v "$eDP" | grep -E "$VGA|$DP|$HDMI" | grep -w $CONNECTED_STATUS)
+CONNECTION=$(xrandr | grep -vE "$eDP|$LVDS" | grep -E "$VGA|$DP|$HDMI" | grep -w $CONNECTED_STATUS)
 EXTERNAL_OUTPUT_IS_CONNECTED=$(echo "$CONNECTION" |cut -d ' ' -f 2)
 
-# Find External and Internal output
-EXTERNAL_OUTPUT=$(echo "$CONNECTION" | cut -d ' ' -f 1)
-INTERNAL_OUTPUT=$(xrandr |grep "$LVDS\|$eDP" | cut -d ' ' -f 1)
+# Find Internal output
+INTERNAL_OUTPUT=$(xrandr |grep -E "$eDP|$LVDS" | cut -d ' ' -f 1)
 
 # Change from external to internal and vice versa when external output is connected/disconnected
+# NOTE: Rate and resolution are made for my Laptop and my Monitor, so you need to change them
 if [ "$EXTERNAL_OUTPUT_IS_CONNECTED" == "$CONNECTED_STATUS" ]; then
-    xrandr --output $EXTERNAL_OUTPUT --primary --auto --output $INTERNAL_OUTPUT --off
+  # Find External output
+  EXTERNAL_OUTPUT=$(echo "$CONNECTION" | cut -d ' ' -f 1)
+  xrandr --output $EXTERNAL_OUTPUT --primary --mode 1920x1080 --rate 74.97 --output $INTERNAL_OUTPUT --off
 else
-    xrandr --output $INTERNAL_OUTPUT --primary --auto --output $EXTERNAL_OUTPUT --off
+  # Check if Internal ouput is active after disconnect External output
+  IS_INTERNAL_ACTIVE=$(xrandr | grep -E "$eDP|$LVDS" -A 1 | grep '*')
+  if [ -z "$IS_INTERNAL_ACTIVE" ]; then
+    xrandr --output $INTERNAL_OUTPUT --primary --mode 1920x1080 --rate 240.00
+  fi
 fi
 
 exit 0

@@ -1,0 +1,16 @@
+/* Author : Daniel Cordova A.
+ * E-Mail : danesc87@gmail.com
+ * Github : @danesc87
+ * Released under GPLv3
+ */
+
+* {
+    background:                 #2F343FB3;
+    background-solid:           #2F343FFF;
+    foreground:                 #FFFFFFCC;
+    border:               			#5193E1FF;
+    selected:               		#343844B3;
+    selected-normal:            #5294E2FF;
+    urgent:                     #DA4453FF;
+    transparent:                #00000000;
+}

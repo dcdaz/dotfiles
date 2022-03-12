@@ -1,6 +1,13 @@
-## Kinda Arc Theme
-# Taken ideas from several places
-# Github: danesc87
+#####################
+## Kinda Arc Theme ##
+#####################
+
+# Ideas taken from various places
+
+# Author : Daniel Cordova A.
+# E-Mail : danesc87@gmail.com
+# Github : @danesc87
+# Released under GPLv3
 
 # Decorator
 window.active.title.bg.color: #2F343F
@@ -15,7 +22,7 @@ border.width: 0
 
 # Title
 padding.width: 0
-padding.height: 2
+padding.height: 4
 window.*.title.bg: Solid Flat
 window.*.*.bg: Parentrelative
 window.label.text.justify: center
