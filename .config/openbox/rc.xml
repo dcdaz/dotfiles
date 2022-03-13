@@ -426,7 +426,7 @@
     </keybind>
     <keybind key="XF86AudioLowerVolume">
       <action name="Execute">
-        <command>~/.config/custom_scripts/manage_volume.sh down</command>
+        <command>bash ~/.config/custom_scripts/manage_volume.sh down</command>
       </action>
     </keybind>
     <keybind key="XF86AudioMute">
@@ -480,7 +480,7 @@
     <!-- <Switch Monitors> -->
     <keybind key="W-p">
       <action name="Execute">
-          <command>bash ~/.config/custom_scripts/external_monitor.sh</command>
+        <command>bash ~/.config/custom_scripts/external_monitor.sh</command>
       </action>
     </keybind>
     <!-- Misc Keys -->
@@ -1058,27 +1058,15 @@
       </position>
       <maximized>no</maximized>
     </application>
-    <application name="select-audio-sink" class="select-audio-sink" type="dialog">
+    <application name="newDiff">
       <position force="yes">
-        <x>-0</x>
-        <y>-0</y>
+        <x>center</x>
+        <y>center</y>
       </position>
-      <decor>no</decor>
       <maximized>no</maximized>
-      <desktop>all</desktop>
-      <layer>above</layer>
-      <skip_taskbar>yes</skip_taskbar>
     </application>
-    <application name="bumblebee-info" class="bumblebee-info" type="dialog">
-      <position force="yes">
-        <x>-0</x>
-        <y>-0</y>
-      </position>
-      <decor>no</decor>
-      <maximized>no</maximized>
-      <desktop>all</desktop>
-      <layer>above</layer>
-      <skip_taskbar>yes</skip_taskbar>
+    <application name="tkdiff">
+      <maximized>yes</maximized>
     </application>
   </applications>
 </openbox_config>

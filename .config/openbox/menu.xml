@@ -93,9 +93,6 @@
       <item label="Mutt" icon="/usr/share/icons/Papirus/24x24/apps/mutt.svg">
         <action name="Execute"><execute>urxvt-256color -e 'mutt'</execute></action>
       </item>
-      <item label="qBittorrent" icon="/usr/share/icons/Papirus/24x24/apps/qbittorrent.svg">
-        <action name="Execute"><execute>qbittorrent</execute></action>
-      </item>
       <item label="Rambox" icon="/usr/share/icons/Papirus/24x24/apps/rambox.svg">
         <action name="Execute"><execute>rambox</execute></action>
       </item>
@@ -105,8 +102,8 @@
       <item label="Tor Browser" icon="/usr/share/icons/Papirus/24x24/apps/tor-browser.svg">
         <action name="Execute"><execute>tor-browser</execute></action>
       </item>
-      <item label="uGet" icon="/usr/share/icons/Papirus/24x24/apps/uget.svg">
-        <action name="Execute"><execute>env GDK_BACKEND=x11 uget-gtk</execute></action>
+      <item label="Transmission" icon="/usr/share/icons/Papirus/24x24/apps/transmission.svg">
+        <action name="Execute"><execute>transmission-gtk</execute></action>
       </item>
       <item label="Zoom" icon="/usr/share/icons/Papirus/24x24/apps/Zoom.svg">
         <action name="Execute"><execute>/usr/bin/zoomapp</execute></action>
@@ -119,7 +116,7 @@
     </menu>
     <menu id="office" icon="/usr/share/icons/Papirus/24x24/apps/applications-office.svg" label="Office">
       <item label="Document Viewer" icon="/usr/share/icons/Papirus/24x24/apps/document-viewer.svg">
-        <action name="Execute"><execute>xreader</execute></action>
+        <action name="Execute"><execute>zathura</execute></action>
       </item>
       <item label="LibreOffice" icon="/usr/share/icons/Papirus/24x24/apps/libreoffice.svg">
         <action name="Execute"><execute>libreoffice</execute></action>
@@ -184,14 +181,8 @@
       <item label="BleachBit as Administrator" icon="/usr/share/icons/Papirus/24x24/apps/bleachbit.svg">
         <action name="Execute"><execute>xdg-su -c bleachbit</execute></action>
       </item>
-      <item label="dconf Editor" icon="/usr/share/icons/Papirus/24x24/apps/dconf-editor.svg">
-        <action name="Execute"><execute>dconf-editor</execute></action>
-      </item>
       <item label="GParted" icon="/usr/share/icons/Papirus/24x24/apps/gparted.svg">
         <action name="Execute"><execute>xdg-su -c gparted</execute></action>
-      </item>
-      <item label="Htop" icon="/usr/share/icons/Papirus/24x24/apps/htop.svg">
-        <action name="Execute"><execute>urxvt-256color -e 'htop'</execute></action>
       </item>
       <item label="LXRandR" icon="/usr/share/icons/Papirus/24x24/devices/video-display.svg">
         <action name="Execute"><execute>lxrandr</execute></action>
