@@ -42,7 +42,7 @@ class VolumeSlider(Gtk.Dialog):
         self.connect("destroy", Gtk.main_quit)
         self.connect('notify::is-active', self.exit_on_focus_out)
         self.show_all()
-        # Config for getting Calendar focused when user opens it
+        # Config for getting Volume Slider focused when user opens it
         self.set_urgency_hint(True)
         Gtk.main()
 
