@@ -2,7 +2,7 @@
 
 # Author : Daniel Cordova A.
 # E-Mail : danesc87@gmail.com
-# Github : @danesc87
+# Github : @dcdaz
 # Released under GPLv3
 
 # Small script that enable/disable Dunst notifications and notify about the status

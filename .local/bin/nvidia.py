@@ -3,7 +3,7 @@
 Description: Simple GTK3 App that shows info from NVIDIA cards
 Author: Daniel Cordova A.
 E-Mail : danesc87@gmail.com
-Github : @danesc87
+Github : @dcdaz
 Released under GPLv3
 """
 
@@ -17,7 +17,8 @@ from gi.repository import Gtk
 class NvidiaInfo(Gtk.Dialog):
 
     def __init__(self, nvidia_markup_data):
-        Gtk.Dialog.__init__(self, "Nvidia Info")
+        Gtk.init_check()
+        Gtk.Dialog.__init__(self, title='Nvidia Info')
         self.set_window_properties()
         label = Gtk.Label()
         label.set_markup(nvidia_markup_data)
@@ -34,7 +35,15 @@ class NvidiaInfo(Gtk.Dialog):
             Gtk.main_quit()
 
     def set_window_properties(self):
-        self.get_style_context().add_class('primary-toolbar')
+        css = '* { background-color: #f00; }'
+        css_provider = Gtk.CssProvider()
+        # css_provider.load_from_data(css)
+        context = Gtk.StyleContext()
+        # screen = Gdk.Screen.get_default()
+        # context.add_provider_for_screen(screen, css_provider,
+        #                                 Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
+
+        self.get_style_context().add_class('nvidia-monitor')
         self.set_border_width(10)
         self.set_position(Gtk.WindowPosition.MOUSE)
         self.set_resizable(False)
@@ -45,31 +54,30 @@ class NvidiaInfo(Gtk.Dialog):
 
 
 def is_already_running():
-    import fcntl
-    import os
+    import psutil
 
-    lock_file_pointer = os.open(os.path.realpath(__file__), os.O_WRONLY)
-    try:
-        fcntl.lockf(lock_file_pointer, fcntl.LOCK_EX | fcntl.LOCK_NB)
-        already_running = False
-    except IOError:
-        already_running = True
+    exists_process = [' '.join(p.cmdline()) for p in psutil.process_iter() if
+                      (len(p.cmdline()) > 0 and ' '.join(p.cmdline()).__contains__('nvidia.py'))]
 
-    return already_running
+    # Greater than 1 because one of them is the current process
+    if len(exists_process) > 1:
+        return True
+
+    return False
 
 
 def kill_instances():
     import os
-    command_to_search_processes = 'ps h -eo pid:1,command  | grep -i nvidia_info.py'
+    command_to_search_processes = 'ps h -eo pid:1,command  | grep -i nvidia.py'
     # Nasty way of doing things, check if we can do it in a better way
-    notes_processes = [
+    processes = [
         (int(process), command) for process, command in [
             ps_output.rstrip('\n').split(' ', 1) for ps_output in os.popen(command_to_search_processes)
         ]
     ]
-    for note_process in notes_processes:
+    for current_process in processes:
         # Signal 15 is SIGTERM related to terminate action
-        os.kill(note_process[0], 15)
+        os.kill(current_process[0], 15)
 
 
 def get_nvidia_info():
@@ -96,18 +104,18 @@ def get_nvidia_info():
     mem_clock = nvidia_xml_data.find('.//clocks/mem_clock')
     video_clock = nvidia_xml_data.find('.//clocks/video_clock')
 
-    return """<b>- Name:</b> <u>{}</u>\n
-    \t\t<b>- Driver:</b>\t\t\t\t\t{}
-    \t\t<b>- Memory:</b>
-    \t\t\t\t<b>- Total:</b>\t\t\t\t{}
-    \t\t\t\t<b>- Used:</b>\t\t\t\t{}
-    \t\t\t\t<b>- Free:</b>\t\t\t\t{}
-    \t\t<b>- Clocks:</b>
-    \t\t\t\t<b>- Graphics:</b>\t\t{}
-    \t\t\t\t<b>- SM:</b>\t\t\t\t{}
-    \t\t\t\t<b>- Mem:</b>\t\t\t\t{}
-    \t\t\t\t<b>- Video:</b>\t\t\t{}
-    \t\t<b>- Temperature:</b>\t\t\t{}""".format(
+    return """<b><u>{}</u></b>\n
+    \t<b>- Driver:</b>\t\t\t\t\t\t{}
+    \t<b>- Memory:</b>
+    \t\t<b>- Total:</b>\t\t\t\t\t\t{}
+    \t\t<b>- Used:</b>\t\t\t\t\t\t{}
+    \t\t<b>- Free:</b>\t\t\t\t\t\t{}
+    \t<b>- Clocks:</b>
+    \t\t<b>- Graphics:</b>\t\t\t\t{}
+    \t\t<b>- SM:</b>\t\t\t\t\t\t{}
+    \t\t<b>- Mem:</b>\t\t\t\t\t\t{}
+    \t\t<b>- Video:</b>\t\t\t\t\t{}
+    \t<b>- Temperature:</b>\t\t\t\t\t{}""".format(
         card_name.text,
         driver_version.text,
         total_memory.text,

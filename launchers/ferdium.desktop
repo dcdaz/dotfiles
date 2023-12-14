@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Ferdium
+GenericName=Connect to webapps
+Comment=Connect to services webapps in one app.
+Exec=ferdium %F
+Icon=ferdium
+Terminal=false
+Type=Application
+Encoding=UTF-8
+Categories=Network;
+StartupNotify=true
+MimeType=x-scheme-handler/ferdium;

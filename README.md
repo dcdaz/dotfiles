@@ -16,7 +16,7 @@ Currently, I'm using **openbox** window manager mainly for its simplicity and st
 
 My **rc.xml** has several configs related to my own hotkeys `feel free to use them if you want` and my **menu.xml** has the entire menu hardcoded because I like that, so I think that will not be very useful to anyone.
 
-The scripts that I use are placed on `.config/custom_scripts` and are the following:
+The scripts that I use are placed on `.local/bin` and are the following:
 
 Script | Description
 -------|------------
@@ -30,9 +30,9 @@ Script | Description
 **notes.py** | Small **Python3** script that creates a simple *GTK* notes app that reads from a plain text file and place it where the mouse is [if user tries to execute again it will exit]
 **notify.py** | Simple **Python3** script for send notifications with urgency level using *gdBus* instead of dunstify/notify-send
 **nvidia_info.py** | Small **Python3** script that checks nvidia information every time user opens it and shows that info inside a *GTK* dialog
-**power_menu.sh** | Small **Bash** script that sends *"icons"* or *"emojis"* to a rofi theme to show a custome power menu, it's based on [Aditya's Rofi Themes](https://github.com/adi1090x/rofi)
+**power_menu.sh** | Small **Shell** script that sends *"icons"* or *"emojis"* to a rofi theme to show a custom power menu, it's based on [Aditya's Rofi Themes](https://github.com/adi1090x/rofi)
 **screenshooter.py** | Simple **Python3** script that creates a *GTK* dialog with some hardcoded options to allow do some screenshots with *scrot*
-**toggle_notifications** | Small **Bash** script that enables or disables **Dunst** notifications and inform to user
+**toggle_notifications** | Small **Shell** script that enables or disables **Dunst** notifications and inform to user
 
 
 > Some of those scripts are bound to a hotkey on *openbox's* **rc.xml** some others are bound to an executor or a button on *Tint2* and probably some of them needs some upgrade.
@@ -40,7 +40,7 @@ Script | Description
 ## PRIME-RUN
 `prime-run` is a small shell script to allows launch any app with NVIDIA graphics card, it should work on laptops with *Optimus* technology like Intel+NVIDIA or AMD+NVIDIA, it'll work if user has NVIDIA driver installed **HARD-WAY** or directly from repos which means no Bumblebee becuase is an old tech and isn't supported, in case of using suse-prime, nvidia-prime, etc. You need to setup your graphics env to hybrid, thus you allow your laptop use integrated card for most graphic and render work but **prime-run** for dedicated stuff like video games or heavy rendering.
 
-```bash
+```sh
 prime-run glxspheres
 ```
 
@@ -84,7 +84,7 @@ Galculator | Simple Calculator
 Flameshot | Screen Capture
 Viewnior | Image viewer
 Zathura | PDF Reader
-Custom Scripts | My own custom *bash* and *python* scripts
+Custom Scripts | My own custom *shell* and *python* scripts
 
 
 ### CONKY
@@ -93,11 +93,27 @@ This Conky configuration is kinda specific for my Laptop it uses sensors to get 
 
 ### PICOM
 
-Picom has a variable on login path, so if you want to use it you should replace **picom_log_path** with your own and enable it.
+Picom has a *"commented"* variable for log path, so if you want to use it you should replace **picom_log_path** with your own and enable it.
+
+## RUST
+
+I use *Rust* via [**rustup**](https://rustup.rs/), you can install it by executing the following command on a terminal:
+
+```sh
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
 
 ## CARGO
 
-Some custom *cargo* configs that I use for building **Rust** apps.
+I use some custom *cargo* configs for building **Rust** apps.
+
+## NODEJS
+
+I use *NodeJS* via [**nvm-sh**](https://github.com/nvm-sh/nvm), you can install it by executing the following command on a terminal:
+
+```sh
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+```
 
 ## THEMES
 

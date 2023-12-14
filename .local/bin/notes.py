@@ -3,7 +3,7 @@
 Description: Simple GTK3 Notes App
 Author: Daniel Cordova A.
 E-Mail : danesc87@gmail.com
-Github : @danesc87
+Github : @dcdaz
 Released under GPLv3
 """
 
@@ -15,7 +15,6 @@ from gi.repository import Gtk
 
 
 class Config(object):
-
     DEFAULT_CONFIG = """[General]
     # Window size default is 300 x 500
     Width = 300
@@ -31,7 +30,7 @@ class Config(object):
     # NotesPosition allow to put the notes and its tabs above or below buttons, values -> Top, Bottom
     Notes = Top
     # TabsPosition values -> Left, Right, Top, Bottom
-    Tabs = Bottom
+    Tabs = Top
 
     [Behavior]
     # HintType is the behavior of notes window app ->
@@ -88,11 +87,13 @@ class Config(object):
         Config.APP_HEIGHT = self.get_int(general.get('Height'), 'Height') if general.get('Height') else self.APP_HEIGHT
         Config.TITLE_TAG = general.get('TitleTag') if general.get('TitleTag') else self.TITLE_TAG
         Config.NOTES_PATH = general.get('NotesPath') if general.get('NotesPath') else self.NOTES_PATH
-        Config.AUTOSAVE_TIME = self.get_int(general.get('AutoSaveTime'), 'AutoSaveTime') if general.get('AutoSaveTime') else self.AUTOSAVE_TIME
+        Config.AUTOSAVE_TIME = self.get_int(general.get('AutoSaveTime'), 'AutoSaveTime') if general.get(
+            'AutoSaveTime') else self.AUTOSAVE_TIME
 
     def add_positions_config(self, positions):
         Config.NOTES_POSITION = \
-            self.map_notes_position.get(positions.get('Notes').upper()) if positions.get('Notes') else self.NOTES_POSITION
+            self.map_notes_position.get(positions.get('Notes').upper()) if positions.get(
+                'Notes') else self.NOTES_POSITION
         Config.TABS_POSITION = \
             self.map_tabs_position.get(positions.get('Tabs').upper()) if positions.get('Tabs') else self.TABS_POSITION
 
@@ -164,9 +165,8 @@ class FileHandler(object):
 class NoteBook(object):
 
     def __init__(self):
-        if self.is_already_running():
-            self.kill_instances()
         Config()
+        Gtk.init_check()
         from os.path import expanduser
         self.file_handler = FileHandler(expanduser(Config.NOTES_PATH))
         self.file_handler.read_data()
@@ -198,34 +198,6 @@ class NoteBook(object):
             self.file_handler.write_data(self.win.get_notebook_data())
             sleep(Config.AUTOSAVE_TIME)
 
-    @staticmethod
-    def is_already_running():
-        import fcntl
-        import os
-
-        lock_file_pointer = os.open(os.path.realpath(__file__), os.O_WRONLY)
-        try:
-            fcntl.lockf(lock_file_pointer, fcntl.LOCK_EX | fcntl.LOCK_NB)
-            already_running = False
-        except IOError:
-            already_running = True
-
-        return already_running
-
-    @staticmethod
-    def kill_instances():
-        import os
-        command_to_search_processes = 'ps h -eo pid:1,command  | grep -i notes.py'
-        # Nasty way of doing things, check if we can do it in a better way
-        notes_processes = [
-            (int(process), command) for process, command in [
-                ps_output.rstrip('\n').split(' ', 1) for ps_output in os.popen(command_to_search_processes)
-            ]
-        ]
-        for note_process in notes_processes:
-            # Signal 15 is SIGTERM related to terminate action
-            os.kill(note_process[0], 15)
-
 
 class NoteBookWindow(Gtk.Window):
     def __init__(self):
@@ -240,6 +212,7 @@ class NoteBookWindow(Gtk.Window):
         notebook_grid.attach(buttons_box, 0, Config.NOTES_POSITION[1], 1, 1)
 
     def set_window_properties(self):
+        self.get_style_context().add_class('tabbed-notes')
         self.set_position(Gtk.WindowPosition.MOUSE)
         self.set_skip_taskbar_hint(True)
         self.set_keep_above(Config.KEEP_ABOVE)
@@ -302,6 +275,7 @@ class NewTabWindow(Gtk.Dialog):
     def __init__(self, parent):
         Gtk.Dialog.__init__(self, title='Tab Name', transient_for=parent, flags=0)
         self.add_button(Gtk.STOCK_OK, Gtk.ResponseType.OK).set_relief(Gtk.ReliefStyle.NONE)
+        self.get_style_context().add_class('tabbed-notes-add-note')
         self.set_default_icon_name('mynotes')
         box = self.get_content_area()
         self.entry = Gtk.Entry()
@@ -329,7 +303,7 @@ class NoteBookPageData(Gtk.ScrolledWindow):
         self.text_buffer = None
         self.text_view = None
         self.set_border_width(2)
-        self.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)  # we scroll only if needed
+        self.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)  # scroll only if needed
         self.load_text_buffer(data)
         self.load_text_view()
         self.add(self.text_view)
@@ -355,5 +329,34 @@ class NoteBookPageData(Gtk.ScrolledWindow):
         return text_view_data
 
 
+def is_already_running():
+    import psutil
+
+    exists_process = [' '.join(p.cmdline()) for p in psutil.process_iter() if
+                      (len(p.cmdline()) > 0 and ' '.join(p.cmdline()).__contains__('notes.py'))]
+
+    # Greater than 1 because one of them is the current process
+    if len(exists_process) > 1:
+        return True
+
+    return False
+
+
+def kill_instances():
+    import os
+    command_to_search_processes = 'ps h -eo pid:1,command  | grep -i notes.py'
+    # Nasty way of doing things, check if we can do it in a better way
+    processes = [
+        (int(process), command) for process, command in [
+            ps_output.rstrip('\n').split(' ', 1) for ps_output in os.popen(command_to_search_processes)
+        ]
+    ]
+    for current_process in processes:
+        # Signal 15 is SIGTERM related to terminate action
+        os.kill(current_process[0], 15)
+
+
 if __name__ == '__main__':
+    if is_already_running():
+        kill_instances()
     NoteBook()

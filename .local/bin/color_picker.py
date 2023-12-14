@@ -3,7 +3,7 @@
 Description: Simple GTK3 Color Picker App
 Author: Daniel Cordova A.
 E-Mail : danesc87@gmail.com
-Github : @danesc87
+Github : @dcdaz
 Released under GPLv3
 """
 
@@ -16,7 +16,8 @@ from gi.repository import Gtk
 class ColorPicker(Gtk.ColorSelectionDialog):
 
     def __init__(self):
-        Gtk.Dialog.__init__(self, title='Color Picker', flags=0)
+        Gtk.init_check()
+        Gtk.Dialog.__init__(self, title='Color Picker')
         self.set_window_properties()
         self.connect("destroy", Gtk.main_quit)
         self.show_all()

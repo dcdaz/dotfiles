@@ -3,7 +3,7 @@
 Description: Simple Script that delivers Notifications to DBUS
 Author: Daniel Cordova A.
 E-Mail : danesc87@gmail.com
-Github : @danesc87
+Github : @dcdaz
 Released under GPLv3
 """
 
@@ -35,8 +35,8 @@ class Notification(object):
         destination = 'org.freedesktop.Notifications'
         object_path = '/org/freedesktop/Notifications'
         interface = 'org.freedesktop.Notifications'
-        bus = dbus.SessionBus()
-        notification_object = bus.get_object(destination, object_path)
+        self.bus = dbus.SessionBus()
+        notification_object = self.bus.get_object(destination, object_path)
         self.notification = dbus.Interface(notification_object, interface)
 
     def notify(self, app_name, icon_name, title, body, urgency):
@@ -47,6 +47,9 @@ class Notification(object):
             sys.exit(1)
         urgency_hint = {'urgency': dbus.Byte(urgency)}
         self.notification.Notify(app_name, 42, icon_name, title, body, [], urgency_hint, time)
+
+    def close_connection(self):
+        self.bus.close()
 
 
 if __name__ == '__main__':
@@ -66,3 +69,4 @@ if __name__ == '__main__':
             sys.exit(1)
         notification = Notification()
         notification.notify(app_name, icon_name, title, body, urgency)
+        notification.close_connection()

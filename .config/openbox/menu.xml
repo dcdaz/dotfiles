@@ -5,7 +5,7 @@
       <action name="Execute"><execute>xdg-open http://</execute></action>
     </item>
     <item label="Terminal" icon="/usr/share/icons/Papirus/24x24/apps/terminal.svg">
-      <action name="Execute"><execute>urxvt-256color</execute></action>
+      <action name="Execute"><execute>sakura</execute></action>
     </item>
     <item label="File Manager" icon="/usr/share/icons/Papirus/24x24/apps/system-file-manager.svg">
       <action name="Execute"><execute>pcmanfm</execute></action>
@@ -55,6 +55,9 @@
       </item>
     </menu>
     <menu id="development" icon="/usr/share/icons/Papirus/24x24/apps/applications-development.svg" label="Development">
+    <item label="Atom" icon="/usr/share/icons/Papirus/24x24/apps/atom.svg">
+       <action name="Execute"><execute>atom</execute></action>
+     </item>
      <item label="DBeaver" icon="/usr/share/icons/Papirus/24x24/apps/dbeaver.svg">
         <action name="Execute"><execute>dbeaver</execute></action>
       </item>
@@ -91,7 +94,7 @@
         <action name="Execute"><execute>jdownloader</execute></action>
       </item>
       <item label="Mutt" icon="/usr/share/icons/Papirus/24x24/apps/mutt.svg">
-        <action name="Execute"><execute>urxvt-256color -e 'mutt'</execute></action>
+        <action name="Execute"><execute>sakura -e 'mutt'</execute></action>
       </item>
       <item label="Rambox" icon="/usr/share/icons/Papirus/24x24/apps/rambox.svg">
         <action name="Execute"><execute>rambox</execute></action>
@@ -190,11 +193,8 @@
       <item label="Oracle VM VirtualBox" icon="/usr/share/icons/Papirus/24x24/apps/virtualbox.svg">
         <action name="Execute"><execute>VirtualBox</execute></action>
       </item>
-      <item label="rxvt-unicode" icon="/usr/share/icons/Papirus/24x24/apps/urxvt.svg">
-        <action name="Execute"><execute>urxvt</execute></action>
-      </item>
-      <item label="rxvt-unicode-256colors" icon="/usr/share/icons/Papirus/24x24/apps/urxvt.svg">
-        <action name="Execute"><execute>urxvt-256color</execute></action>
+      <item label="Sakura" icon="/usr/share/icons/Papirus/24x24/apps/terminal.svg">
+        <action name="Execute"><execute>sakura</execute></action>
       </item>
       <item label="XTerm" icon="/usr/share/icons/Papirus/24x24/apps/xterm.svg">
         <action name="Execute"><execute>xterm</execute></action>
@@ -208,19 +208,19 @@
     </menu>
     <menu id="power" icon="/usr/share/icons/Papirus/24x24/apps/system-shutdown.svg" label="Power">
       <item label="Exit" icon="/usr/share/icons/Papirus/24x24/apps/system-log-out.svg">
-        <action name="Execute"><execute>bash ~/.config/custom_scripts/power_menu.sh 0</execute></action>
+        <action name="Execute"><execute>sh ~/.local/bin/power_menu.sh 4</execute></action>
       </item>
       <item label="Suspend" icon="/usr/share/icons/Papirus/24x24/apps/system-suspend.svg">
-        <action name="Execute"><execute>bash ~/.config/custom_scripts/power_menu.sh 1</execute></action>
+        <action name="Execute"><execute>sh ~/.local/bin/power_menu.sh 0</execute></action>
       </item>
       <item label="Hibernate" icon="/usr/share/icons/Papirus/24x24/apps/system-hibernate.svg">
-        <action name="Execute"><execute>bash ~/.config/custom_scripts/power_menu.sh 4</execute></action>
+        <action name="Execute"><execute>sh ~/.local/bin/power_menu.sh 1</execute></action>
       </item>
       <item label="Reboot" icon="/usr/share/icons/Papirus/24x24/apps/system-reboot.svg">
-        <action name="Execute"><execute>bash ~/.config/custom_scripts/power_menu.sh 3</execute></action>
+        <action name="Execute"><execute>sh ~/.local/bin/power_menu.sh 3</execute></action>
       </item>
       <item label="Power Off" icon="/usr/share/icons/Papirus/24x24/apps/system-shutdown.svg">
-        <action name="Execute"><execute>bash ~/.config/custom_scripts/power_menu.sh 2</execute></action>
+        <action name="Execute"><execute>sh ~/.local/bin/power_menu.sh 2</execute></action>
       </item>
     </menu>
   </menu>

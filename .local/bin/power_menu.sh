@@ -2,7 +2,7 @@
 
 # Author : Daniel Cordova A.
 # E-Mail : danesc87@gmail.com
-# Github : @danesc87
+# Github : @dcdaz
 # Released under GPLv3
 
 # Small script that shows a Rofi theme for having a power menu
@@ -39,18 +39,18 @@ REBOOT="ﰇ"
 HIBERNATE=""
 
 CHOSEN=$(\
-          echo -e "$EXIT\n$SUSPEND\n$SHUTDOWN\n$REBOOT\n$HIBERNATE" |\
+          echo -e "$SUSPEND\n$HIBERNATE\n$SHUTDOWN\n$REBOOT\n$EXIT" |\
           rofi -theme ~/.config/rofi/power_menu.rasi -p\
           "Uptime: $(get_uptime_str)" \
           -dmenu -selected-row $1\
 )
 
 case $CHOSEN in
-  $EXIT)
-    openbox --exit
-    ;;
   $SUSPEND)
     systemctl suspend
+    ;;
+  $HIBERNATE)
+    systemctl hibernate
     ;;
   $SHUTDOWN)
     systemctl poweroff
@@ -58,8 +58,8 @@ case $CHOSEN in
   $REBOOT)
     systemctl reboot
     ;;
-  $HIBERNATE)
-    systemctl hibernate
+  $EXIT)
+    openbox --exit
     ;;
 esac
 exit 0

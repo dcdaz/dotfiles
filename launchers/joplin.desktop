@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Joplin
+GenericName=Notebook
+Comment=An opensource Notebook with sync capabilities
+Exec=joplin %F
+Icon=joplin
+Terminal=false
+Type=Application
+Encoding=UTF-8
+Categories=Utility;Office;
+StartupNotify=true

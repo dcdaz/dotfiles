@@ -2,11 +2,11 @@
 
 # Author : Daniel Cordova A.
 # E-Mail : danesc87@gmail.com
-# Github : @danesc87
+# Github : @dcdaz
 # Released under GPLv3
 
 # Script that gets current volume level and echoes an icon
-# Icon theme, path, and action (mening size and place of icons) should be change to your own
+# Icon theme, path, and action (meaning size and place of icons) should be change to your own
 
 ICON_THEME="Papirus-Dark"
 ICON_PATH="/usr/share/icons/"

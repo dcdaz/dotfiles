@@ -3,7 +3,7 @@
 Description: Simple GTK3 Volume Slider App
 Author: Daniel Cordova A.
 E-Mail : danesc87@gmail.com
-Github : @danesc87
+Github : @dcdaz
 Released under GPLv3
 """
 
@@ -20,7 +20,8 @@ class VolumeSlider(Gtk.Dialog):
             self.kill_instances()
         self.volume_level = 0
         self.get_volume_level()
-        Gtk.Dialog.__init__(self, "Volume Slider")
+        Gtk.init_check()
+        Gtk.Dialog.__init__(self, title='Volume Slider')
         self.set_window_properties()
         box = self.get_content_area()
         adjustment = Gtk.Adjustment(
@@ -76,31 +77,30 @@ class VolumeSlider(Gtk.Dialog):
 
     @staticmethod
     def is_already_running():
-        import fcntl
-        import os
+        import psutil
 
-        lock_file_pointer = os.open(os.path.realpath(__file__), os.O_WRONLY)
-        try:
-            fcntl.lockf(lock_file_pointer, fcntl.LOCK_EX | fcntl.LOCK_NB)
-            already_running = False
-        except IOError:
-            already_running = True
+        exists_process = [' '.join(p.cmdline()) for p in psutil.process_iter() if
+                          (len(p.cmdline()) > 0 and ' '.join(p.cmdline()).__contains__('volume_slider.py'))]
 
-        return already_running
+        # Greater than 1 because one of them is the current process
+        if len(exists_process) > 1:
+            return True
+
+        return False
 
     @staticmethod
     def kill_instances():
         import os
         command_to_search_processes = 'ps h -eo pid:1,command  | grep -i volume_slider.py'
         # Nasty way of doing things, check if we can do it in a better way
-        notes_processes = [
+        processes = [
             (int(process), command) for process, command in [
                 ps_output.rstrip('\n').split(' ', 1) for ps_output in os.popen(command_to_search_processes)
             ]
         ]
-        for note_process in notes_processes:
+        for current_process in processes:
             # Signal 15 is SIGTERM related to terminate action
-            os.kill(note_process[0], 15)
+            os.kill(current_process[0], 15)
 
 
 if __name__ == '__main__':

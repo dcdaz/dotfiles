@@ -1,6 +1,6 @@
 /* Author : Daniel Cordova A.
  * E-Mail : danesc87@gmail.com
- * Github : @danesc87
+ * Github : @dcdaz
  * Released under GPLv3
  */
 
@@ -11,6 +11,8 @@ configuration {
     font:               "Inconsolata Nerd Font Mono Medium 11";
     show-icons:         true;
     icon-theme:         "Papirus";
+    me-select-entry: "MousePrimary";
+    me-accept-entry: "!MousePrimary";
 }
 
 @theme "arc_zero"

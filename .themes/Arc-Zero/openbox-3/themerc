@@ -6,7 +6,7 @@
 
 # Author : Daniel Cordova A.
 # E-Mail : danesc87@gmail.com
-# Github : @danesc87
+# Github : @dcdaz
 # Released under GPLv3
 
 # Decorator
@@ -21,7 +21,7 @@ window.client.padding.width: 0
 border.width: 0
 
 # Title
-padding.width: 0
+padding.width: 4
 padding.height: 4
 window.*.title.bg: Solid Flat
 window.*.*.bg: Parentrelative

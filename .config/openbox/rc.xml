@@ -123,10 +123,8 @@
     <number>2</number>
     <firstdesk>1</firstdesk>
     <names>
-      <!-- set names up here if you want to, like this:
-    <name>desktop 1</name>
-    <name>desktop 2</name>
-    -->
+      <name>1</name>
+      <name>2</name>
     </names>
     <popupTime>0</popupTime>
     <!-- The number of milliseconds to show the popup for when switching
@@ -178,7 +176,7 @@
   </dock>
   <keyboard>
     <chainQuitKey>C-g</chainQuitKey>
-    <!-- Keybindings for desktop switching -->
+    <!-- Desktop Switching -->
     <keybind key="C-A-Left">
       <action name="GoToDesktop">
         <to>left</to>
@@ -240,7 +238,7 @@
     <keybind key="W-d">
       <action name="ToggleShowDesktop"/>
     </keybind>
-    <!-- Keybindings for windows -->
+    <!-- Windows Actions -->
     <keybind key="A-Escape">
       <action name="Lower"/>
       <action name="FocusToBottom"/>
@@ -311,7 +309,7 @@
       </action>
     </keybind>
     <!-- Tile Bottom Left -->
-    <keybind key="C-W-Left">
+    <keybind key="A-W-Left">
       <action name="UnmaximizeFull"/>
       <action name="MoveResizeTo">
         <x>0</x>
@@ -329,7 +327,7 @@
       </action>
     </keybind>
     <!-- Tile Bottom Right -->
-    <keybind key="C-W-Right">
+    <keybind key="A-W-Right">
       <action name="UnmaximizeFull"/>
       <action name="MoveResizeTo">
         <x>-0</x>
@@ -347,7 +345,7 @@
       </action>
     </keybind>
     <!-- Tile Upper Left -->
-    <keybind key="A-W-Left">
+    <keybind key="C-W-Left">
       <action name="UnmaximizeFull"/>
       <action name="MoveResizeTo">
         <x>0</x>
@@ -365,7 +363,7 @@
       </action>
     </keybind>
     <!-- Tile Upper Right -->
-    <keybind key="A-W-Right">
+    <keybind key="C-W-Right">
       <action name="UnmaximizeFull"/>
       <action name="MoveResizeTo">
         <x>-0</x>
@@ -382,7 +380,7 @@
         <direction>north</direction>
       </action>
     </keybind>
-    <!-- Keybindings for window switching -->
+    <!-- Window Switching -->
     <keybind key="A-Tab">
       <action name="NextWindow">
         <dialog>icons</dialog>
@@ -418,45 +416,7 @@
         </finalactions>
       </action>
     </keybind>
-    <!-- Volume Keys -->
-    <keybind key="XF86AudioRaiseVolume">
-      <action name="Execute">
-        <command>bash ~/.config/custom_scripts/manage_volume.sh up</command>
-      </action>
-    </keybind>
-    <keybind key="XF86AudioLowerVolume">
-      <action name="Execute">
-        <command>bash ~/.config/custom_scripts/manage_volume.sh down</command>
-      </action>
-    </keybind>
-    <keybind key="XF86AudioMute">
-      <action name="Execute">
-        <command>bash ~/.config/custom_scripts/manage_volume.sh mute</command>
-      </action>
-    </keybind>
-    <!-- Backlight Keys -->
-    <keybind key="XF86MonBrightnessUp">
-      <action name="Execute">
-        <command>bash ~/.config/custom_scripts/backlight.sh up</command>
-      </action>
-    </keybind>
-    <keybind key="XF86MonBrightnessDown">
-      <action name="Execute">
-        <command>bash ~/.config/custom_scripts/backlight.sh down</command>
-      </action>
-    </keybind>
-    <!-- Keyboard Backlight Keys -->
-    <keybind key="XF86KbdBrightnessUp">
-      <action name="Execute">
-        <command>bash ~/.config/custom_scripts/keyboard_backlight.sh up</command>
-      </action>
-    </keybind>
-    <keybind key="XF86KbdBrightnessDown">
-      <action name="Execute">
-        <command>bash ~/.config/custom_scripts/keyboard_backlight.sh down</command>
-      </action>
-    </keybind>
-    <!-- Keybindings for window switching with the arrow keys -->
+    <!-- Window Switching with arrow keys -->
     <keybind key="W-S-Right">
       <action name="DirectionalCycleWindows">
         <direction>right</direction>
@@ -477,99 +437,109 @@
         <direction>down</direction>
       </action>
     </keybind>
-    <!-- <Switch Monitors> -->
-    <keybind key="W-p">
+    <!-- Volume -->
+    <keybind key="XF86AudioRaiseVolume">
       <action name="Execute">
-        <command>bash ~/.config/custom_scripts/external_monitor.sh</command>
+        <command>sh ~/.local/bin/manage_volume.sh up</command>
       </action>
     </keybind>
-    <!-- Misc Keys -->
+    <keybind key="XF86AudioLowerVolume">
+      <action name="Execute">
+        <command>sh ~/.local/bin/manage_volume.sh down</command>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioMute">
+      <action name="Execute">
+        <command>sh ~/.local/bin/manage_volume.sh mute</command>
+      </action>
+    </keybind>
+    <!-- Backlight -->
+    <keybind key="XF86MonBrightnessUp">
+      <action name="Execute">
+        <command>sh ~/.local/bin/backlight.sh up</command>
+      </action>
+    </keybind>
+    <keybind key="XF86MonBrightnessDown">
+      <action name="Execute">
+        <command>sh ~/.local/bin/backlight.sh down</command>
+      </action>
+    </keybind>
+    <!-- Keyboard Backlight -->
+    <keybind key="XF86KbdBrightnessUp">
+      <action name="Execute">
+        <command>sh ~/.local/bin/keyboard_backlight.sh up</command>
+      </action>
+    </keybind>
+    <keybind key="XF86KbdBrightnessDown">
+      <action name="Execute">
+        <command>sh ~/.local/bin/keyboard_backlight.sh down</command>
+      </action>
+    </keybind>
+    <!-- Miscellanea -->
     <keybind key="W-l">
       <action name="Execute">
-        <command>light-locker-command -l</command>
+        <command>sh ~/.local/bin/lock.sh lock</command>
       </action>
     </keybind>
     <keybind key="Print">
       <action name="Execute">
-        <command>python3 ~/.config/custom_scripts/screenshooter.py</command>
+        <command>flameshot launcher</command>
       </action>
     </keybind>
-    <!-- Keybindings for running applications -->
+    <keybind key="S-Print">
+      <action name="Execute">
+        <command>flameshot full</command>
+      </action>
+    </keybind>
+    <keybind key="W-F12">
+      <action name="Execute">
+        <command>sh ~/.local/bin/toggle_notifications.sh</command>
+      </action>
+    </keybind>
+    <keybind key="W-p">
+      <action name="Execute">
+        <command>sh ~/.local/bin/external_monitor.sh</command>
+      </action>
+    </keybind>
+    <!-- Applications -->
     <keybind key="A-space">
       <action name="Execute">
-        <startupnotify>
-          <enabled>false</enabled>
-          <name>Rofi</name>
-        </startupnotify>
         <command>rofi -show drun</command>
       </action>
     </keybind>
     <keybind key="W-a">
       <action name="Execute">
-        <startupnotify>
-          <enabled>false</enabled>
-          <name>Atom</name>
-        </startupnotify>
         <command>atom</command>
       </action>
     </keybind>
     <keybind key="W-f">
       <action name="Execute">
-        <startupnotify>
-          <enabled>false</enabled>
-          <name>Firefox</name>
-        </startupnotify>
         <command>firefox</command>
       </action>
     </keybind>
     <keybind key="W-S-f">
       <action name="Execute">
-        <startupnotify>
-          <enabled>false</enabled>
-          <name>Firefox Private Window</name>
-        </startupnotify>
         <command>firefox --private-window</command>
       </action>
     </keybind>
     <keybind key="W-S-d">
       <action name="Execute">
-        <startupnotify>
-          <enabled>false</enabled>
-          <name>Downloads</name>
-        </startupnotify>
         <command>pcmanfm -n Downloads</command>
       </action>
     </keybind>
     <keybind key="W-t">
       <action name="Execute">
-        <startupnotify>
-          <enabled>false</enabled>
-          <name>Urxvt</name>
-        </startupnotify>
-        <command>urxvt-256color</command>
+        <command>sakura -im /usr/share/icons/Papirus/22x22/apps/terminal.svg</command>
       </action>
     </keybind>
     <keybind key="W-v">
       <action name="Execute">
-        <startupnotify>
-          <enabled>false</enabled>
-          <name>VSCode</name>
-        </startupnotify>
         <command>code</command>
       </action>
     </keybind>
     <keybind key="W-c">
       <action name="Execute">
-        <startupnotify>
-          <enabled>false</enabled>
-          <name>Clementine</name>
-        </startupnotify>
         <command>clementine</command>
-      </action>
-    </keybind>
-    <keybind key="W-F12">
-      <action name="Execute">
-        <command>bash ~/.config/custom_scripts/toggle_notifications.sh</command>
       </action>
     </keybind>
   </keyboard>
@@ -961,7 +931,7 @@
   # order that they appear in this list
 
 
-    # each rule element can be left out or set to 'default' to specify to not 
+    # each rule element can be left out or set to 'default' to specify to not
     # change that attribute of the window
 
     <decor>yes</decor>
@@ -1027,8 +997,16 @@
 
   # end of the example
     -->
-    <application name="urxvt-256color">
-      <maximized>yes</maximized>
+    <application class="sakura-f4">
+      <decor>no</decor>
+      <size>
+        <width>100%</width>
+        <height>15%</height>
+      </size>
+      <position force="yes">
+        <x>center</x>
+        <y>-1</y>
+      </position>
     </application>
     <application class="Zathura">
       <maximized>yes</maximized>
@@ -1040,11 +1018,11 @@
       <desktop>2</desktop>
       <maximized>yes</maximized>
     </application>
-    <application name="Mail" class="Thunderbird" type="normal">
+    <application name="Mail" class="thunderbird" type="normal">
       <desktop>2</desktop>
       <maximized>yes</maximized>
     </application>
-    <application name="Calendar" class="Thunderbird" type="dialog">
+    <application name="Calendar" class="thunderbird" type="dialog">
       <desktop>all</desktop>
     </application>
     <application role="PictureInPicture">
@@ -1052,6 +1030,13 @@
       <skip_taskbar>yes</skip_taskbar>
     </application>
     <application name="engrampa">
+      <position force="yes">
+        <x>center</x>
+        <y>center</y>
+      </position>
+      <maximized>no</maximized>
+    </application>
+    <application name="gcolor2">
       <position force="yes">
         <x>center</x>
         <y>center</y>

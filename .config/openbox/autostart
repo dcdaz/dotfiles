@@ -2,7 +2,7 @@
 
 # Launch script that switch to external monitor
 # or laptop monitor when cable is connected/disconnected
-exec ~/.config/custom_scripts/external_monitor.sh &
+exec ~/.local/bin/external_monitor.sh &
 
 # Launch Keyboard config layout
 # -option numpad:mac -> allow to use numeric keypad without press numblock key
@@ -32,12 +32,8 @@ xset b off &
 # Launch notification system
 (sleep 0.5s && dunst) &
 
-# Start Light Locker
-(sleep 0.2s && light-locker) &
-
 # Turn off Keyboard backlight
 (sleep 0.2s && asusctl -k high && asusctl -k off ) &
 
-# Load Xresources
-(sleep 0.2s && xrdb ~/.Xresources) &
-
+# Automatic Lock and Suspend
+(sleep 0.2s && sh ~/.local/bin/lock.sh autolock) &

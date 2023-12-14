@@ -3,7 +3,7 @@
 Description: Simple GTK3 Screenshooter App
 Author: Daniel Cordova A.
 E-Mail : danesc87@gmail.com
-Github : @danesc87
+Github : @dcdaz
 Released under GPLv3
 """
 
@@ -27,7 +27,8 @@ class Screenshooter(Gtk.Dialog):
     }
 
     def __init__(self):
-        Gtk.Dialog.__init__(self, "Simple Screenshooter")
+        Gtk.init_check()
+        Gtk.Dialog.__init__(self, title='Simple Screenshooter')
         self.set_window_properties()
         label = Gtk.Label()
         label.set_markup('<big><b><u>Select your option</u></b></big>\n')
@@ -69,17 +70,16 @@ class Screenshooter(Gtk.Dialog):
 
 
 def is_already_running():
-    import fcntl
-    import os
+    import psutil
 
-    lock_file_pointer = os.open(os.path.realpath(__file__), os.O_WRONLY)
-    try:
-        fcntl.lockf(lock_file_pointer, fcntl.LOCK_EX | fcntl.LOCK_NB)
-        already_running = False
-    except IOError:
-        already_running = True
+    exists_process = [' '.join(p.cmdline()) for p in psutil.process_iter() if
+                      (len(p.cmdline()) > 0 and ' '.join(p.cmdline()).__contains__('screenshooter.py'))]
 
-    return already_running
+    # Greater than 1 because one of them is the current process
+    if len(exists_process) > 1:
+        return True
+
+    return False
 
 
 if __name__ == '__main__':

@@ -4,7 +4,7 @@
 
 !! Author : Daniel Cordova A.
 !! E-Mail : danesc87@gmail.com
-!! Github : @danesc87
+!! Github : @dcdaz
 !! Released under GPLv3
 
 
@@ -28,7 +28,7 @@ URxvt.background: [90]#282828
 *.color3: #F1FA8C
 *.color11: #F4F99D
 ! blue
-*.color4: #BD993F9
+*.color4: #D993F9
 *.color12: #CAA9FA
 ! magenta
 *.color5: #FF70C6
@@ -51,10 +51,10 @@ Xft.hintstyle:  hintfull
 #define FONTTYPE Inconsolata Nerd Font Mono
 #define FONTSIZE 12
 URxvt*termName:  xterm-256color
-URxvt.font: xft:FONTTYPE:style=Medium:size=FONTSIZE
-URxvt.boldFont: xft:FONTTYPE:style=Bold:size=FONTSIZE
-URxvt.italicFont: xft:FONTTYPE:style=Italic:size=FONTSIZE
-URxvt.boldItalicfont: xft:FONTTYPE:style=Bold Italic:size=FONTSIZE
+URxvt.font: xft:FONTTYPE:style=Regular:size=FONTSIZE:antialias=true:hinting=true:minspace=True
+URxvt.boldFont: xft:FONTTYPE:style=Bold:size=FONTSIZE:antialias=true:hinting=true:minspace=True
+URxvt.italicFont: xft:FONTTYPE:style=Italic:size=FONTSIZE:antialias=true:hinting=true:minspace=True
+URxvt.boldItalicfont: xft:FONTTYPE:style=Bold Italic:size=FONTSIZE:antialias=true:hinting=true:minspace=True
 URxvt.geometry: 274x64
 URxvt.letterSpace: -1
 URxvt.lineSpace: 0
@@ -87,7 +87,7 @@ URxvt.keysym.C-S-0x56: eval:paste_clipboard
 URxvt.keysym.Control-slash: \033[95;5u
 
 !! Extensions
-URxvt.perl-ext-common: default,clipboard-osc,eval,matcher,font-size
+URxvt.perl-ext-common: default,clipboard-osc,eval,matcher
 
 !! Copy/Paste
 URxvt.copyCommand: xclip -i -selection clipboard
@@ -104,7 +104,7 @@ URxvt.keysym.C-S-Down: perl:font-size:decglobal
 URxvt.keysym.C-equal: perl:font-size:reset
 URxvt.keysym.C-slash: perl:font-size:show
 
-!!! URL's
+!!! URLs
 !URxvt.keysym.M-u: perl:url-select:select_next
 !URxvt.urlLauncher: firefox --new-tab
 !URxvt.underlineURLs: true

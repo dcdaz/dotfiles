@@ -21,4 +21,5 @@ Currently I have launchers for:
 
 All of these apps are placed on `/opt/` directory
 
+> VS Code executable is only a symlink from `/opt/code/code`
 > Zoom executable should be a symlink from `/opt/zoom/ZoomLauncher` and should be placed as `/usr/bin` with name **zoomapp**, also we have a *XML* file called **zoom.xml** which has a mime stuff and should be place on `/usr/share/mime/packages/`

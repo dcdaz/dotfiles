@@ -4,7 +4,7 @@
 
 # Author : Daniel Cordova A.
 # E-Mail : danesc87@gmail.com
-# Github : @danesc87
+# Github : @dcdaz
 # Released under GPLv3
 
 # Common Settings
@@ -16,6 +16,8 @@ set guioptions ""
 set scroll-page-aware "true"
 set scroll-full-overlap 0.01
 set scroll-step 100
+set window-height 3000
+set window-width 3000
 
 
 # Colors

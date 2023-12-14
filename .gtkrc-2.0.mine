@@ -1,0 +1,22 @@
+### Custom configs to have a better Look and Feel on gtk2 apps such as PCManFM
+
+style "custom-sidebar"{
+ GtkTreeView::even-row-color = "#F5F6F7"
+ base[ACTIVE] = "#4084D6"
+ bg[SELECTED] = "#4084D6"
+}
+
+style "custom-nb" {
+ base[NORMAL] = "#F5F6F7"
+ base[ACTIVE] = "#F5F6F7"
+}
+
+style "custom-tooltip" {
+    bg[NORMAL] = "#2F343F"
+}
+
+class "GtkWidget" style "custom-nb"
+class "FmMainWin.*.FmTabPage" style "custom-nb"
+widget "*FmMainWin*FmPlacesView" style "custom-sidebar"
+widget "gtk-tooltip*" style "custom-tooltip"
+

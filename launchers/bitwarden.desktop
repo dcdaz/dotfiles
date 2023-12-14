@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Bitwarden
+GenericName=Password manager
+Comment=An opensource password and secure note manager.
+Exec=bitwarden --disable-gpu-compositing %F
+Icon=bitwarden
+Terminal=false
+Type=Application
+Encoding=UTF-8
+Categories=Utility;Security;
+StartupNotify=true
