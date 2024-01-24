@@ -1,6 +1,14 @@
-"""""""""""""
-" LightLine "
-"""""""""""""
+"""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""
+"           LightLine               "
+"""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""
+
+"""""""""""""""""""""""""""""""""""""
+" Author : Daniel Cordova           "
+" E-Mail : danesc87@gmail.com       "
+" Github : @dcdaz                   "
+"""""""""""""""""""""""""""""""""""""
 
 " Lightline has some colors like: default, wombat, jellybeans, solarized,
 " solarized_dark, PaperColor, seoul256 and landscape

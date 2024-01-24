@@ -1,6 +1,14 @@
-""""""""""""""""""""
-" Custom Functions "
-""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""
+"         Custom Functions          "
+"""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""
+
+"""""""""""""""""""""""""""""""""""""
+" Author : Daniel Cordova           "
+" E-Mail : danesc87@gmail.com       "
+" Github : @dcdaz                   "
+"""""""""""""""""""""""""""""""""""""
 
 " Function that allows to use OmniComplete in a better way
 function! SmartOmniComplete()

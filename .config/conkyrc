@@ -1,9 +1,8 @@
------------------------------------------------------------------------------
--- conkyrc
--- Author : Daniel Cordova A.
--- Conky : >= 1.10
--- License : Distributed under the terms of GNU GPL version 2 or later
------------------------------------------------------------------------------
+---------------------------------
+-- Author : Daniel Cordova     --
+-- E-Mail : danesc87@gmail.com --
+-- Github : @dcdaz             --
+---------------------------------
 
 conky.config = {
 -- Conky settings

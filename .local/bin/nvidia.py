@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
 """
 Description: Simple GTK3 App that shows info from NVIDIA cards
-Author: Daniel Cordova A.
+Author: Daniel Cordova
 E-Mail : danesc87@gmail.com
 Github : @dcdaz
-Released under GPLv3
 """
 
 import gi

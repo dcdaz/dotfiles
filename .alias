@@ -1,4 +1,5 @@
-#Some alias to make my daily life easier
+# Some alias to make my daily life easier
+
 # ZYPPER
 alias i='sudo zypper in'
 alias r='sudo zypper remove -u'
@@ -13,6 +14,5 @@ alias unneeded='zypper packages --unneeded'
 alias y='sudo yast'
 
 # OTHERS
-alias mci='mvn clean install'
 alias vimu='vim -u "NONE"'
 

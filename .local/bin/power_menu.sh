@@ -1,9 +1,8 @@
 #!/bin/sh
 
-# Author : Daniel Cordova A.
+# Author : Daniel Cordova
 # E-Mail : danesc87@gmail.com
 # Github : @dcdaz
-# Released under GPLv3
 
 # Small script that shows a Rofi theme for having a power menu
 # and then execute the option user selected

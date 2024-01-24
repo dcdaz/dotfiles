@@ -1,6 +1,14 @@
-""""""""""""
-" NERDTree "
-""""""""""""
+"""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""
+"             NERDTree              "
+"""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""
+
+"""""""""""""""""""""""""""""""""""""
+" Author : Daniel Cordova           "
+" E-Mail : danesc87@gmail.com       "
+" Github : @dcdaz                   "
+"""""""""""""""""""""""""""""""""""""
 
 let g:NERDTreeWinSize = '30'
 " Open NERDTree automatically when vim starts up in a directory

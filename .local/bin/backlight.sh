@@ -1,9 +1,8 @@
 #!/bin/sh
 
-# Author : Daniel Cordova A.
+# Author : Daniel Cordova
 # E-Mail : danesc87@gmail.com
 # Github : @dcdaz
-# Released under GPLv3
 
 # Script that handles laptop brightness and notify about it
 

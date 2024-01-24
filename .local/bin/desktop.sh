@@ -1,9 +1,8 @@
 #!/bin/sh
 
-# Author : Daniel Cordova A.
+# Author : Daniel Cordova
 # E-Mail : danesc87@gmail.com
 # Github : @dcdaz
-# Released under GPLv3
 
 # Script that gets current desktop echoes it and or allow to change between desktops
 

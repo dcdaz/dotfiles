@@ -1,12 +1,12 @@
-#################################################
-################### OFICIALES ###################
-#################################################
+################################################
+#################### OFICIAL ###################
+################################################
 
 # OFICIALES
 deb http://ftp.jp.debian.org/debian/ testing main contrib non-free
 deb-src http://ftp.jp.debian.org/debian/ testing main contrib non-free
 
-# SEGURIDAD
+# SECURITY
 deb http://security.debian.org/ testing/updates main contrib non-free
 deb-src http://security.debian.org/ testing/updates main contrib non-free
 
@@ -17,28 +17,22 @@ deb-src http://security.debian.org/ testing/updates main contrib non-free
 # deb http://ftp.us.debian.org/debian/ testing-proposed-updates main contrib non-free
 
 # BACKPORTS
-deb http://ftp.debian.org/debian/ jessie-backports main contrib non-free
-deb-src http://ftp.debian.org/debian/ jessie-backports main contrib non-free
+#deb http://ftp.debian.org/debian/ jessie-backports main contrib non-free
+#deb-src http://ftp.debian.org/debian/ jessie-backports main contrib non-free
 
-#################################################
-################# NO OFICIALES ##################
-#################################################
+################################################
+################# NON OFICIAL ##################
+################################################
 
 # FIREFOX
 deb http://mozilla.debian.net/ jessie-backports firefox-release
 
-# GOOGLE CHROME
-deb http://dl.google.com/linux/chrome/deb/ stable main
-
-# GOOGLE TALK-PLUGIN
-deb http://dl.google.com/linux/talkplugin/deb stable main
-
 # TOR
 # deb http://deb.torproject.org/torproject.org testing main
 
-#################################################
-################ LLAVES PUBLICAS ################
-#################################################
+################################################
+################# PUBLIC KEYS ##################
+################################################
 
 #wget -O- -q http://mozilla.debian.net/archive.asc | gpg --import
 #gpg --check-sigs --fingerprint --keyring /usr/share/keyrings/debian-keyring.gpg 06C4AE2A

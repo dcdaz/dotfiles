@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
 """
 Description: Simple GTK3 Color Picker App
-Author: Daniel Cordova A.
+Author: Daniel Cordova
 E-Mail : danesc87@gmail.com
 Github : @dcdaz
-Released under GPLv3
 """
 
 import gi
@@ -49,7 +48,7 @@ class AboutDialog(Gtk.Dialog):
     DEVS_DATA = """<big><b><u>Color Picker About</u></b></big>
     
     <b>Developers:</b><small>
-    \t<b>Name:</b> Daniel Cordova A.
+    \t<b>Name:</b> Daniel Cordova
     \t<b>E-mail:</b> danesc87@gmail.com
     </small>"""
 

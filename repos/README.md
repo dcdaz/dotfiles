@@ -1,15 +1,19 @@
 # Repos
 
-Just a copy of my repositories for openSUSE Tumbleweed, also mi old Debian Testing repos.
+Just a copy of my repositories for openSUSE Tumbleweed, also some Debian Testing repos.
+
+> Debian repos could be outdated
 
 ## OpenSuSe
 
-- Bumblebee
+- Asus
 - Network-Utilities
-- OSS Repo
-- Non-OSS Repo
+- Non-OSS
+- Nvidia
+- OSS
 - Packman
 - Utilities
+- VSCodium
 
 
 ## Debian
@@ -18,8 +22,6 @@ Just a copy of my repositories for openSUSE Tumbleweed, also mi old Debian Testi
 - Security
 - Backports
 - Firefox
-- Chrome
-- Google Talk
 - Tor
 
 And some keys related to those repos

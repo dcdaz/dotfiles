@@ -1,5 +1,0 @@
-#!/bin/sh
-
-/opt/rambox/rambox --disable-gpu-compositing &
-
-exit 0

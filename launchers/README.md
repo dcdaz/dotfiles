@@ -4,19 +4,19 @@ This folder contains several launchers for apps that I download from its website
 
 Currently I have launchers for:
 
-- Atom
+- Bitwarden
 - DBeaver
+- Ferdium
 - Firefox
 - Firefox Developer Edition
-- Insomnia REST Client
+- Insomnium REST Client
 - Intellij IDEA
 - JDownloader
+- Joplin
+- Pulsar
 - Pycharm
-- Rambox
-- Robo3T
 - Thunderbird
 - Tor Browser
-- VS Code
 - Zoom [Only desktop file]
 
 All of these apps are placed on `/opt/` directory

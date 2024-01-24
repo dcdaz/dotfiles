@@ -1,3 +1,15 @@
+"""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""
+"             Paste Mode            "
+"""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""
+
+"""""""""""""""""""""""""""""""""""""
+" Author : Daniel Cordova           "
+" E-Mail : danesc87@gmail.com       "
+" Github : @dcdaz                   "
+"""""""""""""""""""""""""""""""""""""
+
 " Set Paste Automatically
 " This configuration works with tmux
 function! WrapForTmux(s)

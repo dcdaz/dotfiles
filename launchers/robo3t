@@ -1,5 +1,0 @@
-#!/bin/sh
-
-/opt/robo3t/bin/robo3t &
-
-exit 0

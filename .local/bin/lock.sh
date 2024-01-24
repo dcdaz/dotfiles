@@ -1,9 +1,8 @@
 #!/bin/sh
 
-# Author : Daniel Cordova A.
+# Author : Daniel Cordova
 # E-Mail : danesc87@gmail.com
 # Github : @dcdaz
-# Released under GPLv3
 
 # Simple script that locks screen with i3lock or enables i3lock via xautlock
 
