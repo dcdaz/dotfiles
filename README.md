@@ -112,7 +112,8 @@ Script | Description
 **volume_slider.py** | **Python3** script that creates a *GTK* volume slider and executes a OS command to set volume via *amixer*
 
 
-> Some of those scripts are bound to a hotkey on *openbox's* **rc.xml** some others are bound to an executor or a button on *Tint2* and probably some of them needs some upgrade.
+> Some of those scripts are tied to a hotkey on *openbox's* **rc.xml** others to an executor or a button on *Tint2* and probably some of them needs updates
+> Necessary stuff ot make it work `python3-psutil python3-dbus wmctrl`
 
 ### THEMES
 

@@ -34,9 +34,14 @@ set smartcase
 set backspace=indent,eol,start
 " Make Ctrl-Arrows work well
 set term=xterm-256color
-syntax on
+" Terminal size
+set termwinsize=10x0
+" Splitting confs
+set splitbelow
+set splitright
 " Vim tell Leave INSERT mode
 au InsertLeave * set nopaste
+syntax on
 
 """""""""""""""""""""""""""
 " Vim-Plug plugin manager "
@@ -56,6 +61,7 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'scrooloose/nerdcommenter'
 Plug 'Xuyuanp/nerdtree-git-plugin', { 'on':  'NERDTreeToggle' }
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight', {'on': 'NERDTreeToggle'}
+Plug 'airblade/vim-gitgutter'
 Plug 'majutsushi/tagbar', {'on': 'TagbarToggle'}
 Plug 'itchyny/lightline.vim'
 Plug 'ryanoasis/vim-devicons'
@@ -136,7 +142,23 @@ imap <A-Left> <Esc><C-w>h
 imap <A-Right> <Esc><C-w>l
 imap <A-Up> <Esc><C-w>k
 imap <A-Down> <Esc><C-w>j
-"Move from below terminal to editor
+
+" Splitting
+nmap <C-\> :vsplit<CR>
+imap <C-\> <Esc>:vsplit<CR>
+nmap <Esc>\ :split<CR>
+imap <Esc>\ <Esc>:split<CR>
+
+" Resizing
+nmap 9 :vertical resize +1<CR>
+nmap 0 :vertical resize -1<CR>
+nmap ( :resize +1<CR>
+nmap ) :resize -1<CR>
+
+" Open terminal in NORMAL and INSERT mode
+nmap <C-^> :below terminal<CR>
+
+"Move from below terminal to editors
 tnoremap <A-Up> <C-w>k
 
 " NERDCommenter

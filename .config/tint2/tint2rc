@@ -73,7 +73,7 @@ border_color_pressed = #000000 100
 
 #-------------------------------------
 # Panel
-panel_items = TEPPBESC
+panel_items = TEPBESC
 panel_size = 100% 24
 panel_margin = 0 0
 panel_padding = 0 0 0
@@ -208,7 +208,7 @@ ac_disconnected_cmd = python3 ~/.local/bin/notify.py Battery battery-full-symbol
 #-------------------------------------
 # Executor 1
 execp = new
-execp_command = sh ~/.local/bin/desktop.sh
+execp_command = bash ~/.local/bin/desktop.sh
 execp_interval = 3
 execp_has_icon = 1
 execp_cache_icon = 1
@@ -219,10 +219,10 @@ execp_tooltip =
 execp_lclick_command = 
 execp_rclick_command = 
 execp_mclick_command = 
-execp_uwheel_command = sh ~/.local/bin/desktop.sh prev
-execp_dwheel_command = sh ~/.local/bin/desktop.sh next
+execp_uwheel_command = bash ~/.local/bin/desktop.sh prev
+execp_dwheel_command = bash ~/.local/bin/desktop.sh next
 execp_font = Noto Sans Medium 9
-execp_font_color = #F5F6F7 100
+execp_font_color = #f5f6f7 100
 execp_padding = 0 0
 execp_background_id = 0
 execp_centered = 0
@@ -232,7 +232,7 @@ execp_icon_h = 0
 #-------------------------------------
 # Executor 2
 execp = new
-execp_command = sh ~/.local/bin/echo_volume_icon.sh
+execp_command = bash ~/.local/bin/echo_volume_icon.sh
 execp_interval = 3
 execp_has_icon = 1
 execp_cache_icon = 1
@@ -243,8 +243,8 @@ execp_tooltip =
 execp_lclick_command = python3 ~/.local/bin/volume_slider.py
 execp_rclick_command = pavucontrol
 execp_mclick_command = 
-execp_uwheel_command = sh ~/.local/bin/manage_volume.sh up
-execp_dwheel_command = sh ~/.local/bin/manage_volume.sh down
+execp_uwheel_command = bash ~/.local/bin/manage_volume.sh up
+execp_dwheel_command = bash ~/.local/bin/manage_volume.sh down
 execp_font_color = #000000 100
 execp_padding = 0 0
 execp_background_id = 0
@@ -269,22 +269,6 @@ button_centered = 1
 button_max_icon_size = 0
 
 #-------------------------------------
-# Button 2
-button = new
-button_icon = nvidia
-button_text = 
-button_lclick_command = python3 ~/.local/bin/nvidia_info.py
-button_rclick_command = 
-button_mclick_command = 
-button_uwheel_command = 
-button_dwheel_command = 
-button_font_color = #000000 100
-button_padding = 2 0
-button_background_id = 0
-button_centered = 1
-button_max_icon_size = 0
-
-#-------------------------------------
 # Tooltip
 tooltip_show_timeout = 0.1
 tooltip_hide_timeout = 0.2
@@ -292,3 +276,4 @@ tooltip_padding = 10 5
 tooltip_background_id = 5
 tooltip_font_color = #dddddd 100
 tooltip_font = Noto Sans Medium 10
+

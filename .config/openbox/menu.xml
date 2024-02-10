@@ -13,8 +13,8 @@
     <item label="Vi IMproved" icon="/usr/share/icons/Papirus/24x24/apps/vim.svg">
         <action name="Execute"><execute>gvim -f</execute></action>
     </item>
-    <item label="KeePassXC" icon="/usr/share/icons/Papirus/24x24/apps/keepassxc.svg">
-        <action name="Execute"><execute>keepassxc</execute></action>
+    <item label="Bitwarden" icon="/usr/share/icons/Papirus/24x24/apps/bitwarden.svg">
+        <action name="Execute"><execute>bitwarden</execute></action>
     </item>
     <separator label="Categories"/>
     <menu id="utilities" icon="/usr/share/icons/Papirus/24x24/apps/applications-accessories.svg" label="Utilities">
@@ -24,28 +24,19 @@
       <item label="File Manager PCManFM" icon="/usr/share/icons/Papirus/24x24/apps/system-file-manager.svg">
         <action name="Execute"><execute>pcmanfm</execute></action>
       </item>
-      <item label="Flameshot" icon="/usr/share/icons/Papirus/24x24/apps/flameshot.svg">
-        <action name="Execute"><execute>flameshot</execute></action>
-      </item>
       <item label="Galculator" icon="/usr/share/icons/Papirus/24x24/apps/calc.svg">
         <action name="Execute"><execute>galculator</execute></action>
       </item>
-      <item label="KeePassXC" icon="/usr/share/icons/Papirus/24x24/apps/keepassxc.svg">
-        <action name="Execute"><execute>keepassxc</execute></action>
+      <item label="Bitwarden" icon="/usr/share/icons/Papirus/24x24/apps/bitwarden.svg">
+        <action name="Execute"><execute>bitwarden</execute></action>
       </item>
       <item label="Vi IMproved" icon="/usr/share/icons/Papirus/24x24/apps/vim.svg">
         <action name="Execute"><execute>gvim -f</execute></action>
       </item>
     </menu>
     <menu id="graphics" icon="/usr/share/icons/Papirus/24x24/apps/applications-graphics.svg" label="Graphics">
-      <item label="Color picker" icon="/usr/share/icons/Papirus/24x24/apps/gcolor2.svg">
-          <action name="Execute"><execute>gcolor2</execute></action>
-      </item>
-      <item label="GIMP" icon="/usr/share/icons/Papirus/24x24/apps/gimp.svg">
-        <action name="Execute"><execute>gimp-2.10</execute></action>
-      </item>
-      <item label="Inkscape" icon="/usr/share/icons/Papirus/24x24/apps/inkscape.svg">
-        <action name="Execute"><execute>inkscape</execute></action>
+      <item label="Color picker" icon="/usr/share/icons/Papirus/24x24/apps/gcolor3.svg">
+          <action name="Execute"><execute>gcolor3</execute></action>
       </item>
       <item label="LibreOffice Draw" icon="/usr/share/icons/Papirus/24x24/apps/libreoffice-draw.svg">
         <action name="Execute"><execute>libreoffice --draw</execute></action>
@@ -55,14 +46,11 @@
       </item>
     </menu>
     <menu id="development" icon="/usr/share/icons/Papirus/24x24/apps/applications-development.svg" label="Development">
-    <item label="Atom" icon="/usr/share/icons/Papirus/24x24/apps/atom.svg">
-       <action name="Execute"><execute>atom</execute></action>
-     </item>
      <item label="DBeaver" icon="/usr/share/icons/Papirus/24x24/apps/dbeaver.svg">
         <action name="Execute"><execute>dbeaver</execute></action>
       </item>
-      <item label="Insomnia" icon="/usr/share/icons/Papirus/24x24/apps/insomnia.svg">
-        <action name="Execute"><execute>insomnia</execute></action>
+      <item label="Insomnium" icon="/usr/share/icons/Papirus/24x24/apps/insomnia.svg">
+        <action name="Execute"><execute>insomnium</execute></action>
       </item>
       <item label="Intellij Idea" icon="/usr/share/icons/Papirus/24x24/apps/intellij.svg">
         <action name="Execute"><execute>intellijidea</execute></action>
@@ -73,18 +61,21 @@
       <item label="Pycharm" icon="/usr/share/icons/Papirus/24x24/apps/pycharm.svg">
         <action name="Execute"><execute>pycharm</execute></action>
       </item>
-     <item label="TkDiff" icon="/usr/share/icons/Papirus/24x24/apps/kompare.svg">
-        <action name="Execute"><execute>tkdiff</execute></action>
+     <item label="Diffuse" icon="/usr/share/icons/Papirus/24x24/apps/diffuse.svg">
+        <action name="Execute"><execute>diffuse</execute></action>
       </item>
-      <item label="Visual Studio Code" icon="/usr/share/icons/Papirus/24x24/apps/code.svg">
-        <action name="Execute"><execute>code --unity-launch</execute></action>
+      <item label="VSCodium" icon="/usr/share/icons/Papirus/24x24/apps/code.svg">
+        <action name="Execute"><execute>codium</execute></action>
       </item>
     </menu>
     <menu id="network" icon="/usr/share/icons/Papirus/24x24/apps/applications-internet.svg" label="Network">
       <item label="Chromium" icon="/usr/share/icons/Papirus/24x24/apps/chromium.svg">
         <action name="Execute"><execute>chromium</execute></action>
       </item>
-           <item label="Firefox" icon="/usr/share/icons/Papirus/24x24/apps/firefox.svg">
+      <item label="Ferdium" icon="/usr/share/icons/Papirus/24x24/apps/ferdium.svg">
+        <action name="Execute"><execute>ferdium</execute></action>
+      </item>
+      <item label="Firefox" icon="/usr/share/icons/Papirus/24x24/apps/firefox.svg">
         <action name="Execute"><execute>firefox</execute></action>
       </item>
       <item label="Firefox-Dev" icon="/usr/share/icons/Papirus/24x24/apps/firefox-developer-edition.svg">
@@ -96,9 +87,6 @@
       <item label="Mutt" icon="/usr/share/icons/Papirus/24x24/apps/mutt.svg">
         <action name="Execute"><execute>sakura -e 'mutt'</execute></action>
       </item>
-      <item label="Rambox" icon="/usr/share/icons/Papirus/24x24/apps/rambox.svg">
-        <action name="Execute"><execute>rambox</execute></action>
-      </item>
       <item label="Thunderbird" icon="/usr/share/icons/Papirus/24x24/apps/thunderbird.svg">
         <action name="Execute"><execute>thunderbird</execute></action>
       </item>
@@ -109,7 +97,7 @@
         <action name="Execute"><execute>transmission-gtk</execute></action>
       </item>
       <item label="Zoom" icon="/usr/share/icons/Papirus/24x24/apps/Zoom.svg">
-        <action name="Execute"><execute>/usr/bin/zoomapp</execute></action>
+        <action name="Execute"><execute>zoom</execute></action>
       </item>
     </menu>
     <menu id="games" icon="/usr/share/icons/Papirus/24x24/apps/applications-games.svg" label="Games">
@@ -118,9 +106,6 @@
       </item>
     </menu>
     <menu id="office" icon="/usr/share/icons/Papirus/24x24/apps/applications-office.svg" label="Office">
-      <item label="Document Viewer" icon="/usr/share/icons/Papirus/24x24/apps/document-viewer.svg">
-        <action name="Execute"><execute>zathura</execute></action>
-      </item>
       <item label="LibreOffice" icon="/usr/share/icons/Papirus/24x24/apps/libreoffice.svg">
         <action name="Execute"><execute>libreoffice</execute></action>
       </item>
@@ -139,11 +124,11 @@
       <item label="LibreOffice Writer" icon="/usr/share/icons/Papirus/24x24/apps/libreoffice-writer.svg">
         <action name="Execute"><execute>libreoffice --writer</execute></action>
       </item>
+      <item label="Document Viewer" icon="/usr/share/icons/Papirus/24x24/apps/document-viewer.svg">
+        <action name="Execute"><execute>zathura</execute></action>
+      </item>
     </menu>
     <menu id="multimedia" icon="/usr/share/icons/Papirus/24x24/apps/applications-multimedia.svg" label="Multimedia">
-      <item label="Clementine" icon="/usr/share/icons/Papirus/24x24/apps/clementine.svg">
-        <action name="Execute"><execute>clementine</execute></action>
-      </item>
       <item label="HDAJackRetask" icon="/usr/share/icons/Papirus/24x24/devices/audio-speakers.svg">
         <action name="Execute"><execute>hdajackretask</execute></action>
       </item>
@@ -187,8 +172,8 @@
       <item label="GParted" icon="/usr/share/icons/Papirus/24x24/apps/gparted.svg">
         <action name="Execute"><execute>xdg-su -c gparted</execute></action>
       </item>
-      <item label="LXRandR" icon="/usr/share/icons/Papirus/24x24/devices/video-display.svg">
-        <action name="Execute"><execute>lxrandr</execute></action>
+      <item label="aRandR" icon="/usr/share/icons/Papirus/24x24/devices/video-display.svg">
+        <action name="Execute"><execute>arandr</execute></action>
       </item>
       <item label="Oracle VM VirtualBox" icon="/usr/share/icons/Papirus/24x24/apps/virtualbox.svg">
         <action name="Execute"><execute>VirtualBox</execute></action>
@@ -196,31 +181,22 @@
       <item label="Sakura" icon="/usr/share/icons/Papirus/24x24/apps/terminal.svg">
         <action name="Execute"><execute>sakura</execute></action>
       </item>
-      <item label="XTerm" icon="/usr/share/icons/Papirus/24x24/apps/xterm.svg">
-        <action name="Execute"><execute>xterm</execute></action>
-      </item>
-      <item label="YaST Software" icon="/usr/share/icons/Papirus/24x24/apps/yast-software.svg">
-        <action name="Execute"><execute>/usr/lib/YaST2/bin/sw_single_wrapper</execute></action>
-      </item>
-      <item label="YaST" icon="/usr/share/icons/Papirus/24x24/apps/yast.svg">
-        <action name="Execute"><execute>xdg-su -c /sbin/yast2</execute></action>
-      </item>
     </menu>
     <menu id="power" icon="/usr/share/icons/Papirus/24x24/apps/system-shutdown.svg" label="Power">
       <item label="Exit" icon="/usr/share/icons/Papirus/24x24/apps/system-log-out.svg">
-        <action name="Execute"><execute>sh ~/.local/bin/power_menu.sh 4</execute></action>
+        <action name="Execute"><execute>bash ~/.local/bin/power_menu.sh 4</execute></action>
       </item>
       <item label="Suspend" icon="/usr/share/icons/Papirus/24x24/apps/system-suspend.svg">
-        <action name="Execute"><execute>sh ~/.local/bin/power_menu.sh 0</execute></action>
+        <action name="Execute"><execute>bash ~/.local/bin/power_menu.sh 0</execute></action>
       </item>
       <item label="Hibernate" icon="/usr/share/icons/Papirus/24x24/apps/system-hibernate.svg">
-        <action name="Execute"><execute>sh ~/.local/bin/power_menu.sh 1</execute></action>
+        <action name="Execute"><execute>bash ~/.local/bin/power_menu.sh 1</execute></action>
       </item>
       <item label="Reboot" icon="/usr/share/icons/Papirus/24x24/apps/system-reboot.svg">
-        <action name="Execute"><execute>sh ~/.local/bin/power_menu.sh 3</execute></action>
+        <action name="Execute"><execute>bash ~/.local/bin/power_menu.sh 3</execute></action>
       </item>
       <item label="Power Off" icon="/usr/share/icons/Papirus/24x24/apps/system-shutdown.svg">
-        <action name="Execute"><execute>sh ~/.local/bin/power_menu.sh 2</execute></action>
+        <action name="Execute"><execute>bash ~/.local/bin/power_menu.sh 2</execute></action>
       </item>
     </menu>
   </menu>

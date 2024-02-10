@@ -440,45 +440,45 @@
     <!-- Volume -->
     <keybind key="XF86AudioRaiseVolume">
       <action name="Execute">
-        <command>sh ~/.local/bin/manage_volume.sh up</command>
+        <command>bash ~/.local/bin/manage_volume.sh up</command>
       </action>
     </keybind>
     <keybind key="XF86AudioLowerVolume">
       <action name="Execute">
-        <command>sh ~/.local/bin/manage_volume.sh down</command>
+        <command>bash ~/.local/bin/manage_volume.sh down</command>
       </action>
     </keybind>
     <keybind key="XF86AudioMute">
       <action name="Execute">
-        <command>sh ~/.local/bin/manage_volume.sh mute</command>
+        <command>bash ~/.local/bin/manage_volume.sh mute</command>
       </action>
     </keybind>
     <!-- Backlight -->
     <keybind key="XF86MonBrightnessUp">
       <action name="Execute">
-        <command>sh ~/.local/bin/backlight.sh up</command>
+        <command>bash ~/.local/bin/backlight.sh up</command>
       </action>
     </keybind>
     <keybind key="XF86MonBrightnessDown">
       <action name="Execute">
-        <command>sh ~/.local/bin/backlight.sh down</command>
+        <command>bash ~/.local/bin/backlight.sh down</command>
       </action>
     </keybind>
     <!-- Keyboard Backlight -->
     <keybind key="XF86KbdBrightnessUp">
       <action name="Execute">
-        <command>sh ~/.local/bin/keyboard_backlight.sh up</command>
+        <command>bash ~/.local/bin/keyboard_backlight.sh up</command>
       </action>
     </keybind>
     <keybind key="XF86KbdBrightnessDown">
       <action name="Execute">
-        <command>sh ~/.local/bin/keyboard_backlight.sh down</command>
+        <command>bash ~/.local/bin/keyboard_backlight.sh down</command>
       </action>
     </keybind>
     <!-- Miscellanea -->
     <keybind key="W-l">
       <action name="Execute">
-        <command>sh ~/.local/bin/lock.sh lock</command>
+        <command>bash ~/.local/bin/lock.sh lock</command>
       </action>
     </keybind>
     <keybind key="Print">
@@ -493,12 +493,12 @@
     </keybind>
     <keybind key="W-F12">
       <action name="Execute">
-        <command>sh ~/.local/bin/toggle_notifications.sh</command>
+        <command>bash ~/.local/bin/toggle_notifications.sh</command>
       </action>
     </keybind>
     <keybind key="W-p">
       <action name="Execute">
-        <command>sh ~/.local/bin/external_monitor.sh</command>
+        <command>bash ~/.local/bin/external_monitor.sh</command>
       </action>
     </keybind>
     <!-- Applications -->
@@ -534,7 +534,7 @@
     </keybind>
     <keybind key="W-v">
       <action name="Execute">
-        <command>code</command>
+        <command>codium</command>
       </action>
     </keybind>
     <keybind key="W-c">

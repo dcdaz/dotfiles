@@ -2,7 +2,7 @@
 
 # Launch script that switch to external monitor
 # or laptop monitor when cable is connected/disconnected
-exec ~/.local/bin/external_monitor.sh &
+bash ~/.local/bin/external_monitor.sh &
 
 # Launch Keyboard config layout
 # -option numpad:mac -> allow to use numeric keypad without press numblock key
@@ -12,7 +12,7 @@ setxkbmap -layout us -variant altgr-intl -option deadkeys
 xset b off &
 
 # Set wallpaper
-(sleep 0.5s && feh --bg-center ~/Pictures/scifi/scifi5.jpg) &
+(sleep 0.5s && feh --bg-center ~/Pictures/night\ cities/night-city2.jpeg) &
 
 # Launch Tint2 bar
 (sleep 0.2s && tint2) &
@@ -36,4 +36,4 @@ xset b off &
 (sleep 0.2s && asusctl -k high && asusctl -k off ) &
 
 # Automatic Lock and Suspend
-(sleep 0.2s && sh ~/.local/bin/lock.sh autolock) &
+(sleep 0.2s && bash ~/.local/bin/lock.sh autolock) &
