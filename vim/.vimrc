@@ -10,10 +10,7 @@
 " Github : @dcdaz                   "
 """""""""""""""""""""""""""""""""""""
 
-"""""""""""""""
-" Basic Confs "
-"""""""""""""""
-
+" Basic Confs
 set encoding=utf-8
 set number
 set expandtab
@@ -27,151 +24,57 @@ set title
 set nocp
 set noshowmode
 set hlsearch
-" Use case insensitive search, except when using capital letters
 set ignorecase
 set smartcase
-" Make 'Backspace' key work propely on some vim instances
+set laststatus=2
 set backspace=indent,eol,start
-" Make Ctrl-Arrows work well
 set term=xterm-256color
-" Terminal size
 set termwinsize=10x0
-" Splitting confs
 set splitbelow
 set splitright
-" Vim tell Leave INSERT mode
 au InsertLeave * set nopaste
 syntax on
 
-"""""""""""""""""""""""""""
-" Vim-Plug plugin manager "
-"""""""""""""""""""""""""""
-
-" Install vim-plug and plugins only if there aren't present
+" Vim Plugins
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-" Specify a directory for plugins
-" - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.vim/vim-plugins')
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'scrooloose/nerdcommenter'
-Plug 'Xuyuanp/nerdtree-git-plugin', { 'on':  'NERDTreeToggle' }
+Plug 'Xuyuanp/nerdtree-git-plugin', {'on':  'NERDTreeToggle'}
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight', {'on': 'NERDTreeToggle'}
 Plug 'airblade/vim-gitgutter'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'majutsushi/tagbar', {'on': 'TagbarToggle'}
 Plug 'itchyny/lightline.vim'
 Plug 'ryanoasis/vim-devicons'
-Plug 'alvan/vim-closetag'
+Plug 'dracula/vim', {'as': 'dracula'}
 Plug 'severin-lemaignan/vim-minimap', {'on': []}
-Plug 'smancill/conky-syntax.vim', {'for': 'conky'}
-Plug 'udalov/kotlin-vim', {'for': 'kotlin'}
-Plug 'peterhoeg/vim-qml', {'for': 'qml'}
-Plug 'rust-lang/rust.vim', {'for': 'rust'}
-Plug 'cespare/vim-toml', {'for': 'toml'}
-Plug 'dracula/vim', { 'as': 'dracula' }
-" Initialize plugin system
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'hrsh7th/vim-vsnip'
+Plug 'hrsh7th/vim-vsnip-integ'
+Plug 'puremourning/vimspector',{'for': ['rust','c','cpp','python','javascript']} 
 call plug#end()
 
-"""""""""""
-" Sources "
-"""""""""""
+" Colorscheme and Font
+silent! colorscheme dracula
+set guifont=Inconsolata\ Nerd\ Font\ Mono\ 12
 
-" Various Confs
-source ~/.vim/confs/various.vim
-" Custom Functions
-source ~/.vim/confs/custom-functions.vim
-" Pastemode automatically
-source ~/.vim/confs/pastemode.vim
+" Misc
+source ~/.vim/config/misc.vim
+" Pastemode
+source ~/.vim/config/pastemode.vim
 " Lightline
-source ~/.vim/confs/lightline.vim
-" Nerd Stuff
-source ~/.vim/confs/nerd-stuff.vim
-
-""""""""""""""""
-" OmniComplete "
-""""""""""""""""
-
-" Syntax completion
-set omnifunc=syntaxcomplete#Complete
-set completeopt+=longest,menuone
-" Popup Menu config
-highlight Pmenu ctermbg=236 ctermfg=250 guibg=#313131 guifg=#D6D6D6
-
-"""""""""""""""""""""
-" Mapping Shortcuts "
-"""""""""""""""""""""
-
-" Lazy mappings
-map 1 :NERDTreeToggle<CR>
-map 2 :TagbarToggle<CR>
-" Toggle wrapping long text
-map 3 :call ToggleWrap()<CR>
-" ShortCut MiniMap
-map 4 :MinimapToggle<CR>
-
-" Visual Block
-nnoremap vb <C-v>
-
-" Tabs
-" Create new Tab
-map za :tabnew<CR>
-" Move to the right tab
-map zx gt
-" Move to the left tab
-map zz gT
-
-" Simple Behavior
-" Paste text from clipboard with 'Ctrl+v'
-map <C-v> "+gP
-" Select all text with 'Ctrl+a'
-map <C-a> ggVG
-" Format Json
-nmap fj :set syntax=json \| %!python3 -m json.tool<CR>
-" Format XML
-nmap fx :set syntax=xml \| %!python3 -c "import xml.dom.minidom, sys; print(xml.dom.minidom.parse(sys.stdin).toprettyxml())"<CR>
-" Move between panes in NORMAL and INSERT modes
-nmap <A-Left> <C-w>h
-nmap <A-Right> <C-w>l
-nmap <A-Up> <C-w>k
-nmap <A-Down> <C-w>j
-imap <A-Left> <Esc><C-w>h
-imap <A-Right> <Esc><C-w>l
-imap <A-Up> <Esc><C-w>k
-imap <A-Down> <Esc><C-w>j
-
-" Splitting
-nmap <C-\> :vsplit<CR>
-imap <C-\> <Esc>:vsplit<CR>
-nmap <Esc>\ :split<CR>
-imap <Esc>\ <Esc>:split<CR>
-
-" Resizing
-nmap 9 :vertical resize +1<CR>
-nmap 0 :vertical resize -1<CR>
-nmap ( :resize +1<CR>
-nmap ) :resize -1<CR>
-
-" Open terminal in NORMAL and INSERT mode
-nmap <C-^> :below terminal<CR>
-
-"Move from below terminal to editors
-tnoremap <A-Up> <C-w>k
-
-" NERDCommenter
-" Toggle Comment line or selected text with 'Ctrl+/'
-nmap <C-_> <leader>c<Space>
-vmap <C-_> <leader>c<Space>
-
-" Omnicompletion
-imap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
-            \ "\<lt>C-n>" :
-            \ "\<lt>C-x>\<lt>C-o><c-r>=pumvisible() ?" .
-            \ "\"\\<lt>c-n>\\<lt>c-p>\\<lt>c-n>\" :" .
-            \ "\" \\<lt>bs>\\<lt>C-n>\"\<CR>"
-imap <C-@> <C-Space>
-imap <C-k> <c-r>=SmartOmniComplete()<CR>
+source ~/.vim/config/lightline.vim
+" LSP
+source ~/.vim/config/lsp.vim
+" Mapping
+source ~/.vim/config/mapping.vim
 
