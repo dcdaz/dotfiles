@@ -10,7 +10,7 @@ import gi
 
 gi.require_version('Gtk', '3.0')
 
-from gi.repository import Gtk
+from gi.repository import Gtk, Gdk
 
 
 class Config(object):
@@ -18,6 +18,8 @@ class Config(object):
     # Window size default is 300 x 500
     Width = 300
     Height = 500
+    # Use Dark Theme if possible
+    DarkTheme = True
     # This will be used as title tag for notes on file and will allow app to create tabs from them with its content
     TitleTag = ###
     # Notes filepath by default is ~/.local/share/notes
@@ -43,6 +45,7 @@ class Config(object):
 
     APP_WIDTH = 300
     APP_HEIGHT = 500
+    USE_DARK_THEME = True
     TITLE_TAG = '###'
     NOTES_PATH = '~/local/share/notes'
     AUTOSAVE_TIME = 20
@@ -51,9 +54,9 @@ class Config(object):
     HINT_TYPE = 0
     KEEP_ABOVE = True
 
-    map_notes_position = {'TOP': (0, 1), 'BOTTOM': (1, 0)}
-    map_tabs_position = {'LEFT': 0, 'RIGHT': 1, 'TOP': 2, 'BOTTOM': 3}
-    map_hint_type = {'NORMAL': 0, 'DOCK': 6, 'DESKTOP': 7}
+    NOTES_POSITION_MAP = {'TOP': (0, 1), 'BOTTOM': (1, 0)}
+    TABS_POSITION_MAP = {'LEFT': 0, 'RIGHT': 1, 'TOP': 2, 'BOTTOM': 3}
+    HINT_TYPE_MAP = {'NORMAL': 0, 'DOCK': 6, 'DESKTOP': 7}
 
     def __init__(self):
         import configparser
@@ -82,37 +85,28 @@ class Config(object):
         )
 
     def add_general_config(self, general):
-        Config.APP_WIDTH = self.get_int(general.get('Width'), 'Width') if general.get('Width') else self.APP_WIDTH
-        Config.APP_HEIGHT = self.get_int(general.get('Height'), 'Height') if general.get('Height') else self.APP_HEIGHT
+        Config.APP_WIDTH = general.getint('Width') if general.get('Width') else self.APP_WIDTH
+        Config.APP_HEIGHT = general.getint('Height') if general.get('Height') else self.APP_HEIGHT
+        Config.USE_DARK_THEME = general.getboolean('DarkTheme') if general.get('DarkTheme') else self.USE_DARK_THEME
         Config.TITLE_TAG = general.get('TitleTag') if general.get('TitleTag') else self.TITLE_TAG
         Config.NOTES_PATH = general.get('NotesPath') if general.get('NotesPath') else self.NOTES_PATH
-        Config.AUTOSAVE_TIME = self.get_int(general.get('AutoSaveTime'), 'AutoSaveTime') if general.get(
-            'AutoSaveTime') else self.AUTOSAVE_TIME
+        Config.AUTOSAVE_TIME = general.getint('AutoSaveTime') if general.get('AutoSaveTime') else self.AUTOSAVE_TIME
 
     def add_positions_config(self, positions):
         Config.NOTES_POSITION = \
-            self.map_notes_position.get(positions.get('Notes').upper()) if positions.get(
+            self.NOTES_POSITION_MAP.get(positions.get('Notes').upper()) if positions.get(
                 'Notes') else self.NOTES_POSITION
         Config.TABS_POSITION = \
-            self.map_tabs_position.get(positions.get('Tabs').upper()) if positions.get('Tabs') else self.TABS_POSITION
+            self.TABS_POSITION_MAP.get(positions.get('Tabs').upper()) if positions.get('Tabs') else self.TABS_POSITION
 
     def add_behavior_config(self, behavior):
         Config.HINT_TYPE = \
-            self.map_hint_type.get(behavior.get('HintType').upper()) if behavior.get('HintType') else self.APP_WIDTH
+            self.HINT_TYPE_MAP.get(behavior.get('HintType').upper()) if behavior.get('HintType') else self.APP_WIDTH
         try:
             from distutils.util import strtobool
             Config.KEEP_ABOVE = strtobool(behavior.get('KeepAbove')) if behavior.get('KeepAbove') else self.KEEP_ABOVE
         except ValueError:
             print("'{type} = {value}' is not a valid Boolean".format(value=behavior.get('KeepAbove'), type='KeepAbove'))
-            import sys
-            sys.exit(1)
-
-    @staticmethod
-    def get_int(value, property_name):
-        try:
-            return int(value)
-        except ValueError:
-            print("'{type} = {value}' is not valid number".format(value=value, type=property_name))
             import sys
             sys.exit(1)
 
@@ -164,6 +158,8 @@ class FileHandler(object):
 class NoteBook(object):
 
     def __init__(self):
+        if self.is_already_running():
+            self.kill_instances()
         Config()
         Gtk.init_check()
         from os.path import expanduser
@@ -197,8 +193,52 @@ class NoteBook(object):
             self.file_handler.write_data(self.win.get_notebook_data())
             sleep(Config.AUTOSAVE_TIME)
 
+    @staticmethod
+    def is_already_running():
+        import psutil
+
+        exists_process = [' '.join(p.cmdline()) for p in psutil.process_iter() if
+                          (len(p.cmdline()) > 0 and ' '.join(p.cmdline()).__contains__('notes.py'))]
+
+        # Greater than 1 because one of them is the current process
+        if len(exists_process) > 1:
+            return True
+
+        return False
+
+    @staticmethod
+    def kill_instances():
+        import os
+        command_to_search_processes = 'ps h -eo pid:1,command  | grep -i notes.py'
+        # Nasty way of doing things, check if we can do it in a better way
+        processes = [
+            (int(process), command) for process, command in [
+                ps_output.rstrip('\n').split(' ', 1) for ps_output in os.popen(command_to_search_processes)
+            ]
+        ]
+        for current_process in processes:
+            # Signal 15 is SIGTERM related to terminate action
+            os.kill(current_process[0], 15)
+
 
 class NoteBookWindow(Gtk.Window):
+    CSS_CONFIG = """
+        .tabbed-notes {
+            border-radius: 5px;
+        }
+        .tabbed-notes notebook > header {
+            border: none;
+            border-radius: 5px 5px 0px 0px;
+        }
+        .tabbed-notes notebook > stack, .tabbed-notes notebook.frame {
+            border: none;
+        }
+        .tabbed-notes notebook tab {
+            border: none;
+            border-radius: 5px 5px 0px 0px;
+        }
+    """
+
     def __init__(self):
         Gtk.Window.__init__(self, title='NoteBook')
         self.set_window_properties()
@@ -206,6 +246,8 @@ class NoteBookWindow(Gtk.Window):
         self.add(notebook_grid)
         self.notebook = Gtk.Notebook(vexpand=True, hexpand=True)
         self.notebook.set_tab_pos(Config.TABS_POSITION)
+        self.notebook.set_scrollable(True)
+        self.notebook.set_show_border(False)
         buttons_box = self.create_buttons_box_and_return()
         notebook_grid.attach(self.notebook, 0, Config.NOTES_POSITION[0], 1, 1)
         notebook_grid.attach(buttons_box, 0, Config.NOTES_POSITION[1], 1, 1)
@@ -217,9 +259,27 @@ class NoteBookWindow(Gtk.Window):
         self.set_keep_above(Config.KEEP_ABOVE)
         self.set_type_hint(Config.HINT_TYPE)
         self.set_decorated(False)
-        self.set_border_width(2)
         self.set_default_size(Config.APP_WIDTH, Config.APP_HEIGHT)
         self.stick()
+        css_provider = Gtk.CssProvider()
+        css_provider.load_from_data(self.CSS_CONFIG)
+        context = Gtk.StyleContext()
+        screen = Gdk.Screen.get_default()
+        context.add_provider_for_screen(
+            screen,
+            css_provider,
+            Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
+        )
+        Gtk.Settings.get_default().set_property('gtk-application-prefer-dark-theme', Config.USE_DARK_THEME)
+        # Gtk.Settings.get_default().set_property('gtk-application-prefer-dark-theme', False)
+        icon_theme_name = Gtk.Settings.get_default().get_property('gtk-icon-theme-name')
+        if Config.USE_DARK_THEME:
+            from os.path import exists, expanduser
+            dark_icon_theme_general = exists('/usr/share/icons/' + icon_theme_name + '-Dark')
+            dark_icon_theme_user_on_local = exists('~/.local/share/icons/' + icon_theme_name + '-Dark')
+            dark_icon_theme_user = exists('~/.icons/' + icon_theme_name + '-Dark')
+            if dark_icon_theme_general or dark_icon_theme_user or dark_icon_theme_user_on_local:
+                Gtk.Settings.get_default().set_property('gtk-icon-theme-name', icon_theme_name + '-Dark')
 
     def create_buttons_box_and_return(self):
         button_box = Gtk.Box()
@@ -242,7 +302,9 @@ class NoteBookWindow(Gtk.Window):
 
     def create_notebooks(self, data):
         for title, value in data.items():
-            self.notebook.append_page(NoteBookPage(title, value), Gtk.Label(label=title))
+            notebook_page = NoteBookPage(title, value)
+            self.notebook.append_page(notebook_page, Gtk.Label(label=title))
+            self.notebook.set_tab_reorderable(notebook_page, True)
 
     def get_notebook_data(self):
         notebook_data = ''
@@ -288,7 +350,6 @@ class NewTabWindow(Gtk.Dialog):
 class NoteBookPage(Gtk.Box):
     def __init__(self, name, data):
         Gtk.Box.__init__(self, name=name, vexpand=True, hexpand=True)
-        self.set_border_width(2)
         self.tex_view = NoteBookPageData(data)
         self.add(self.tex_view)
 
@@ -301,7 +362,7 @@ class NoteBookPageData(Gtk.ScrolledWindow):
         Gtk.ScrolledWindow.__init__(self, vexpand=True, hexpand=True)
         self.text_buffer = None
         self.text_view = None
-        self.set_border_width(2)
+        self.set_border_width(5)
         self.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)  # scroll only if needed
         self.load_text_buffer(data)
         self.load_text_view()
@@ -328,34 +389,5 @@ class NoteBookPageData(Gtk.ScrolledWindow):
         return text_view_data
 
 
-def is_already_running():
-    import psutil
-
-    exists_process = [' '.join(p.cmdline()) for p in psutil.process_iter() if
-                      (len(p.cmdline()) > 0 and ' '.join(p.cmdline()).__contains__('notes.py'))]
-
-    # Greater than 1 because one of them is the current process
-    if len(exists_process) > 1:
-        return True
-
-    return False
-
-
-def kill_instances():
-    import os
-    command_to_search_processes = 'ps h -eo pid:1,command  | grep -i notes.py'
-    # Nasty way of doing things, check if we can do it in a better way
-    processes = [
-        (int(process), command) for process, command in [
-            ps_output.rstrip('\n').split(' ', 1) for ps_output in os.popen(command_to_search_processes)
-        ]
-    ]
-    for current_process in processes:
-        # Signal 15 is SIGTERM related to terminate action
-        os.kill(current_process[0], 15)
-
-
 if __name__ == '__main__':
-    if is_already_running():
-        kill_instances()
     NoteBook()

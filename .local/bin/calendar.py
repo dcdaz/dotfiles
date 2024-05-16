@@ -9,10 +9,21 @@ Github : @dcdaz
 import gi
 
 gi.require_version('Gtk', '3.0')
-from gi.repository import Gtk
+from gi.repository import Gtk, Gdk
 
 
 class Calendar(Gtk.Dialog):
+    CSS_CONFIG = """
+        .calendar-window {
+            border-radius: 5px;
+        }
+        .calendar-widget {
+            font-size: 15px;
+        }
+        .calendar-widget.view, .calendar-widget.header {
+            border: none;
+        }
+    """
 
     def __init__(self):
         if self.is_already_running():
@@ -21,7 +32,7 @@ class Calendar(Gtk.Dialog):
         Gtk.Dialog.__init__(self, title='Calendar')
         self.set_window_properties()
         box = self.get_content_area()
-        calendar = Gtk.Calendar(show_week_numbers=True)
+        calendar = Gtk.Calendar(show_week_numbers=False)
         calendar.get_style_context().add_class('calendar-widget')
         from datetime import date
         calendar.mark_day(date.today().day)
@@ -39,12 +50,22 @@ class Calendar(Gtk.Dialog):
 
     def set_window_properties(self):
         self.get_style_context().add_class('calendar-window')
-        self.set_default_size(600, 0)
+        self.set_default_size(320, 0)
         self.set_position(Gtk.WindowPosition.MOUSE)
         self.set_skip_taskbar_hint(True)
         self.set_keep_above(True)
         self.stick()
         self.set_decorated(False)
+        css_provider = Gtk.CssProvider()
+        css_provider.load_from_data(self.CSS_CONFIG)
+        context = Gtk.StyleContext()
+        screen = Gdk.Screen.get_default()
+        context.add_provider_for_screen(
+            screen,
+            css_provider,
+            Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
+        )
+        Gtk.Settings.get_default().set_property('gtk-application-prefer-dark-theme', True)
 
     @staticmethod
     def is_already_running():

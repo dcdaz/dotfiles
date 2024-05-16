@@ -10,12 +10,19 @@ import gi
 from xml.etree import ElementTree
 
 gi.require_version('Gtk', '3.0')
-from gi.repository import Gtk
+from gi.repository import Gtk, Gdk
 
 
 class NvidiaInfo(Gtk.Dialog):
+    CSS_CONFIG = """
+        .nvidia-monitor {
+            border-radius: 5px;
+        }
+    """
 
     def __init__(self, nvidia_markup_data):
+        if self.is_already_running():
+            self.kill_instances()
         Gtk.init_check()
         Gtk.Dialog.__init__(self, title='Nvidia Info')
         self.set_window_properties()
@@ -34,14 +41,6 @@ class NvidiaInfo(Gtk.Dialog):
             Gtk.main_quit()
 
     def set_window_properties(self):
-        css = '* { background-color: #f00; }'
-        css_provider = Gtk.CssProvider()
-        # css_provider.load_from_data(css)
-        context = Gtk.StyleContext()
-        # screen = Gdk.Screen.get_default()
-        # context.add_provider_for_screen(screen, css_provider,
-        #                                 Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
-
         self.get_style_context().add_class('nvidia-monitor')
         self.set_border_width(10)
         self.set_position(Gtk.WindowPosition.MOUSE)
@@ -50,33 +49,44 @@ class NvidiaInfo(Gtk.Dialog):
         self.set_keep_above(True)
         self.stick()
         self.set_decorated(False)
+        css_provider = Gtk.CssProvider()
+        css_provider.load_from_data(self.CSS_CONFIG)
+        context = Gtk.StyleContext()
+        screen = Gdk.Screen.get_default()
+        context.add_provider_for_screen(
+            screen,
+            css_provider,
+            Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
+        )
+        Gtk.Settings.get_default().set_property('gtk-application-prefer-dark-theme', True)
 
+    @staticmethod
+    def is_already_running():
+        import fcntl
+        import os
 
-def is_already_running():
-    import psutil
+        lock_file_pointer = os.open(os.path.realpath(__file__), os.O_WRONLY)
+        try:
+            fcntl.lockf(lock_file_pointer, fcntl.LOCK_EX | fcntl.LOCK_NB)
+            already_running = False
+        except IOError:
+            already_running = True
 
-    exists_process = [' '.join(p.cmdline()) for p in psutil.process_iter() if
-                      (len(p.cmdline()) > 0 and ' '.join(p.cmdline()).__contains__('nvidia.py'))]
+        return already_running
 
-    # Greater than 1 because one of them is the current process
-    if len(exists_process) > 1:
-        return True
-
-    return False
-
-
-def kill_instances():
-    import os
-    command_to_search_processes = 'ps h -eo pid:1,command  | grep -i nvidia.py'
-    # Nasty way of doing things, check if we can do it in a better way
-    processes = [
-        (int(process), command) for process, command in [
-            ps_output.rstrip('\n').split(' ', 1) for ps_output in os.popen(command_to_search_processes)
+    @staticmethod
+    def kill_instances():
+        import os
+        command_to_search_processes = 'ps h -eo pid:1,command  | grep -i nvidia.py'
+        # Nasty way of doing things, check if we can do it in a better way
+        processes = [
+            (int(process), command) for process, command in [
+                ps_output.rstrip('\n').split(' ', 1) for ps_output in os.popen(command_to_search_processes)
+            ]
         ]
-    ]
-    for current_process in processes:
-        # Signal 15 is SIGTERM related to terminate action
-        os.kill(current_process[0], 15)
+        for current_process in processes:
+            # Signal 15 is SIGTERM related to terminate action
+            os.kill(current_process[0], 15)
 
 
 def get_nvidia_info():
@@ -129,7 +139,4 @@ def get_nvidia_info():
 
 
 if __name__ == '__main__':
-    if is_already_running():
-        kill_instances()
-    nvidia_data = get_nvidia_info()
-    NvidiaInfo(nvidia_data)
+    NvidiaInfo(get_nvidia_info())
