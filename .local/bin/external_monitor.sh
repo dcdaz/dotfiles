@@ -29,7 +29,7 @@ INTERNAL_OUTPUT=$(xrandr |grep -E "$eDP|$LVDS" | cut -d ' ' -f 1)
 if [ "$EXTERNAL_OUTPUT_IS_CONNECTED" == "$CONNECTED_STATUS" ]; then
   # Find External output
   EXTERNAL_OUTPUT=$(echo "$CONNECTION" | cut -d ' ' -f 1)
-  xrandr --output $EXTERNAL_OUTPUT --primary --mode 1920x1080 --rate 74.97 --output $INTERNAL_OUTPUT --off
+  xrandr --output $EXTERNAL_OUTPUT --primary --mode 2560x1080 --rate 74.99 --output $INTERNAL_OUTPUT --off
 else
   # Check if Internal ouput is active after disconnect External output
   IS_INTERNAL_ACTIVE=$(xrandr | grep -E "$eDP|$LVDS" -A 1 | grep '*')

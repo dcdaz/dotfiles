@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Zoom
+GenericName=Meetings Client
+Comment=Private pain in the ass meetings client
+Exec=sh -c "$HOME/.local/share/zoom/ZoomLauncher" %u
+Icon=Zoom
+Terminal=false
+Type=Application
+Encoding=UTF-8
+Categories=Network;
+StartupNotify=true
+MimeType=x-scheme-handler/ferdium;

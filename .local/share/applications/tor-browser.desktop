@@ -2,7 +2,7 @@
 Name=Tor Browser
 GenericName=Tor Web Browser
 Comment=Web Navigator for anonymity on the net
-Exec=tor-browser %u
+Exec=sh -c "$HOME/.local/share/tor-browser/Browser/start-tor-browser" %u
 Icon=tor
 Terminal=false
 Type=Application

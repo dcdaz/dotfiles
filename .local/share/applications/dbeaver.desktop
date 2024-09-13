@@ -2,7 +2,7 @@
 Name=DBeaver
 GenericName=Database tool
 Comment=Tool for manage databases
-Exec=dbeaver %u
+Exec=sh -c "$HOME/.local/share/dbeaver/dbeaver"  %u
 Icon=dbeaver
 Terminal=false
 Type=Application

@@ -55,7 +55,7 @@ cmdname=`basename $0`
 ## Variables
 ##
 MOZ_DIST_BIN="/usr"
-MOZ_DIST_LIB="/opt/thunderbird"
+MOZ_DIST_LIB="$HOME/.local/share/thunderbird"
 MOZ_APPNAME="thunderbird"
 MOZ_PROGRAM="$MOZ_DIST_LIB/$MOZ_APPNAME-bin"
 

@@ -2,7 +2,7 @@
 Name=Intellij Idea
 GenericName=Java Development IDE
 Comment=Community Edition of Jetbrains IDE for java development
-Exec=intellijidea %u
+Exec=sh -c "$HOME/.local/share/intellij-idea/bin/idea.sh" %u
 Icon=intellij_idea
 Terminal=false
 Type=Application

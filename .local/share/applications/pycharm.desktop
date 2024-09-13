@@ -2,7 +2,7 @@
 Name=Pycharm
 GenericName=Python Development IDE
 Comment=Community Edition of Jetbrains IDE for python development
-Exec=pycharm %u
+Exec=sh -c "$HOME/.local/share/pycharm/bin/pycharm.sh" %u
 Icon=pycharm
 Terminal=false
 Type=Application

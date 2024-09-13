@@ -1,5 +1,0 @@
-#!/bin/sh
-
-sh /opt/idea-IC/bin/idea.sh &
-
-exit 0

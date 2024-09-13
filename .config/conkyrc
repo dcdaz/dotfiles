@@ -73,7 +73,7 @@ FAN SPEED: ${alignr 4}${execi 5 sensors | grep -A2 asus-isa | grep cpu_fan | cut
 ${color1}${font Noto Sans:style=Medium:size=14}TEMPERATURE${font}
 ${hr 2}
 # Proper HDD/SSD Temp should be done via "hddtemp" util, 
-# in my laptop case lm_sensors reports nvme-pci-adapter temp 
+# in my laptop lm_sensors reports nvme-pci-adapter temp
 # which is quite the same ~0.1 diff
 ${color1}${font weather:size=12}y${font} SSD: ${alignr 4}${execi 7 sensors | grep -A2 nvme | grep Composite | cut -d "+" -f2 | cut -c1-4} °C
 # Real Temp on K10 processors like Ryzen 9 4900HS, in older CPUS or intel ones, should be something like "Core" rather than "Tdie"
