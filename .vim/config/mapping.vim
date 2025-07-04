@@ -15,6 +15,7 @@ nnoremap 1 :NERDTreeToggle<CR>
 nnoremap 2 :TagbarToggle<CR>
 nnoremap 3 :call ToggleWrap()<CR>
 nnoremap 4 :MinimapToggle<CR>
+nnoremap 5 :GitGutterToggle<CR>
 
 " Paste and Select All
 noremap <C-v> "+gP
@@ -42,14 +43,14 @@ inoremap <A-Up> <Esc><C-w>k
 inoremap <A-Down> <Esc><C-w>j
 
 " Splitting and resizing Panes
-noremap <C-\> :vsplit<CR>
-noremap <Esc>\ :split<CR>
+noremap <C-\> :vnew<CR>
+noremap <C-S-\> :new<CR>
 noremap 0 :vertical resize +1<CR>
 noremap 9 :vertical resize -1<CR>
 noremap ) :resize +1<CR>
 noremap ( :resize -1<CR>
-inoremap <C-\> <Esc>:vsplit<CR>
-inoremap <Esc>\ <Esc>:split<CR>
+inoremap <C-\> <Esc>:vnew<CR>
+inoremap <C-S-\> <Esc>:new<CR>
 
 " Open terminal in NORMAL and INSERT mode and Move to/from it
 noremap <C-^> :below terminal<CR>
@@ -60,7 +61,15 @@ tnoremap <A-Up> <C-w>k
 nmap <C-_> <leader>c<Space>
 imap <C-_> <leader>c<Space>
 
-" LSP Pumvisible and Vim-Snip
+" GitGutter
+noremap <C-g> :GitGutterPreviewHunk<CR>
+noremap <C-h> :GitGutterLineHighlightsToggle<CR>
+inoremap <C-g> :GitGutterPreviewHunk<CR>
+inoremap <C-h> :GitGutterLineHighlightsToggle<CR>
+
+" LSP, Pumvisible and Vim-Snip
+noremap <C-b> :LspDefinition<CR>
+inoremap <C-b> <Esc>:LspDefinition<CR>
 inoremap <C-Space> <C-n>
 " inoremap <C-@> <C-Space>
 inoremap <expr> <CR> pumvisible() ? asyncomplete#close_popup() : "\<CR>"

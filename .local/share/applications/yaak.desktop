@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Yaak
+GenericName=API service testing tool
+Comment=Tool for test endpoints of an API
+Exec=yaak %u
+Icon=yaak
+Terminal=false
+Type=Application
+Encoding=UTF-8
+Categories=Development;
+StartupNotify=true

@@ -26,6 +26,7 @@ set noshowmode
 set hlsearch
 set ignorecase
 set smartcase
+set termguicolors
 set laststatus=2
 set backspace=indent,eol,start
 set term=xterm-256color
@@ -52,7 +53,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'majutsushi/tagbar', {'on': 'TagbarToggle'}
 Plug 'itchyny/lightline.vim'
 Plug 'ryanoasis/vim-devicons'
-Plug 'dracula/vim', {'as': 'dracula'}
+Plug 'catppuccin/vim', {'as': 'catppuccin'}
 Plug 'severin-lemaignan/vim-minimap', {'on': []}
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
@@ -60,11 +61,11 @@ Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
-Plug 'puremourning/vimspector',{'for': ['rust','c','cpp','python','javascript']} 
+Plug 'puremourning/vimspector',{'for': ['rust','c','cpp','python','javascript', 'typescript']}
 call plug#end()
 
 " Colorscheme and Font
-silent! colorscheme dracula
+silent! colorscheme catppuccin_frappe
 set guifont=Inconsolata\ Nerd\ Font\ Mono\ 12
 
 " Misc

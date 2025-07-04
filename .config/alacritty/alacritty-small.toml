@@ -3,7 +3,9 @@ import       = ["~/.config/alacritty/catppuccin-frappe.toml"]
 
 [window]
 opacity      = 0.95
-startup_mode = "Maximized"
+dimensions = { columns = 320, lines = 15 }
+position = { x = 0, y = 785 }
+decorations = "None"
 
 [font]
 normal       = { family = "Inconsolata Nerd Font Mono", style = "Medium" }

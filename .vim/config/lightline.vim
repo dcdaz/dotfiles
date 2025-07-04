@@ -60,7 +60,7 @@ endfunction
 " Configs
 let g:unite_force_overwrite_statusline = 0
 let g:lightline = {
-      \ 'colorscheme': 'one',
+            \ 'colorscheme': 'catppuccin_frappe',
       \ 'component_function': {
       \   'filename': 'FileName',
       \   'filetype': 'FileType',
