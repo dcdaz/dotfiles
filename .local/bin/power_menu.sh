@@ -31,10 +31,10 @@ function get_uptime_str {
 
 # Options
 # Uses Nerd Fonts
-EXIT="﫼"
-SUSPEND=""
+EXIT="󰿅"
+SUSPEND="󰍷"
 SHUTDOWN="⏻"
-REBOOT="ﰇ"
+REBOOT=""
 HIBERNATE=""
 
 CHOSEN=$(\

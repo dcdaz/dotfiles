@@ -34,7 +34,7 @@ else
   # Check if Internal ouput is active after disconnect External output
   IS_INTERNAL_ACTIVE=$(xrandr | grep -E "$eDP|$LVDS" -A 1 | grep '*')
   if [ -z "$IS_INTERNAL_ACTIVE" ]; then
-    xrandr --output $INTERNAL_OUTPUT --primary --mode 1920x1080 --rate 240.00
+    xrandr --output $INTERNAL_OUTPUT --primary --mode 1920x1080 --rate 60.0
   fi
 fi
 

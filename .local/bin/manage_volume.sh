@@ -18,11 +18,11 @@ BODY="Current volume is: "
 SCRIPT_PATH=${0%/*}
 
 function get_volume_level {
-    amixer get Master | grep 'Left' | awk '$0~/%/{print $5}' | tr -d '[]'
+    amixer -D pulse get Master | grep 'Left' | awk '$0~/%/{print $5}' | tr -d '[]'
 }
 
 function check_if_is_mute {
-    amixer get Master | grep off > /dev/null
+    amixer -D pulse get Master | grep off > /dev/null
 }
 
 function get_volume_icon_name {
@@ -39,7 +39,7 @@ function get_volume_icon_name {
 }
 
 function manage_volume {
-    amixer set -q Master $1 > /dev/null
+    amixer -D pulse set -q Master $1 > /dev/null
     get_volume_icon_name
     python3 $SCRIPT_PATH/notify.py "$APPNAME" "$APPICON_NAME" "$SUMMARY" "$BODY $(get_volume_level)" 1
 }
@@ -48,10 +48,10 @@ function toggle_mute {
     check_if_is_mute
     if [ $? == 1 ]
     then
-        amixer -q set Master mute
+        amixer -D pulse -q set Master mute
         python3 $SCRIPT_PATH/notify.py "$APPNAME" "audio-volume-muted" "$SUMMARY" "$BODY 0%" 1
     else
-        amixer -q set Master unmute
+        amixer -D pulse -q set Master unmute
         get_volume_icon_name
         python3 $SCRIPT_PATH/notify.py "$APPNAME" "$APPICON_NAME" "$SUMMARY" "$BODY $(get_volume_level)" 1
     fi

@@ -1,8 +1,9 @@
----------------------------------
--- Author : Daniel Cordova     --
--- E-Mail : danesc87@gmail.com --
--- Github : @dcdaz             --
----------------------------------
+-----------------------------------------------------------------------------
+-- conkyrc
+-- Author : Daniel Cordova
+-- Conky : >= 1.10
+-- License : Distributed under the terms of GNU GPL version 2 or later
+-----------------------------------------------------------------------------
 
 conky.config = {
 -- Conky settings
@@ -23,25 +24,27 @@ override_utf8_locale = true,
 text_buffer_size = 2048,
 
 -- Window specifications
-own_window_class = 'conky-semi',
+own_window_class = 'Conky',
 own_window = true,
--- Dock type for KDE, Desktop type for XFCE to avoid conky get messed with notifications and also for openbox
-own_window_type = 'dock',
---own_window_type = 'desktop',
+-- Window types are: dock, desktop, normal, panel, override
+own_window_type = 'desktop',
 own_window_transparent = true,
 own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+out_to_wayland = true,
 own_window_argb_visual = true,
--- own_window_argb_value = 255,
+--own_window_argb_value = 0,
 alignment = 'top_right',
 gap_x = 10,
 gap_y = 10,
-minimum_width = 0, minimum_height = 0,
+minimum_width = 180,
+minimum_height = 0,
 maximum_width = 360,
 
 -- Graphics settings
 draw_shades = false,
 draw_outline = false,
 draw_borders = false,
+-- Colors
 default_color = 'EFEFEF',
 color1 = 'F0F0F0',
 color2 = 'F0F0F0',
@@ -52,58 +55,55 @@ color2 = 'F0F0F0',
 
 conky.text = [[
 # Common data
-${color1}${font openlogos-archupdate:bold:size=18}t${font Noto Sans:size=18} ${alignc}${exec whoami}${font}
+${color1}${font Inconsolata Nerd Font Mono:size=32}${font Noto Sans:size=18} ${alignc}${exec whoami}${font}
 ${hr 2}
-${color1}Kernel: ${alignr 4}$kernel
+# Debian systems reports $kernel variable like "6.12.38+deb13-amd64" which is weird, if you have a diff Linux, you can use $kernel freely
+${color1}Kernel: ${alignr 4}${exec uname -r | cut -d "+" -f1}
 ${color1}Host: ${alignr 4}$nodename
 ${color1}Uptime: ${alignr 4}$uptime
 
 # System data
-${color1}${font Noto Sans:style=Medium:size=14}SYSTEM${font}
+${color1}${font Inconsolata Nerd Font Mono:size=18}${font Noto Sans:style=Medium:size=12} SYSTEM${font}
 ${hr 2}
-${color1}RAM:${alignr 4}$legacymem/$memmax
-${membar 3,165}
-${color1}SWAP:${alignr 4}$swap/$swapmax
-${swapbar 3,165}
-CPU: ${alignr 4}$cpu% (${freq}Mhz)
-${cpubar cpu0 3,165}
-FAN SPEED: ${alignr 4}${execi 5 sensors | grep -A2 asus-isa | grep cpu_fan | cut -d ":" -f2 | xargs}
+${color1}${font Inconsolata Nerd Font Mono:size=15}${font} RAM:${alignr 4}$legacymem/$memmax
+${membar 3}
+${color1}${font Inconsolata Nerd Font Mono:size=15}${font} SWAP:${alignr 4}$swap/$swapmax
+${swapbar 3}
+${font Inconsolata Nerd Font Mono:size=15}${font} CPU: ${alignr 4}$cpu% (${freq}Mhz)
+${cpubar cpu0 3}
+# ${font Inconsolata Nerd Font Mono:size=15}󰈐${font} FAN SPEED: ${alignr 4}${execi 5 sensors | grep -A2 asus-isa | grep cpu_fan | cut -d ":" -f2 | xargs}
 
 # Temperature data
-${color1}${font Noto Sans:style=Medium:size=14}TEMPERATURE${font}
+${color1}${font Inconsolata Nerd Font Mono:size=18}${font Noto Sans:style=Medium:size=12} TEMPERATURE${font}
 ${hr 2}
-# Proper HDD/SSD Temp should be done via "hddtemp" util, 
-# in my laptop lm_sensors reports nvme-pci-adapter temp
-# which is quite the same ~0.1 diff
-${color1}${font weather:size=12}y${font} SSD: ${alignr 4}${execi 7 sensors | grep -A2 nvme | grep Composite | cut -d "+" -f2 | cut -c1-4} °C
-# Real Temp on K10 processors like Ryzen 9 4900HS, in older CPUS or intel ones, should be something like "Core" rather than "Tdie"
-${color1}${font weather:size=12}z${font} CPU: ${alignr 4}${execi 7 sensors | grep -A3 coretemp | grep Package | cut -d "+" -f2 | cut -c1-4 } °C
-${color1}${font weather:size=12}y${font} NVIDIA: ${alignr 4}${execi 7 nvidia-smi -q -d TEMPERATURE | grep "GPU Current Temp" | cut -d ":" -f2 | cut -c1-3} °C
+${color1}SSD: ${alignr 4}${execi 7 sensors | grep -A2 nvme | grep Composite | cut -d "+" -f2 | cut -c1-4} °C
+${color1}CPU: ${alignr 4}${execi 7 sensors | grep -A3 k10 | grep Tctl | cut -d "+" -f2 | cut -c1-4 } °C
+${color1}GPU: ${alignr 4}${execi 7 sensors | grep -A4 amdgpu-pci | grep edge | cut -d "+" -f2 | cut -c1-4 } °C
 
 # Storage data
-${color1}${font Noto Sans:style=Medium:size=14}STORAGE${font}
+${color1}${font Inconsolata Nerd Font Mono:size=18}󰋊${font Noto Sans:style=Medium:size=12} STORAGE${font}
 ${hr 2}
 ${color1}/ ${alignr 4}${fs_free /} free
-${fs_bar 3,165 /}
+${fs_bar 3 /}
 ${color1}/home ${alignr 4}${fs_free /home} free
-${fs_bar 3,165 /}
+${fs_bar 3 /home}
 
 # Network data
-${color1}${font Noto Sans:style=Medium:size=14}NETWORK${font}
+${color1}${font Inconsolata Nerd Font Mono:size=18}${font Noto Sans:style=Medium:size=12} NETWORK${font}
 ${hr 2}
-${color1}SSID: ${alignr 4}${wireless_essid wlan0}
-${color1}Signal: ${alignr 4}${wireless_link_qual_perc wlan0} %
-${color1}Local IP: ${alignr 4}${addr wlan0}
+${color1}SSID: ${alignr 4}${wireless_essid wlp1s0}
+${color1}Signal: ${alignr 4}${wireless_link_qual_perc wlp1s0} %
+${color1}Local IP: ${alignr 4}${addr wlp1s0}
 
-${font PizzaDude Bullets:size=12}v${font} Up: ${alignr 4}${upspeed wlan0} Kb/s
-${font PizzaDude Bullets:size=12}r${font} Down: ${alignr 4}${downspeed wlan0} Kb/s
+${font Inconsolata Nerd Font Mono:size=12}󰓅${font} Up: ${alignr 4}${upspeed wlp1s0} Kb/s
+${font Inconsolata Nerd Font Mono:size=12}󰓅${font} Down: ${alignr 4}${downspeed wlp1s0} Kb/s
 
-${font PizzaDude Bullets:size=12}M${font} Uploaded: ${alignr 4}${totalup wlan0}
-${font PizzaDude Bullets:size=12}S${font} Downloaded: ${alignr 4}${totaldown wlan0}
+${font Inconsolata Nerd Font Mono:size=12}${font} Uploaded: ${alignr 4}${totalup wlp1s0}
+${font Inconsolata Nerd Font Mono:size=12}${font} Downloaded: ${alignr 4}${totaldown wlp1s0}
 
 # Energy data
-${color1}${font Noto Sans:style=Medium:size=14}ENERGY${font}
+${color1}${font Inconsolata Nerd Font Mono:size=18}󱐥${font Noto Sans:style=Medium:size=12} ENERGY${font}
 ${hr 2}
-${color1}Adapter: ${alignr 4}${acpiacadapter AC0}
+${color1}Adapter: ${alignr 4}${acpiacadapter AC}
 ${color1}Battery: ${alignr 4}${battery_percent BAT0} %
 ]];

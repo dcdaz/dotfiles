@@ -527,7 +527,7 @@
     </keybind>
     <keybind key="W-t">
       <action name="Execute">
-        <command>sakura -im /usr/share/icons/Papirus/22x22/apps/terminal.svg</command>
+        <command>alacritty</command>
       </action>
     </keybind>
     <keybind key="W-v">

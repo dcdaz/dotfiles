@@ -103,8 +103,7 @@ class Config(object):
         Config.HINT_TYPE = \
             self.HINT_TYPE_MAP.get(behavior.get('HintType').upper()) if behavior.get('HintType') else self.APP_WIDTH
         try:
-            from distutils.util import strtobool
-            Config.KEEP_ABOVE = strtobool(behavior.get('KeepAbove')) if behavior.get('KeepAbove') else self.KEEP_ABOVE
+            Config.KEEP_ABOVE = behavior.getboolean('KeepAbove') if behavior.get('KeepAbove') else self.KEEP_ABOVE
         except ValueError:
             print("'{type} = {value}' is not a valid Boolean".format(value=behavior.get('KeepAbove'), type='KeepAbove'))
             import sys

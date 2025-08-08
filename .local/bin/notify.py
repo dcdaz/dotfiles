@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """
 Description: Simple Script that delivers Notifications to DBUS
-Author: Daniel Cordova
+Author: Daniel Cordova A.
 E-Mail : danesc87@gmail.com
-Github : @dcdaz
+Github : @danesc87
+Released under GPLv3
 """
 
 import dbus

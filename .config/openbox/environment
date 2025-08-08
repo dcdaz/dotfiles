@@ -6,3 +6,9 @@ export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=gasp'
 export JAVA_FONTS=/usr/share/fonts/TTF
 export XCURSOR_SIZE=24
 export XCURSOR_THEME=Capitaine-Cursors-Palenight
+
+# Add ".local/bin" to PATH
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+

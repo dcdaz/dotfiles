@@ -13,7 +13,7 @@ ACTION_PATH="/16x16/actions/"
 APPICON_NAME="audio-volume-medium.svg"
 
 function get_volume_level {
-    amixer get Master | grep 'Left' | awk '$0~/%/{print $5}' | tr -d '[]'
+    amixer -D pulse get Master | grep 'Left' | awk '$0~/%/{print $5}' | tr -d '[]'
 }
 
 function get_volume_icon_name {

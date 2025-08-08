@@ -1,0 +1,2 @@
+#!/bin/sh
+feh --no-fehbg --bg-scale '/home/danny/Pictures/anime/landscape26.jpg' 

@@ -18,7 +18,7 @@ class Calendar(Gtk.Dialog):
             border-radius: 5px;
         }
         .calendar-widget {
-            font-size: 15px;
+            font-size: 20px;
         }
         .calendar-widget.view, .calendar-widget.header {
             border: none;
@@ -50,7 +50,7 @@ class Calendar(Gtk.Dialog):
 
     def set_window_properties(self):
         self.get_style_context().add_class('calendar-window')
-        self.set_default_size(320, 0)
+        self.set_default_size(350, 0)
         self.set_position(Gtk.WindowPosition.MOUSE)
         self.set_skip_taskbar_hint(True)
         self.set_keep_above(True)
