@@ -13,12 +13,18 @@ export EDITOR=/usr/bin/vim
 unset GIT_ASKPASS
 unset SSH_ASKPASS
 
-## PROMPT
+## PATH
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
 
+## COMPLETIONS
+source /etc/bash_completion
+
+## PROMPT
 PS1="\[\e[0;36m\]\u\[\e[0;95m\]@\[\e[0;93m\]\h:\[\e[0;94m\]\W$\[\e[0;39m\] "
 
 ## TMUX
-
 if [ -n "$PS1" ]; then
 case $- in *i*)
     [ -z "$TMUX" ] && exec tmux
@@ -31,7 +37,6 @@ if [[ -n "$TMUX" ]]; then
 fi
 
 ## ALIASES
-
 test -s ~/.alias && . ~/.alias || true
 
 ## RUST
@@ -52,3 +57,4 @@ case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
+

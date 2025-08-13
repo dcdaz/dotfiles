@@ -76,6 +76,7 @@ Configuration that allows LightDM to check graphical and to have a GTK theme, ic
 App Name | Description
 ---------|------------
 Alacritty | Terminal
+Autostart | Autostart apps
 Dunst | Notification Daemon
 Flameshot | Screenshot tool
 Galculator | Calculator
@@ -90,6 +91,8 @@ Conky | System Monitor
 Picom | Standalone compositor
 Mime | Mimeapp list
 UserDirs | User directories
+Thunar | Thunar actions configs
+Xfce4 | Xfce4 common configs
 
 #### CONKY
 

@@ -481,7 +481,7 @@
     </keybind>
     <keybind key="Print">
       <action name="Execute">
-        <command>flameshot launcher</command>
+        <command>flameshot gui</command>
       </action>
     </keybind>
     <keybind key="S-Print">
@@ -522,7 +522,7 @@
     </keybind>
     <keybind key="W-S-d">
       <action name="Execute">
-        <command>pcmanfm -n Downloads</command>
+        <command>thunar Downloads</command>
       </action>
     </keybind>
     <keybind key="W-t">
@@ -995,24 +995,13 @@
 
   # end of the example
     -->
-    <application class="sakura-f4">
-      <decor>no</decor>
-      <size>
-        <width>100%</width>
-        <height>15%</height>
-      </size>
-      <position force="yes">
-        <x>center</x>
-        <y>-1</y>
-      </position>
-    </application>
     <application class="Zathura">
       <maximized>yes</maximized>
     </application>
     <application name="gvim">
       <maximized>yes</maximized>
     </application>
-    <application name="rambox">
+    <application name="ferdium">
       <desktop>2</desktop>
       <maximized>yes</maximized>
     </application>
@@ -1033,23 +1022,6 @@
         <y>center</y>
       </position>
       <maximized>no</maximized>
-    </application>
-    <application name="gcolor2">
-      <position force="yes">
-        <x>center</x>
-        <y>center</y>
-      </position>
-      <maximized>no</maximized>
-    </application>
-    <application name="newDiff">
-      <position force="yes">
-        <x>center</x>
-        <y>center</y>
-      </position>
-      <maximized>no</maximized>
-    </application>
-    <application name="tkdiff">
-      <maximized>yes</maximized>
     </application>
   </applications>
 </openbox_config>
