@@ -1,0 +1,34 @@
+#################################################
+#################### OFFICIAL ###################
+#################################################
+
+# OFFICIAL
+deb http://cdn-fastly.deb.debian.org/debian/ testing main contrib non-free non-free-firmware
+deb-src http://cdn-fastly.deb.debian.org/debian/ testing main contrib non-free non-free-firmware
+
+deb http://cdn-fastly.deb.debian.org/debian/ testing-updates main contrib non-free non-free-firmware
+deb-src http://cdn-fastly.deb.debian.org/debian/ testing-updates main contrib non-free non-free-firmware
+
+# SECURITY
+#deb http://security.debian.org/ testing/updates main contrib non-free
+#deb-src http://security.debian.org/ testing/updates main contrib non-free
+
+# PROPOSED-UPDATES
+deb http://ftp.debian.org/debian/ testing-proposed-updates main contrib non-free non-free-firmware
+deb-src http://ftp.debian.org/debian/ testing-proposed-updates main contrib non-free non-free-firmware
+
+# BACKPORTS
+deb http://ftp.debian.org/debian/ testing-backports main contrib non-free non-free-firmware
+deb-src http://ftp.debian.org/debian/ testing-backports main contrib non-free non-free-firmware
+
+#################################################
+################# NON OFFICIAL ##################
+#################################################
+
+# VSCODIUM
+deb [arch=amd64,arm64 signed-by=/usr/share/keyrings/vscodium-archive-keyring.gpg] https://download.vscodium.com/debs vscodium main
+
+################################################
+################# PUBLIC KEYS ##################
+################################################
+#wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg  | gpg --dearmor | sudo dd of=/usr/share/keyrings/vscodium-archive-keyring.gpg

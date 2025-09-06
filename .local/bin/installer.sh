@@ -13,8 +13,8 @@ ACTION="$1"
 # All available commands by OS goes here
 declare -A options='(
   [debian,update]="sudo apt-get update"
-  [debian,upgrade]="sudo apt-get upgrade"
-  [debian,dist-upgrade]="sudo apt-get dist-upgrade"
+  [debian,upgrade]="sudo DEBIAN_FRONTEND=noninteractive apt-get upgrade"
+  [debian,dist-upgrade]="sudo DEBIAN_FRONTEND=noninteractive apt-get dist-upgrade"
   [debian,install]="sudo apt-get install"
   [debian,remove]="sudo apt-get remove --purge"
   [debian,search]="apt-cache search"
