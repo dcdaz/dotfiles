@@ -19,6 +19,9 @@ declare -A options='(
   [debian,remove]="sudo apt-get remove --purge"
   [debian,search]="apt-cache search"
   [debian,info]="apt-cache show"
+  [debian,orphans]="echo Not implemented yet!"
+  [debian,unneeded]="echo Not implemented yet!"
+  [debian,manual]="sudo dpkg"
 
   [suse,update]="sudo zypper ref"
   [suse,upgrade]="sudo zypper up"
@@ -27,18 +30,31 @@ declare -A options='(
   [suse,remove]="sudo zypper remove -u"
   [suse,search]="zypper search"
   [suse,info]="zypper if"
+  [suse,orphans]="zypper packages --orphaned"
+  [suse,unneeded]="zypper packages --unneeded"
+  [suse,manual]="sudo zypper"
 
-  [arch,update]="sudo pacman -Syu"
+  [arch,update]="sudo pacman -Sy"
+  [arch,upgrade]="sudo pacman -Su"
+  [arch,dist-upgrade]="echo Not implemented yet!"
   [arch,install]="sudo pacman -S"
   [arch,remove]="sudo pacman -R"
   [arch,search]="pacman -Ss"
+  [arch,info]="echo Not implemented yet!"
+  [arch,orphans]="echo Not implemented yet!"
+  [arch,unneeded]="echo Not implemented yet!"
+  [arch,manual]="sudo pacman"
 
   [mac,update]="brew update"
   [mac,upgrade]="brew upgrade"
+  [mac,dist-upgrade]="echo Not implemented yet!"
   [mac,install]="brew install"
   [mac,remove]="brew uninstall"
   [mac,search]="brew search"
   [mac,info]="brew info"
+  [mac,orphans]="echo Not implemented yet!"
+  [mac,unneeded]="echo Not implemented yet!"
+  [mac,manual]="echo Not implemented yet!"
 )'
 
 function run_command {

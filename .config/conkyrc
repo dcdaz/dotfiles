@@ -71,7 +71,7 @@ ${color1}${font Inconsolata Nerd Font Mono:size=15}${font} SWAP:${alignr 4}$s
 ${swapbar 3}
 ${font Inconsolata Nerd Font Mono:size=15}${font} CPU: ${alignr 4}$cpu% (${freq}Mhz)
 ${cpubar cpu0 3}
-# ${font Inconsolata Nerd Font Mono:size=15}󰈐${font} FAN SPEED: ${alignr 4}${execi 5 sensors | grep -A2 asus-isa | grep cpu_fan | cut -d ":" -f2 | xargs}
+${font Inconsolata Nerd Font Mono:size=15}󰈐${font} FAN SPEED: ${alignr 4}${execi 5 sensors | grep -A2 thinkpad-isa | grep fan1 | cut -d ":" -f2 | xargs}
 
 # Temperature data
 ${color1}${font Inconsolata Nerd Font Mono:size=18}${font Noto Sans:style=Medium:size=12} TEMPERATURE${font}
@@ -91,15 +91,18 @@ ${fs_bar 3 /home}
 # Network data
 ${color1}${font Inconsolata Nerd Font Mono:size=18}${font Noto Sans:style=Medium:size=12} NETWORK${font}
 ${hr 2}
-${color1}SSID: ${alignr 4}${wireless_essid wlp1s0}
-${color1}Signal: ${alignr 4}${wireless_link_qual_perc wlp1s0} %
-${color1}Local IP: ${alignr 4}${addr wlp1s0}
+#${color1}SSID: ${alignr 4}${wireless_essid wlp194s0}
+#${color1}Signal: ${alignr 4}${wireless_link_qual_perc wlp194s0} %
+# Apply this fix for wifi 7
+${color1}SSID: ${alignr 4}${texeci 5 nmcli -f IN-USE,SIGNAL,SSID device wifi | awk '/^\*/{if (NR!=1) {print $3}}'}
+${color1}Signal: ${alignr 4}${texeci 5 nmcli -f IN-USE,SIGNAL,SSID device wifi | awk '/^\*/{if (NR!=1) {print $2}}'} %
+${color1}Local IP: ${alignr 4}${addr wlp194s0}
 
-${font Inconsolata Nerd Font Mono:size=12}󰓅${font} Up: ${alignr 4}${upspeed wlp1s0} Kb/s
-${font Inconsolata Nerd Font Mono:size=12}󰓅${font} Down: ${alignr 4}${downspeed wlp1s0} Kb/s
+${font Inconsolata Nerd Font Mono:size=12}󰓅${font} Up: ${alignr 4}${upspeed wlp194s0} Kb/s
+${font Inconsolata Nerd Font Mono:size=12}󰓅${font} Down: ${alignr 4}${downspeed wlp194s0} Kb/s
 
-${font Inconsolata Nerd Font Mono:size=12}${font} Uploaded: ${alignr 4}${totalup wlp1s0}
-${font Inconsolata Nerd Font Mono:size=12}${font} Downloaded: ${alignr 4}${totaldown wlp1s0}
+${font Inconsolata Nerd Font Mono:size=12}${font} Uploaded: ${alignr 4}${totalup wlp194s0}
+${font Inconsolata Nerd Font Mono:size=12}${font} Downloaded: ${alignr 4}${totaldown wlp194s0}
 
 # Energy data
 ${color1}${font Inconsolata Nerd Font Mono:size=18}󱐥${font Noto Sans:style=Medium:size=12} ENERGY${font}

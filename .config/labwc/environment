@@ -1,0 +1,14 @@
+# Look'n Feel of QT Apps
+# For more custom config install qt5ct
+#export QT_STYLE_OVERRIDE=gtk2
+#export WINIT_X11_SCALE_FACTOR=1.0
+#export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=gasp'
+#export JAVA_FONTS=/usr/share/fonts/TTF
+#export XCURSOR_SIZE=24
+#export XCURSOR_THEME=Capitaine-Cursors-Palenight
+
+# Add ".local/bin" to PATH
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+

@@ -1,0 +1,210 @@
+<labwc_config>
+    <resistance>
+        <windowEdgeStrength>10</windowEdgeStrength>
+        <screenEdgeStrength>20</screenEdgeStrength>
+    </resistance>
+    <focus>
+        <followMouse>no</followMouse>
+        <raiseOnFocus>no</raiseOnFocus>
+    </focus>
+    <theme>
+        <name>Arc-Zero</name>
+        <titlebar>
+            <titleLayout>NLIMC</titleLayout>
+        </titlebar>
+        <keepBorder>yes</keepBorder>
+        <font place="ActiveWindow">
+            <name>Noto Sans</name>
+            <size>9</size>
+            <weight>Bold</weight>
+            <slant>Normal</slant>
+        </font>
+        <font place="InactiveWindow">
+            <name>Noto Sans</name>
+            <size>9</size>
+            <weight>Bold</weight>
+            <slant>Normal</slant>
+        </font>
+        <font place="MenuHeader">
+            <name>Noto Sans</name>
+            <size>9</size>
+            <weight>Normal</weight>
+            <slant>Normal</slant>
+        </font>
+        <font place="MenuItem">
+            <name>Noto Sans</name>
+            <size>9</size>
+            <weight>Normal</weight>
+            <slant>Normal</slant>
+        </font>
+        <font place="ActiveOnScreenDisplay">
+            <name>Noto Sans</name>
+            <size>9</size>
+            <weight>Normal</weight>
+            <slant>Normal</slant>
+        </font>
+        <font place="InactiveOnScreenDisplay">
+            <name>Noto Sans</name>
+            <size>9</size>
+            <weight>Bold</weight>
+            <slant>Normal</slant>
+        </font>
+    </theme>
+    <desktops number="2">
+        <names>
+            <name>1</name>
+            <name>2</name>
+        </names>
+        <popupTime>0</popupTime>
+    </desktops>
+    <resize>
+        <drawContents>yes</drawContents>
+        <popupShow>NonPixel</popupShow>
+    </resize>
+    <!-- <margin top="0" bottom="0" left="0" right="0"/> -->
+    <!-- Desktop Management -->
+    <keyboard>
+        <keybind key="W-1">
+            <action name="GoToDesktop" to="1"/>
+        </keybind>
+        <keybind key="W-2">
+            <action name="GoToDesktop" to="2"/>
+        </keybind>
+        <keybind key="C-A-Left">
+            <action name="GoToDesktop" to="left"/>
+        </keybind>
+        <keybind key="C-A-Right">
+            <action name="GoToDesktop" to="right"/>
+        </keybind>
+        <keybind key="W-S-Left">
+            <action name="SendToDesktop" to="left"/>
+        </keybind>
+        <keybind key="W-S-Right">
+            <action name="SendToDesktop" to="right"/>
+        </keybind>
+        <!-- Window Management -->
+        <keybind key="A-F">
+            <action name="Close"/>
+        </keybind>
+        <keybind key="W-d">
+            <action name="ToggleShowDesktop"/>
+        </keybind>
+        <keybind key="W-m">
+            <action name="Iconify"/>
+        </keybind>
+        <keybind key="A-Tab">
+            <action name="NextWindow"/>
+        </keybind>
+        <keybind key="A-S-Tab">
+            <action name="PreviousWindow"/>
+        </keybind>
+        <keybind key="W-Up">
+            <action name="ToggleMaximize" direction="both"/>
+        </keybind>
+        <keybind key="W-Left">
+            <action name="ToggleSnapToEdge" direction="left" combine="no"/>
+        </keybind>
+        <keybind key="W-Right">
+            <action name="ToggleSnapToEdge" direction="right" combine="no"/>
+        </keybind>
+        <keybind key="C-W-Up">
+            <action name="ToggleSnapToEdge" direction="up" combine="no"/>
+        </keybind>
+        <keybind key="C-W-Down">
+            <action name="ToggleSnapToEdge" direction="down" combine="no"/>
+        </keybind>
+        <keybind key="C-W-Left">
+            <action name="ToggleSnapToEdge" direction="up-left" combine="yes"/>
+        </keybind>
+        <keybind key="C-W-Right">
+            <action name="ToggleSnapToEdge" direction="up-right" combine="yes"/>
+        </keybind>
+        <keybind key="A-W-Left">
+            <action name="ToggleSnapToEdge" direction="down-left" combine="yes"/>
+        </keybind>
+        <keybind key="A-W-Right">
+            <action name="ToggleSnapToEdge" direction="down-right" combine="yes"/>
+        </keybind>
+        <!-- Volume -->
+        <keybind key="XF86AudioRaiseVolume">
+            <action name="Execute" command="bash ~/.local/bin/manage_volume.sh up"/>
+        </keybind>
+        <keybind key="XF86AudioLowerVolume">
+            <action name="Execute" command="bash ~/.local/bin/manage_volume.sh down"/>
+        </keybind>
+        <keybind key="XF86AudioMute">
+            <action name="Execute" command="bash ~/.local/bin/manage_volume.sh mute"/>
+        </keybind>
+        <!-- Backlight -->
+        <keybind key="XF86MonBrightnessUp">
+            <action name="Execute" command="bash ~/.local/bin/backlight.sh up"/>
+        </keybind>
+        <keybind key="XF86MonBrightnessDown">
+            <action name="Execute" command="bash ~/.local/bin/backlight.sh down"/>
+        </keybind>
+        <!-- Keyboard Backlight -->
+        <keybind key="XF86KbdBrightnessUp">
+            <action name="Execute" command="bash ~/.local/bin/keyboard_backlight.sh up"/>
+        </keybind>
+        <keybind key="XF86KbdBrightnessDown">
+            <action name="Execute" command="bash ~/.local/bin/keyboard_backlight.sh down"/>
+        </keybind>
+        <!-- Misc -->
+        <keybind key="Print">
+            <action name="Execute" command="bash ~/.local/bin/keyboard_backlight.sh down"/>
+        </keybind>
+        <keybind key="W-F12">
+            <action name="Execute" command="bash ~/.local/bin/toggle_notifications.sh"/>
+        </keybind>
+        <keybind key="W-p">
+            <action name="Execute" command="bash ~/.local/bin/external_monitor.sh"/>
+        </keybind>
+        <keybind key="W-l">
+            <action name="Execute" command="swaylock -i ~/Pictures/hackers/hacker-desk.png"/>
+        </keybind>
+        <!-- Applications -->
+        <keybind key="A-space">
+            <action name="Execute" command="rofi -show drun"/>
+        </keybind>
+        <keybind key="W-t">
+            <action name="Execute" command="alacritty"/>
+        </keybind>
+        <keybind key="W-f">
+            <action name="Execute" command="firefox"/>
+        </keybind>
+        <keybind key="W-S-f">
+            <action name="Execute" command="firefox --private-window"/>
+        </keybind>
+        <keybind key="W-v">
+            <action name="Execute" command="codium"/>
+        </keybind>
+        <keybind key="W-S-d">
+            <action name="Execute" command="thunar Downloads"/>
+        </keybind>
+    </keyboard>
+    <mouse>
+        <default />
+        <context name="Frame">
+            <mousebind button="A-Left" action="Drag">
+                <action name="Move"/>
+            </mousebind>
+            <mousebind button="A-Right" action="Drag">
+                <action name="Resize"/>
+            </mousebind>
+        </context>
+        <context name="Titlebar">
+            <mousebind button="Left" action="Drag">
+                <action name="Move"/>
+            </mousebind>
+            <mousebind button="Left" action="DoubleClick">
+                <action name="ToggleMaximize"/>
+            </mousebind>
+        </context>
+    </mouse>
+    <windowRules>
+        <windowRule identifier="ferdium">
+            <desktop>2</desktop>
+            <maximized>yes</maximized>
+        </windowRule>
+    </windowRules>
+</labwc_config>

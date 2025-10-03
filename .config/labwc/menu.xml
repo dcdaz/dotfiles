@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openbox_menu xmlns="http://openbox.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://openbox.org/">
+<openbox_menu>
   <menu id="root-menu" label="Applications">
-    <item label="Web Browser" icon="/usr/share/icons/Papirus/24x24/apps/firefox.svg">
-      <action name="Execute"><execute>xdg-open http://</execute></action>
+    <item label="Firefox" icon="/usr/share/icons/Papirus/24x24/apps/firefox.svg">
+      <action name="Execute"><execute>firefox</execute></action>
     </item>
-    <item label="Alacritty" icon="/usr/share/icons/Papirus/24x24/apps/alacritty.svg">
+    <item label="Alacritty" icon="/usr/share/icons/Papirus/24x24/apps/Alacritty.svg">
       <action name="Execute"><execute>alacritty</execute></action>
     </item>
     <item label="File Manager" icon="/usr/share/icons/Papirus/24x24/apps/system-file-manager.svg">
@@ -143,11 +143,8 @@
       <item label="Openbox Configuration Manager" icon="/usr/share/icons/Papirus/24x24/apps/obconf.svg">
         <action name="Execute"><execute>obconf</execute></action>
       </item>
-      <item label="Reconfigure Openbox" icon="/usr/share/icons/Papirus/24x24/apps/openbox.svg">
-        <action name="Execute"><execute>openbox --reconfigure</execute></action>
-      </item>
-      <item label="Tint2 Settings" icon="/usr/share/icons/Papirus/24x24/apps/tint2.svg">
-        <action name="Execute"><execute>tint2conf</execute></action>
+      <item label="Reconfigure Labwc" icon="/usr/share/icons/Papirus/24x24/apps/systemsettings.svg">
+        <action name="Reconfigure"/>
       </item>
     </menu>
     <menu id="system" icon="/usr/share/icons/Papirus/24x24/apps/applications-utilities.svg" label="System">
@@ -160,10 +157,7 @@
       <item label="GParted" icon="/usr/share/icons/Papirus/24x24/apps/gparted.svg">
         <action name="Execute"><execute>/usr/sbin/gparted %f</execute></action>
       </item>
-      <item label="aRandR" icon="/usr/share/icons/Papirus/24x24/devices/video-display.svg">
-        <action name="Execute"><execute>arandr</execute></action>
-      </item>
-      <item label="Alacritty" icon="/usr/share/icons/Papirus/24x24/apps/alacritty.svg">
+      <item label="Alacritty" icon="/usr/share/icons/Papirus/24x24/apps/Alacritty.svg">
         <action name="Execute"><execute>alacritty</execute></action>
       </item>
     </menu>

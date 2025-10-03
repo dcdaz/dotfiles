@@ -6,7 +6,7 @@
 	<submenu></submenu>
 	<unique-id>1753563150871715-1</unique-id>
 	<command>alacritty --config-file ~/.config/alacritty/alacritty-small.toml --working-directory %f</command>
-	<description>Example for a custom action</description>
+	<description>Open Terminal Here</description>
 	<range></range>
 	<patterns>*</patterns>
 	<startup-notify/>

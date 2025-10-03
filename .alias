@@ -1,13 +1,16 @@
 # Some alias to make my daily life easier
 
 # PACKAGE MANAGEMENT
+alias ref='bash ~/.local/bin/installer.sh update'
+alias u='bash ~/.local/bin/installer.sh upgrade'
+alias dup='bash ~/.local/bin/installer.sh dist-upgrade'
 alias i='bash ~/.local/bin/installer.sh install'
 alias r='bash ~/.local/bin/installer.sh remove'
 alias s='bash ~/.local/bin/installer.sh search'
 alias f='bash ~/.local/bin/installer.sh info'
-alias ref='bash ~/.local/bin/installer.sh update'
-alias u='bash ~/.local/bin/installer.sh upgrade'
-alias dup='bash ~/.local/bin/installer.sh dist-upgrade'
+alias orp='bash ~/.local/bin/installer.sh orphans'
+alias unn='bash ~/.local/bin/installer.sh unneeded'
+alias z='bash ~/.local/bin/installer.sh manual'
 
 # OTHERS
 alias vimu='vim -u "NONE"'

@@ -995,7 +995,7 @@
 
   # end of the example
     -->
-    <application class="Zathura">
+    <application class="Atril">
       <maximized>yes</maximized>
     </application>
     <application name="gvim">

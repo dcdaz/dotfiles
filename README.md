@@ -69,6 +69,17 @@ gitconfig with some *aliases, default-editor, name, mail, etc.* and also it has 
 
 Configuration that allows LightDM to check graphical and to have a GTK theme, icons, etc
 
+### EMPTTY
+
+Configu for emptty login manager, on *Debian* based distros conf has `-tty#` due to how it was started.
+
+```bash
+sudo systemctl enable emptty@tty7.service
+sudo cp etc/emptty/conf-tty7 /etc/emptty/
+```
+
+> Don't forget to replace `{USER_NAME}` with your own user name
+
 ### CONFIGS
 
 `.config/` folder has some configs like:

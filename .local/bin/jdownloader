@@ -3,7 +3,7 @@ set -e
 
 if test -z "$JDOWNLOADER_DIRECTORY"; then
 	# You can override this default by setting JDOWNLOADER_DIRECTORY
-	JDOWNLOADER_DIRECTORY=~/.jdownloader
+	JDOWNLOADER_DIRECTORY=~/.local/share/jdownloader
 fi
 
 LOG_FILE=${JDOWNLOADER_DIRECTORY}/jdownloader.log

@@ -1,0 +1,39 @@
+#!/bin/sh
+
+# Launch script that switch to external monitor
+# or laptop monitor when cable is connected/disconnected
+# Monitor
+wlr-randr --output HDMI-A-1 --on --mode 2560x1080@74.990997Hz --output eDP-1 --off
+#bash ~/.local/bin/external_monitor.sh &
+
+# Launch Keyboard config layout
+# -option numpad:mac -> allow to use numeric keypad without press numblock key
+#setxkbmap -layout us -variant altgr-intl -option deadkeys
+
+# Turn off bell sounds
+#xset b off &
+
+# Set wallpaper
+(sleep 0.5s && swaybg -i ~/Pictures/anime/landscape19.jpg -m fill) &
+
+# Launch Tint2 bar
+#(sleep 0.2s && tint2) &
+
+# Waybar
+#(sleep 0.2s && waybar) &
+
+# Policy Kit, allows to ask super user password
+(sleep 0.2s && /usr/libexec/polkit-mate-authentication-agent-1) &
+
+# Launch Network-Manager app
+(sleep 0.2s && nm-applet --indicator) &
+
+# Set custom composition
+#(sleep 0.2s && picom --config ~/.config/picom.conf) &
+
+# Launch Conky System Monitor with custom config
+(sleep 0.5s && conky -c ~/.config/conkyrc) &
+
+# Launch notification system
+(sleep 0.5s && dunst) &
+

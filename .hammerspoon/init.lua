@@ -79,7 +79,7 @@ local functionMapKeys = {
     {modifiers = optionKey, character = 'f', fn = function() hs.application.launchOrFocus('Firefox') end},
     -- {modifiers = optshiftKey, character = 'f', fn = function() hs.application.open('~/.local/bin/wolf') end},
     {modifiers = optshiftKey, character = 'f', fn = function() openAppWithParams('/Applications/LibreWolf.app/Contents/MacOS/librewolf', {'--private-window'}) end},
-    {modifiers = optshiftKey, character = 'd', fn = function() openAppWithParams('/usr/bin/open', {'/Users/danny/Downloads'}) end},
+    {modifiers = optshiftKey, character = 'd', fn = function() openAppWithParams('/usr/bin/open', {'~/Downloads'}) end},
 }
 
 local textHandleKeys = {
