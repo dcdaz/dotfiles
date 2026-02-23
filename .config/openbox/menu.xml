@@ -14,7 +14,7 @@
         <action name="Execute"><execute>gvim -f</execute></action>
     </item>
     <item label="Bitwarden" icon="/usr/share/icons/Papirus/24x24/apps/bitwarden.svg">
-        <action name="Execute"><execute>bitwarden --disable-gpu-compositing %F</execute></action>
+        <action name="Execute"><execute>bitwarden %F</execute></action>
     </item>
     <separator label="Categories"/>
     <menu id="utilities" icon="/usr/share/icons/Papirus/24x24/apps/applications-accessories.svg" label="Utilities">
@@ -28,7 +28,7 @@
         <action name="Execute"><execute>galculator</execute></action>
       </item>
       <item label="Bitwarden" icon="/usr/share/icons/Papirus/24x24/apps/bitwarden.svg">
-        <action name="Execute"><execute>bitwarden --disable-gpu-compositing %F</execute></action>
+        <action name="Execute"><execute>bitwarden %F</execute></action>
       </item>
       <item label="Vi IMproved" icon="/usr/share/icons/Papirus/24x24/apps/vim.svg">
         <action name="Execute"><execute>gvim -f</execute></action>

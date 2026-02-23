@@ -12,9 +12,10 @@ APPNAME="Keyboard Backlight"
 APPICON="keyboard"
 SUMMARY="Keyboard Backlight"
 BODY="Current backlight"
-# Since this search son asus::kbd_backlight will work just on Asus laptops
-# you need to change with your own backlight path, only teste on Asus ROG Zephyrus M15
-CURRENT_BACKLIGHT=$(cat /sys/class/leds/asus::kbd_backlight/brightness)
+
+# Since this search son tcapi::kbd_backlight will work only on Thinkpad laptops
+# you need to change with your own backlight path, testd on Thinkpad P14s Gen 6 AMD
+CURRENT_BACKLIGHT=$(cat /sys/class/leds/tpacpi::kbd_backlight/brightness)
 BACKLIGHT_TEXT=""
 
 # Load Notify Script
