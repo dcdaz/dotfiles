@@ -20,7 +20,7 @@ declare -A options='(
   [debian,search]="apt-cache search"
   [debian,info]="apt-cache show"
   [debian,orphans]="echo Not implemented yet!"
-  [debian,unneeded]="echo Not implemented yet!"
+  [debian,unneeded]="sudo apt-get autoremove"
   [debian,manual]="sudo dpkg"
 
   [suse,update]="sudo zypper ref"
@@ -61,9 +61,9 @@ function run_command {
   shopt -s nocasematch
   if [ $(uname) == "Darwin" ]; then
     ${options["mac",$ACTION]} $@
-  elif [[ $(cat /etc/issue) =~ "debian" ]]; then
+  elif [[ $(cat /etc/issue 2>/dev/null) =~ "debian" ]] || [[ $(cat /etc/issue.net 2>/dev/null) =~ "debian" ]]; then
       ${options["debian",$ACTION]} $@
-  elif [[ $(cat /etc/issue) =~ "suse" ]]; then
+  elif [[ $(cat /etc/issue 2>/dev/null) =~ "suse" ]] || [[ $(cat /etc/issue.net 2>/dev/null) =~ "suse" ]]; then
       ${options["suse",$ACTION]} $@
   else
       ${options["arch",$ACTION]} $@

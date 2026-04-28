@@ -44,7 +44,7 @@ test -s ~/.alias && . ~/.alias || true
 source "$HOME/.cargo/env"
 
 ## NVM
-# curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+# curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
 # Don't forget check version before run curl command
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
