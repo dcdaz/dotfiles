@@ -70,11 +70,15 @@ inoremap <C-h> :GitGutterLineHighlightsToggle<CR>
 " LSP, Pumvisible and Vim-Snip
 noremap <C-b> :LspDefinition<CR>
 inoremap <C-b> <Esc>:LspDefinition<CR>
-inoremap <C-Space> <C-n>
-" inoremap <C-@> <C-Space>
+" Autocomplete trigger
+inoremap <C-Space> <C-r>=asyncomplete#force_refresh()<CR><C-n>
+inoremap <C-@> <C-r>=asyncomplete#force_refresh()<CR><C-n>
+" Confirm completion and close popup
 inoremap <expr> <CR> pumvisible() ? asyncomplete#close_popup() : "\<CR>"
+" Snippet expansion
 inoremap <expr> <C-j> vsnip#expandable() ? '<Plug>(vsnip-expand)' : '<C-j>'
 noremap <expr> <C-j> vsnip#expandable() ? '<Plug>(vsnip-expand)' : '<C-j>'
+" Snippet expand or jump
 inoremap <expr> <C-l> vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'
 noremap <expr> <C-l> vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'
 " If you need more configs for snippets you cahn check https://github.com/hrsh7th/vim-vsnip

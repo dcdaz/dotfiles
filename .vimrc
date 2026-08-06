@@ -33,6 +33,7 @@ set term=xterm-256color
 set termwinsize=10x0
 set splitbelow
 set splitright
+set nofoldenable
 au InsertLeave * set nopaste
 syntax on
 
@@ -52,6 +53,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'majutsushi/tagbar', {'on': 'TagbarToggle'}
 Plug 'itchyny/lightline.vim'
+Plug 'itchyny/vim-gitbranch'
 Plug 'ryanoasis/vim-devicons'
 Plug 'catppuccin/vim', {'as': 'catppuccin'}
 Plug 'severin-lemaignan/vim-minimap', {'on': []}
@@ -62,6 +64,8 @@ Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'puremourning/vimspector',{'for': ['rust','c','cpp','python','javascript', 'typescript']}
+Plug 'axvr/org.vim', {'for': ['org']}
+"Plug 'ggml-org/llama.vim'
 call plug#end()
 
 " Colorscheme and Font

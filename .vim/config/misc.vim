@@ -19,9 +19,10 @@ let g:minimap_highlight='Visual'
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_user_command = 'find %s -type f'
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/](target|build|.git)$',
-  \ 'file': '\v\.(d|so|swp|pyc)$',
+  \ 'file': '\v\.(class|d|so|swp|pyc)$',
   \ 'link': 'some_bad_symbolic_links',
   \ }
 

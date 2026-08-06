@@ -67,10 +67,11 @@ let g:lightline = {
       \   'fileencoding': 'FileEncoding',
       \   'fileformat': 'FileFormat',
       \   'mode': 'Mode',
+      \   'gitbranch': 'gitbranch#name',
       \ },
       \ 'active': {
       \   'left': [ [ 'mode' ], [ 'filename' ] ],
-      \   'right': [ ['lineinfo'], ['percent'], [ 'filetype', 'fileformat', 'fileencoding' ] ]
+      \   'right': [ ['lineinfo'], ['percent'], [ 'gitbranch', 'filetype', 'fileformat', 'fileencoding' ] ]
       \ },
       \ 'separator': { 'left': '', 'right': '' },
       \ 'subseparator': { 'left': '', 'right': '' }
