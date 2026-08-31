@@ -1,5 +1,6 @@
 local target_apps = {
     "Ferdium",
+    "ferdium",
     "thunderbird"
 }
 

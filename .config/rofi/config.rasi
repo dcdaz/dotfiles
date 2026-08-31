@@ -5,7 +5,8 @@
 
 configuration {
     modi:               "drun";
-    location:           2;
+    location:           0;
+    yoffset:            -200;
     fixed-num-lines:    true;
     font:               "Inconsolata Nerd Font Mono Medium 11";
     show-icons:         true;
